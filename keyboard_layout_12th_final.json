@@ -1,0 +1,568 @@
+{
+  "keys": [
+    {
+      "index": 0,
+      "row": 0,
+      "col": 0,
+      "hand": "left",
+      "finger": "pinky",
+      "is_layer_key": false,
+      "slots": {
+        "base_tap": "ENT",
+        "base_hold": "ESC"
+      }
+    },
+    {
+      "index": 1,
+      "row": 0,
+      "col": 1,
+      "hand": "left",
+      "finger": "ring",
+      "is_layer_key": false,
+      "slots": {
+        "base_tap": "g",
+        "base_hold": "G"
+      }
+    },
+    {
+      "index": 2,
+      "row": 0,
+      "col": 2,
+      "hand": "left",
+      "finger": "middle",
+      "is_layer_key": true,
+      "slots": {
+        "base_tap": "<LAYER>"
+      }
+    },
+    {
+      "index": 3,
+      "row": 0,
+      "col": 3,
+      "hand": "left",
+      "finger": "index",
+      "is_layer_key": false,
+      "slots": {
+        "base_tap": "m",
+        "base_hold": "M",
+        "layer_tap": "h",
+        "layer_hold": "H"
+      }
+    },
+    {
+      "index": 4,
+      "row": 2,
+      "col": 2,
+      "hand": "left",
+      "finger": "thumb",
+      "is_layer_key": false,
+      "slots": {
+        "base_tap": "d",
+        "base_hold": "D",
+        "layer_tap": "x",
+        "layer_hold": "X"
+      }
+    },
+    {
+      "index": 5,
+      "row": 1,
+      "col": 1,
+      "hand": "left",
+      "finger": "ring",
+      "is_layer_key": false,
+      "slots": {
+        "base_tap": "p",
+        "base_hold": "P"
+      }
+    },
+    {
+      "index": 6,
+      "row": 1,
+      "col": 2,
+      "hand": "left",
+      "finger": "middle",
+      "is_layer_key": false,
+      "slots": {
+        "base_tap": "r",
+        "base_hold": "R"
+      }
+    },
+    {
+      "index": 7,
+      "row": 1,
+      "col": 3,
+      "hand": "left",
+      "finger": "index",
+      "is_layer_key": false,
+      "slots": {
+        "base_tap": "n",
+        "base_hold": "N",
+        "layer_tap": "q",
+        "layer_hold": "Q"
+      }
+    },
+    {
+      "index": 8,
+      "row": 2,
+      "col": 3,
+      "hand": "left",
+      "finger": "thumb",
+      "is_layer_key": false,
+      "slots": {
+        "base_tap": "l",
+        "base_hold": "L",
+        "layer_tap": "k",
+        "layer_hold": "K"
+      }
+    },
+    {
+      "index": 9,
+      "row": 2,
+      "col": 4,
+      "hand": "left",
+      "finger": "thumb",
+      "is_layer_key": false,
+      "slots": {
+        "base_tap": "s",
+        "base_hold": "S",
+        "layer_tap": "z",
+        "layer_hold": "Z"
+      }
+    },
+    {
+      "index": 10,
+      "row": 2,
+      "col": 0,
+      "hand": "right",
+      "finger": "thumb",
+      "is_layer_key": false,
+      "slots": {
+        "base_tap": "a",
+        "base_hold": "A",
+        "layer_tap": "'"
+      }
+    },
+    {
+      "index": 11,
+      "row": 0,
+      "col": 1,
+      "hand": "right",
+      "finger": "index",
+      "is_layer_key": false,
+      "slots": {
+        "base_tap": "t",
+        "base_hold": "T",
+        "layer_tap": "f",
+        "layer_hold": "F"
+      }
+    },
+    {
+      "index": 12,
+      "row": 0,
+      "col": 2,
+      "hand": "right",
+      "finger": "middle",
+      "is_layer_key": false,
+      "slots": {
+        "base_tap": "i",
+        "base_hold": "I",
+        "layer_tap": "w",
+        "layer_hold": "W"
+      }
+    },
+    {
+      "index": 13,
+      "row": 0,
+      "col": 3,
+      "hand": "right",
+      "finger": "ring",
+      "is_layer_key": false,
+      "slots": {
+        "base_tap": "v",
+        "base_hold": "V",
+        "layer_tap": "b",
+        "layer_hold": "B"
+      }
+    },
+    {
+      "index": 14,
+      "row": 0,
+      "col": 4,
+      "hand": "right",
+      "finger": "pinky",
+      "is_layer_key": false,
+      "slots": {
+        "base_hold": "DEL",
+        "base_tap": "BKS",
+        "layer_tap": "_"
+      }
+    },
+    {
+      "index": 15,
+      "row": 2,
+      "col": 1,
+      "hand": "right",
+      "finger": "thumb",
+      "is_layer_key": false,
+      "slots": {
+        "base_tap": "c",
+        "base_hold": "C",
+        "layer_tap": ","
+      }
+    },
+    {
+      "index": 16,
+      "row": 1,
+      "col": 1,
+      "hand": "right",
+      "finger": "index",
+      "is_layer_key": false,
+      "slots": {
+        "base_tap": "SPC",
+        "base_hold": "TAB",
+        "layer_tap": "y",
+        "layer_hold": "Y"
+      }
+    },
+    {
+      "index": 17,
+      "row": 1,
+      "col": 2,
+      "hand": "right",
+      "finger": "middle",
+      "is_layer_key": false,
+      "slots": {
+        "base_tap": "e",
+        "base_hold": "E",
+        "layer_tap": "j",
+        "layer_hold": "J"
+      }
+    },
+    {
+      "index": 18,
+      "row": 1,
+      "col": 3,
+      "hand": "right",
+      "finger": "ring",
+      "is_layer_key": false,
+      "slots": {
+        "base_tap": "u",
+        "base_hold": "U",
+        "layer_tap": "-"
+      }
+    },
+    {
+      "index": 19,
+      "row": 2,
+      "col": 2,
+      "hand": "right",
+      "finger": "thumb",
+      "is_layer_key": false,
+      "slots": {
+        "base_tap": "o",
+        "base_hold": "O",
+        "layer_tap": "."
+      }
+    }
+  ],
+  "char_to_key_slot": {
+    "DEL": [
+      14,
+      "base_hold"
+    ],
+    "BKS": [
+      14,
+      "base_tap"
+    ],
+    "ENT": [
+      0,
+      "base_tap"
+    ],
+    "ESC": [
+      0,
+      "base_hold"
+    ],
+    "e": [
+      17,
+      "base_tap"
+    ],
+    "E": [
+      17,
+      "base_hold"
+    ],
+    "SPC": [
+      16,
+      "base_tap"
+    ],
+    "TAB": [
+      16,
+      "base_hold"
+    ],
+    "c": [
+      15,
+      "base_tap"
+    ],
+    "C": [
+      15,
+      "base_hold"
+    ],
+    "o": [
+      19,
+      "base_tap"
+    ],
+    "O": [
+      19,
+      "base_hold"
+    ],
+    "<LAYER>": [
+      2,
+      "base_tap"
+    ],
+    "a": [
+      10,
+      "base_tap"
+    ],
+    "A": [
+      10,
+      "base_hold"
+    ],
+    "i": [
+      12,
+      "base_tap"
+    ],
+    "I": [
+      12,
+      "base_hold"
+    ],
+    "l": [
+      8,
+      "base_tap"
+    ],
+    "L": [
+      8,
+      "base_hold"
+    ],
+    "r": [
+      6,
+      "base_tap"
+    ],
+    "R": [
+      6,
+      "base_hold"
+    ],
+    "n": [
+      7,
+      "base_tap"
+    ],
+    "N": [
+      7,
+      "base_hold"
+    ],
+    "u": [
+      18,
+      "base_tap"
+    ],
+    "U": [
+      18,
+      "base_hold"
+    ],
+    "d": [
+      4,
+      "base_tap"
+    ],
+    "D": [
+      4,
+      "base_hold"
+    ],
+    "t": [
+      11,
+      "base_tap"
+    ],
+    "T": [
+      11,
+      "base_hold"
+    ],
+    "s": [
+      9,
+      "base_tap"
+    ],
+    "S": [
+      9,
+      "base_hold"
+    ],
+    "m": [
+      3,
+      "base_tap"
+    ],
+    "M": [
+      3,
+      "base_hold"
+    ],
+    "q": [
+      7,
+      "layer_tap"
+    ],
+    "Q": [
+      7,
+      "layer_hold"
+    ],
+    "f": [
+      11,
+      "layer_tap"
+    ],
+    "F": [
+      11,
+      "layer_hold"
+    ],
+    "p": [
+      5,
+      "base_tap"
+    ],
+    "P": [
+      5,
+      "base_hold"
+    ],
+    "j": [
+      17,
+      "layer_tap"
+    ],
+    "J": [
+      17,
+      "layer_hold"
+    ],
+    "v": [
+      13,
+      "base_tap"
+    ],
+    "V": [
+      13,
+      "base_hold"
+    ],
+    "h": [
+      3,
+      "layer_tap"
+    ],
+    "H": [
+      3,
+      "layer_hold"
+    ],
+    "'": [
+      10,
+      "layer_tap"
+    ],
+    "w": [
+      12,
+      "layer_tap"
+    ],
+    "W": [
+      12,
+      "layer_hold"
+    ],
+    ",": [
+      15,
+      "layer_tap"
+    ],
+    ".": [
+      19,
+      "layer_tap"
+    ],
+    "_": [
+      14,
+      "layer_tap"
+    ],
+    "y": [
+      16,
+      "layer_tap"
+    ],
+    "Y": [
+      16,
+      "layer_hold"
+    ],
+    "z": [
+      9,
+      "layer_tap"
+    ],
+    "Z": [
+      9,
+      "layer_hold"
+    ],
+    "k": [
+      8,
+      "layer_tap"
+    ],
+    "K": [
+      8,
+      "layer_hold"
+    ],
+    "x": [
+      4,
+      "layer_tap"
+    ],
+    "X": [
+      4,
+      "layer_hold"
+    ],
+    "-": [
+      18,
+      "layer_tap"
+    ],
+    "b": [
+      13,
+      "layer_tap"
+    ],
+    "B": [
+      13,
+      "layer_hold"
+    ],
+    "g": [
+      1,
+      "base_tap"
+    ],
+    "G": [
+      1,
+      "base_hold"
+    ]
+  },
+  "layer_key_index": 2,
+  "lockedSlots": [
+    "14,base_tap",
+    "14,base_hold",
+    "0,base_hold",
+    "0,base_tap",
+    "17,base_tap",
+    "16,base_tap",
+    "16,base_hold",
+    "17,base_hold",
+    "15,base_tap",
+    "19,base_tap",
+    "2,base_tap",
+    "8,base_tap",
+    "10,base_tap",
+    "12,base_tap",
+    "6,base_tap",
+    "7,base_tap",
+    "4,base_tap",
+    "18,base_tap",
+    "1,base_tap",
+    "11,base_tap",
+    "9,base_tap",
+    "3,base_tap",
+    "11,layer_tap",
+    "7,layer_tap",
+    "12,layer_tap",
+    "5,base_tap",
+    "17,layer_tap",
+    "13,base_tap",
+    "19,layer_tap",
+    "3,layer_tap",
+    "10,layer_tap",
+    "15,layer_tap",
+    "13,layer_tap",
+    "14,layer_tap",
+    "9,layer_tap",
+    "16,layer_tap",
+    "18,layer_tap",
+    "8,layer_tap",
+    "4,layer_tap"
+  ]
+}

@@ -1,0 +1,47 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    behaviors {
+        ht: hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+                // Left hand (Pins 0-9)
+                &ht ESC ENT  &ht LS(G) G  &sl 1        &ht LS(M) M
+                &ht LS(D) D  &ht LS(P) P  &ht LS(R) R  &ht LS(N) N
+                &ht LS(L) L  &ht LS(S) S
+                
+                // Right hand (Pins 0-9)
+                &ht LS(A) A  &ht LS(T) T  &ht LS(I) I  &ht LS(V) V  &ht DEL BSPC
+                &ht LS(C) C  &ht TAB SPC  &ht LS(E) E  &ht LS(U) U
+                &ht LS(O) O
+            >;
+        };
+
+        layer_1 {
+            bindings = <
+                // Left hand
+                &none        &none        &trans       &ht LS(H) H
+                &ht LS(X) X  &none        &none        &ht LS(Q) Q
+                &ht LS(K) K  &ht LS(Z) Z
+                
+                // Right hand
+                &kp SQT      &ht LS(F) F  &ht LS(W) W  &ht LS(B) B  &kp UNDER
+                &kp COMMA    &ht LS(Y) Y  &ht LS(J) J  &kp MINUS
+                &kp DOT
+            >;
+        };
+    };
+};

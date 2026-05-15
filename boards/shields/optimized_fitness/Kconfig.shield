@@ -1,0 +1,5 @@
+config SHIELD_OPTIMIZED_FITNESS_LEFT
+    def_bool $(shields_list_contains,optimized_fitness_left)
+
+config SHIELD_OPTIMIZED_FITNESS_RIGHT
+    def_bool $(shields_list_contains,optimized_fitness_right)
