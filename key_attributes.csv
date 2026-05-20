@@ -1,0 +1,21 @@
+Index,Main,Doigt,Rangée,Colonne,Base Tap,Base Hold,Layer Tap,Layer Hold,Touche Calque
+1,Gauche,Pouce,2,4,s,S,z,Z,Non
+2,Gauche,Pouce,2,3,l,L,k,K,Non
+3,Gauche,Pouce,2,2,d,D,x,X,Non
+4,Gauche,Index,0,3,m,M,h,H,Non
+5,Gauche,Index,1,3,n,N,q,Q,Non
+6,Gauche,Majeur,0,2,<LAYER>,,,,Oui
+7,Gauche,Majeur,1,2,r,R,,,Non
+8,Gauche,Annulaire,0,1,g,G,,,Non
+9,Gauche,Annulaire,1,1,p,P,,,Non
+10,Gauche,Auriculaire,0,0,ENT,ESC,,,Non
+11,Droite,Pouce,2,0,a,A,',,Non
+12,Droite,Pouce,2,1,c,C,,,,Non
+13,Droite,Pouce,2,2,o,O,.,,Non
+14,Droite,Index,0,1,t,T,f,F,Non
+15,Droite,Index,1,1,SPC,TAB,y,Y,Non
+16,Droite,Majeur,0,2,i,I,w,W,Non
+17,Droite,Majeur,1,2,e,E,j,J,Non
+18,Droite,Annulaire,0,3,v,V,b,B,Non
+19,Droite,Annulaire,1,3,u,U,-,,Non
+20,Droite,Auriculaire,0,4,BKS,DEL,_,,Non

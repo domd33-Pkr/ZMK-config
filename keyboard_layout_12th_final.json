@@ -1,7 +1,7 @@
 {
   "keys": [
     {
-      "index": 0,
+      "index": 10,
       "row": 0,
       "col": 0,
       "hand": "left",
@@ -13,7 +13,7 @@
       }
     },
     {
-      "index": 1,
+      "index": 8,
       "row": 0,
       "col": 1,
       "hand": "left",
@@ -25,7 +25,7 @@
       }
     },
     {
-      "index": 2,
+      "index": 6,
       "row": 0,
       "col": 2,
       "hand": "left",
@@ -36,7 +36,7 @@
       }
     },
     {
-      "index": 3,
+      "index": 4,
       "row": 0,
       "col": 3,
       "hand": "left",
@@ -50,7 +50,7 @@
       }
     },
     {
-      "index": 4,
+      "index": 3,
       "row": 2,
       "col": 2,
       "hand": "left",
@@ -64,7 +64,7 @@
       }
     },
     {
-      "index": 5,
+      "index": 9,
       "row": 1,
       "col": 1,
       "hand": "left",
@@ -76,7 +76,7 @@
       }
     },
     {
-      "index": 6,
+      "index": 7,
       "row": 1,
       "col": 2,
       "hand": "left",
@@ -88,7 +88,7 @@
       }
     },
     {
-      "index": 7,
+      "index": 5,
       "row": 1,
       "col": 3,
       "hand": "left",
@@ -102,7 +102,7 @@
       }
     },
     {
-      "index": 8,
+      "index": 2,
       "row": 2,
       "col": 3,
       "hand": "left",
@@ -116,7 +116,7 @@
       }
     },
     {
-      "index": 9,
+      "index": 1,
       "row": 2,
       "col": 4,
       "hand": "left",
@@ -130,7 +130,7 @@
       }
     },
     {
-      "index": 10,
+      "index": 11,
       "row": 2,
       "col": 0,
       "hand": "right",
@@ -143,7 +143,7 @@
       }
     },
     {
-      "index": 11,
+      "index": 14,
       "row": 0,
       "col": 1,
       "hand": "right",
@@ -157,7 +157,7 @@
       }
     },
     {
-      "index": 12,
+      "index": 16,
       "row": 0,
       "col": 2,
       "hand": "right",
@@ -171,7 +171,7 @@
       }
     },
     {
-      "index": 13,
+      "index": 18,
       "row": 0,
       "col": 3,
       "hand": "right",
@@ -185,7 +185,7 @@
       }
     },
     {
-      "index": 14,
+      "index": 20,
       "row": 0,
       "col": 4,
       "hand": "right",
@@ -198,7 +198,7 @@
       }
     },
     {
-      "index": 15,
+      "index": 12,
       "row": 2,
       "col": 1,
       "hand": "right",
@@ -211,7 +211,7 @@
       }
     },
     {
-      "index": 16,
+      "index": 15,
       "row": 1,
       "col": 1,
       "hand": "right",
@@ -239,7 +239,7 @@
       }
     },
     {
-      "index": 18,
+      "index": 19,
       "row": 1,
       "col": 3,
       "hand": "right",
@@ -252,7 +252,7 @@
       }
     },
     {
-      "index": 19,
+      "index": 13,
       "row": 2,
       "col": 2,
       "hand": "right",
@@ -267,19 +267,19 @@
   ],
   "char_to_key_slot": {
     "DEL": [
-      14,
+      20,
       "base_hold"
     ],
     "BKS": [
-      14,
+      20,
       "base_tap"
     ],
     "ENT": [
-      0,
+      10,
       "base_tap"
     ],
     "ESC": [
-      0,
+      10,
       "base_hold"
     ],
     "e": [
@@ -291,135 +291,135 @@
       "base_hold"
     ],
     "SPC": [
-      16,
+      15,
       "base_tap"
     ],
     "TAB": [
-      16,
+      15,
       "base_hold"
     ],
     "c": [
-      15,
+      12,
       "base_tap"
     ],
     "C": [
-      15,
+      12,
       "base_hold"
     ],
     "o": [
-      19,
+      13,
       "base_tap"
     ],
     "O": [
-      19,
+      13,
       "base_hold"
     ],
     "<LAYER>": [
-      2,
+      6,
       "base_tap"
     ],
     "a": [
-      10,
+      11,
       "base_tap"
     ],
     "A": [
-      10,
+      11,
       "base_hold"
     ],
     "i": [
-      12,
+      16,
       "base_tap"
     ],
     "I": [
-      12,
+      16,
       "base_hold"
     ],
     "l": [
-      8,
+      2,
       "base_tap"
     ],
     "L": [
-      8,
+      2,
       "base_hold"
     ],
     "r": [
-      6,
+      7,
       "base_tap"
     ],
     "R": [
-      6,
+      7,
       "base_hold"
     ],
     "n": [
-      7,
+      5,
       "base_tap"
     ],
     "N": [
-      7,
+      5,
       "base_hold"
     ],
     "u": [
-      18,
+      19,
       "base_tap"
     ],
     "U": [
-      18,
+      19,
       "base_hold"
     ],
     "d": [
-      4,
+      3,
       "base_tap"
     ],
     "D": [
-      4,
+      3,
       "base_hold"
     ],
     "t": [
-      11,
+      14,
       "base_tap"
     ],
     "T": [
-      11,
+      14,
       "base_hold"
     ],
     "s": [
-      9,
+      1,
       "base_tap"
     ],
     "S": [
-      9,
+      1,
       "base_hold"
     ],
     "m": [
-      3,
+      4,
       "base_tap"
     ],
     "M": [
-      3,
+      4,
       "base_hold"
     ],
     "q": [
-      7,
+      5,
       "layer_tap"
     ],
     "Q": [
-      7,
+      5,
       "layer_hold"
     ],
     "f": [
-      11,
+      14,
       "layer_tap"
     ],
     "F": [
-      11,
+      14,
       "layer_hold"
     ],
     "p": [
-      5,
+      9,
       "base_tap"
     ],
     "P": [
-      5,
+      9,
       "base_hold"
     ],
     "j": [
@@ -431,138 +431,138 @@
       "layer_hold"
     ],
     "v": [
-      13,
+      18,
       "base_tap"
     ],
     "V": [
-      13,
+      18,
       "base_hold"
     ],
     "h": [
-      3,
+      4,
       "layer_tap"
     ],
     "H": [
-      3,
+      4,
       "layer_hold"
     ],
     "'": [
-      10,
+      11,
       "layer_tap"
     ],
     "w": [
-      12,
+      16,
       "layer_tap"
     ],
     "W": [
-      12,
+      16,
       "layer_hold"
     ],
     ",": [
-      15,
+      12,
       "layer_tap"
     ],
     ".": [
-      19,
+      13,
       "layer_tap"
     ],
     "_": [
-      14,
+      20,
       "layer_tap"
     ],
     "y": [
-      16,
+      15,
       "layer_tap"
     ],
     "Y": [
-      16,
+      15,
       "layer_hold"
     ],
     "z": [
-      9,
+      1,
       "layer_tap"
     ],
     "Z": [
-      9,
+      1,
       "layer_hold"
     ],
     "k": [
-      8,
+      2,
       "layer_tap"
     ],
     "K": [
-      8,
+      2,
       "layer_hold"
     ],
     "x": [
-      4,
+      3,
       "layer_tap"
     ],
     "X": [
-      4,
+      3,
       "layer_hold"
     ],
     "-": [
-      18,
+      19,
       "layer_tap"
     ],
     "b": [
-      13,
+      18,
       "layer_tap"
     ],
     "B": [
-      13,
+      18,
       "layer_hold"
     ],
     "g": [
-      1,
+      8,
       "base_tap"
     ],
     "G": [
-      1,
+      8,
       "base_hold"
     ]
   },
-  "layer_key_index": 2,
+  "layer_key_index": 6,
   "lockedSlots": [
-    "14,base_tap",
-    "14,base_hold",
-    "0,base_hold",
-    "0,base_tap",
-    "17,base_tap",
-    "16,base_tap",
-    "16,base_hold",
-    "17,base_hold",
-    "15,base_tap",
-    "19,base_tap",
-    "2,base_tap",
-    "8,base_tap",
+    "20,base_tap",
+    "20,base_hold",
+    "10,base_hold",
     "10,base_tap",
+    "17,base_tap",
+    "15,base_tap",
+    "15,base_hold",
+    "17,base_hold",
     "12,base_tap",
-    "6,base_tap",
-    "7,base_tap",
-    "4,base_tap",
-    "18,base_tap",
-    "1,base_tap",
-    "11,base_tap",
-    "9,base_tap",
-    "3,base_tap",
-    "11,layer_tap",
-    "7,layer_tap",
-    "12,layer_tap",
-    "5,base_tap",
-    "17,layer_tap",
     "13,base_tap",
-    "19,layer_tap",
-    "3,layer_tap",
-    "10,layer_tap",
-    "15,layer_tap",
-    "13,layer_tap",
+    "6,base_tap",
+    "2,base_tap",
+    "11,base_tap",
+    "16,base_tap",
+    "7,base_tap",
+    "5,base_tap",
+    "3,base_tap",
+    "19,base_tap",
+    "8,base_tap",
+    "14,base_tap",
+    "1,base_tap",
+    "4,base_tap",
     "14,layer_tap",
-    "9,layer_tap",
+    "5,layer_tap",
     "16,layer_tap",
+    "9,base_tap",
+    "17,layer_tap",
+    "18,base_tap",
+    "13,layer_tap",
+    "4,layer_tap",
+    "11,layer_tap",
+    "12,layer_tap",
     "18,layer_tap",
-    "8,layer_tap",
-    "4,layer_tap"
+    "20,layer_tap",
+    "1,layer_tap",
+    "15,layer_tap",
+    "19,layer_tap",
+    "2,layer_tap",
+    "3,layer_tap"
   ]
 }
