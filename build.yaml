@@ -1,6 +1,8 @@
 ---
 include:
   - board: nice_nano
+    shield: settings_reset
+  - board: nice_nano
     shield: optimized_fitness_left
   - board: nice_nano
     shield: optimized_fitness_right
