@@ -28,7 +28,7 @@
                 &ht LS(R) R  // 7  (P1.00)
                 &ht LS(G) G  // 8  (P0.11)
                 &ht LS(P) P  // 9  (P1.04)
-                &ht ESC ENT  // 10 (P1.06)
+                &ht ESC RET  // 10 (P1.06)
                 
                 // Right hand (Index 11 to 20)
                 &ht LS(A) A  // 11 (P0.06)
