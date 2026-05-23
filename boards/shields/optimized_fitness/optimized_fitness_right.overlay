@@ -1,4 +1,8 @@
-#include <dt-bindings/zmk/matrix_transform.h>
+#include "optimized_fitness.dtsi"
+
+&default_transform {
+    col-offset = <10>;
+};
 
 / {
     chosen {

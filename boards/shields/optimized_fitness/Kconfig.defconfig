@@ -3,4 +3,7 @@ if SHIELD_OPTIMIZED_FITNESS_LEFT || SHIELD_OPTIMIZED_FITNESS_RIGHT
 config ZMK_KEYBOARD_NAME
     default "Optimized Fit"
 
+config ZMK_SPLIT
+    default y
+
 endif
