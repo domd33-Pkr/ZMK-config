@@ -9,8 +9,8 @@
         compatible = "zmk,kscan-gpio-direct";
         label = "KSCAN";
         input-gpios
-            = <&pro_micro 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // Index 1
-            , <&pro_micro 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // Index 2
+            = <&pro_micro 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // Index 1
+            , <&pro_micro 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // Index 2
             , <&pro_micro 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // Index 3
             , <&pro_micro 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // Index 4
             , <&pro_micro 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // Index 5

@@ -1,104 +1,17 @@
 {
   "keys": [
     {
-      "index": 10,
-      "row": 0,
-      "col": 0,
-      "hand": "left",
-      "finger": "pinky",
-      "is_layer_key": false,
-      "slots": {
-        "base_tap": "ENT",
-        "base_hold": "ESC"
-      }
-    },
-    {
-      "index": 8,
-      "row": 0,
-      "col": 1,
-      "hand": "left",
-      "finger": "ring",
-      "is_layer_key": false,
-      "slots": {
-        "base_tap": "g",
-        "base_hold": "G"
-      }
-    },
-    {
-      "index": 6,
-      "row": 0,
-      "col": 2,
-      "hand": "left",
-      "finger": "middle",
-      "is_layer_key": true,
-      "slots": {
-        "base_tap": "<LAYER>"
-      }
-    },
-    {
-      "index": 4,
-      "row": 0,
-      "col": 3,
-      "hand": "left",
-      "finger": "index",
-      "is_layer_key": false,
-      "slots": {
-        "base_tap": "m",
-        "base_hold": "M",
-        "layer_tap": "h",
-        "layer_hold": "H"
-      }
-    },
-    {
-      "index": 3,
+      "index": 1,
       "row": 2,
-      "col": 2,
+      "col": 4,
       "hand": "left",
       "finger": "thumb",
       "is_layer_key": false,
       "slots": {
-        "base_tap": "d",
-        "base_hold": "D",
-        "layer_tap": "x",
-        "layer_hold": "X"
-      }
-    },
-    {
-      "index": 9,
-      "row": 1,
-      "col": 1,
-      "hand": "left",
-      "finger": "ring",
-      "is_layer_key": false,
-      "slots": {
-        "base_tap": "p",
-        "base_hold": "P"
-      }
-    },
-    {
-      "index": 7,
-      "row": 1,
-      "col": 2,
-      "hand": "left",
-      "finger": "middle",
-      "is_layer_key": false,
-      "slots": {
-        "base_tap": "r",
-        "base_hold": "R"
-      }
-    },
-    {
-      "index": 5,
-      "row": 1,
-      "col": 3,
-      "hand": "left",
-      "finger": "index",
-      "is_layer_key": false,
-      "slots": {
-        "base_tap": "n",
-        "base_hold": "N",
-        "layer_tap": "q",
-        "layer_hold": "Q"
+        "base_tap": "s",
+        "base_hold": "S",
+        "layer_tap": "z",
+        "layer_hold": "Z"
       }
     },
     {
@@ -116,17 +29,104 @@
       }
     },
     {
-      "index": 1,
+      "index": 3,
       "row": 2,
-      "col": 4,
+      "col": 2,
       "hand": "left",
       "finger": "thumb",
       "is_layer_key": false,
       "slots": {
-        "base_tap": "s",
-        "base_hold": "S",
-        "layer_tap": "z",
-        "layer_hold": "Z"
+        "base_tap": "d",
+        "base_hold": "D",
+        "layer_tap": "x",
+        "layer_hold": "X"
+      }
+    },
+    {
+      "index": 4,
+      "row": 0,
+      "col": 3,
+      "hand": "left",
+      "finger": "index",
+      "is_layer_key": false,
+      "slots": {
+        "base_tap": "m",
+        "base_hold": "M",
+        "layer_tap": "h",
+        "layer_hold": "H"
+      }
+    },
+    {
+      "index": 5,
+      "row": 1,
+      "col": 3,
+      "hand": "left",
+      "finger": "index",
+      "is_layer_key": false,
+      "slots": {
+        "base_tap": "n",
+        "base_hold": "N",
+        "layer_tap": "q",
+        "layer_hold": "Q"
+      }
+    },
+    {
+      "index": 6,
+      "row": 0,
+      "col": 2,
+      "hand": "left",
+      "finger": "middle",
+      "is_layer_key": true,
+      "slots": {
+        "base_tap": "<LAYER>"
+      }
+    },
+    {
+      "index": 7,
+      "row": 1,
+      "col": 2,
+      "hand": "left",
+      "finger": "middle",
+      "is_layer_key": false,
+      "slots": {
+        "base_tap": "r",
+        "base_hold": "R"
+      }
+    },
+    {
+      "index": 8,
+      "row": 0,
+      "col": 1,
+      "hand": "left",
+      "finger": "ring",
+      "is_layer_key": false,
+      "slots": {
+        "base_tap": "g",
+        "base_hold": "G"
+      }
+    },
+    {
+      "index": 9,
+      "row": 1,
+      "col": 1,
+      "hand": "left",
+      "finger": "ring",
+      "is_layer_key": false,
+      "slots": {
+        "base_tap": "p",
+        "base_hold": "P"
+      }
+    },
+    {
+      "index": 10,
+      "row": 0,
+      "col": 0,
+      "hand": "left",
+      "finger": "pinky",
+      "is_layer_key": false,
+      "slots": {
+        "base_tap": "ENT",
+        "base_hold": "ESC"
       }
     },
     {
@@ -140,6 +140,32 @@
         "base_tap": "a",
         "base_hold": "A",
         "layer_tap": "'"
+      }
+    },
+    {
+      "index": 12,
+      "row": 2,
+      "col": 1,
+      "hand": "right",
+      "finger": "thumb",
+      "is_layer_key": false,
+      "slots": {
+        "base_tap": "c",
+        "base_hold": "C",
+        "layer_tap": ","
+      }
+    },
+    {
+      "index": 13,
+      "row": 2,
+      "col": 2,
+      "hand": "right",
+      "finger": "thumb",
+      "is_layer_key": false,
+      "slots": {
+        "base_tap": "o",
+        "base_hold": "O",
+        "layer_tap": "."
       }
     },
     {
@@ -157,60 +183,6 @@
       }
     },
     {
-      "index": 16,
-      "row": 0,
-      "col": 2,
-      "hand": "right",
-      "finger": "middle",
-      "is_layer_key": false,
-      "slots": {
-        "base_tap": "i",
-        "base_hold": "I",
-        "layer_tap": "w",
-        "layer_hold": "W"
-      }
-    },
-    {
-      "index": 18,
-      "row": 0,
-      "col": 3,
-      "hand": "right",
-      "finger": "ring",
-      "is_layer_key": false,
-      "slots": {
-        "base_tap": "v",
-        "base_hold": "V",
-        "layer_tap": "b",
-        "layer_hold": "B"
-      }
-    },
-    {
-      "index": 20,
-      "row": 0,
-      "col": 4,
-      "hand": "right",
-      "finger": "pinky",
-      "is_layer_key": false,
-      "slots": {
-        "base_hold": "DEL",
-        "base_tap": "BKS",
-        "layer_tap": "_"
-      }
-    },
-    {
-      "index": 12,
-      "row": 2,
-      "col": 1,
-      "hand": "right",
-      "finger": "thumb",
-      "is_layer_key": false,
-      "slots": {
-        "base_tap": "c",
-        "base_hold": "C",
-        "layer_tap": ","
-      }
-    },
-    {
       "index": 15,
       "row": 1,
       "col": 1,
@@ -222,6 +194,20 @@
         "base_hold": "TAB",
         "layer_tap": "y",
         "layer_hold": "Y"
+      }
+    },
+    {
+      "index": 16,
+      "row": 0,
+      "col": 2,
+      "hand": "right",
+      "finger": "middle",
+      "is_layer_key": false,
+      "slots": {
+        "base_tap": "i",
+        "base_hold": "I",
+        "layer_tap": "w",
+        "layer_hold": "W"
       }
     },
     {
@@ -239,6 +225,20 @@
       }
     },
     {
+      "index": 18,
+      "row": 0,
+      "col": 3,
+      "hand": "right",
+      "finger": "ring",
+      "is_layer_key": false,
+      "slots": {
+        "base_tap": "v",
+        "base_hold": "V",
+        "layer_tap": "b",
+        "layer_hold": "B"
+      }
+    },
+    {
       "index": 19,
       "row": 1,
       "col": 3,
@@ -252,26 +252,126 @@
       }
     },
     {
-      "index": 13,
-      "row": 2,
-      "col": 2,
+      "index": 20,
+      "row": 0,
+      "col": 4,
       "hand": "right",
-      "finger": "thumb",
+      "finger": "pinky",
       "is_layer_key": false,
       "slots": {
-        "base_tap": "o",
-        "base_hold": "O",
-        "layer_tap": "."
+        "base_hold": "DEL",
+        "base_tap": "BKS",
+        "layer_tap": "_"
       }
     }
   ],
   "char_to_key_slot": {
-    "DEL": [
-      20,
+    "S": [
+      1,
       "base_hold"
     ],
-    "BKS": [
-      20,
+    "Z": [
+      1,
+      "layer_hold"
+    ],
+    "s": [
+      1,
+      "base_tap"
+    ],
+    "z": [
+      1,
+      "layer_tap"
+    ],
+    "K": [
+      2,
+      "layer_hold"
+    ],
+    "L": [
+      2,
+      "base_hold"
+    ],
+    "k": [
+      2,
+      "layer_tap"
+    ],
+    "l": [
+      2,
+      "base_tap"
+    ],
+    "D": [
+      3,
+      "base_hold"
+    ],
+    "X": [
+      3,
+      "layer_hold"
+    ],
+    "d": [
+      3,
+      "base_tap"
+    ],
+    "x": [
+      3,
+      "layer_tap"
+    ],
+    "H": [
+      4,
+      "layer_hold"
+    ],
+    "M": [
+      4,
+      "base_hold"
+    ],
+    "h": [
+      4,
+      "layer_tap"
+    ],
+    "m": [
+      4,
+      "base_tap"
+    ],
+    "N": [
+      5,
+      "base_hold"
+    ],
+    "Q": [
+      5,
+      "layer_hold"
+    ],
+    "n": [
+      5,
+      "base_tap"
+    ],
+    "q": [
+      5,
+      "layer_tap"
+    ],
+    "<LAYER>": [
+      6,
+      "base_tap"
+    ],
+    "R": [
+      7,
+      "base_hold"
+    ],
+    "r": [
+      7,
+      "base_tap"
+    ],
+    "G": [
+      8,
+      "base_hold"
+    ],
+    "g": [
+      8,
+      "base_tap"
+    ],
+    "P": [
+      9,
+      "base_hold"
+    ],
+    "p": [
+      9,
       "base_tap"
     ],
     "ENT": [
@@ -282,13 +382,57 @@
       10,
       "base_hold"
     ],
-    "e": [
-      17,
+    "'": [
+      11,
+      "layer_tap"
+    ],
+    "A": [
+      11,
+      "base_hold"
+    ],
+    "a": [
+      11,
       "base_tap"
     ],
-    "E": [
-      17,
+    ",": [
+      12,
+      "layer_tap"
+    ],
+    "C": [
+      12,
       "base_hold"
+    ],
+    "c": [
+      12,
+      "base_tap"
+    ],
+    ".": [
+      13,
+      "layer_tap"
+    ],
+    "O": [
+      13,
+      "base_hold"
+    ],
+    "o": [
+      13,
+      "base_tap"
+    ],
+    "F": [
+      14,
+      "layer_hold"
+    ],
+    "T": [
+      14,
+      "base_hold"
+    ],
+    "f": [
+      14,
+      "layer_tap"
+    ],
+    "t": [
+      14,
+      "base_tap"
     ],
     "SPC": [
       15,
@@ -298,271 +442,127 @@
       15,
       "base_hold"
     ],
-    "c": [
-      12,
-      "base_tap"
-    ],
-    "C": [
-      12,
-      "base_hold"
-    ],
-    "o": [
-      13,
-      "base_tap"
-    ],
-    "O": [
-      13,
-      "base_hold"
-    ],
-    "<LAYER>": [
-      6,
-      "base_tap"
-    ],
-    "a": [
-      11,
-      "base_tap"
-    ],
-    "A": [
-      11,
-      "base_hold"
-    ],
-    "i": [
-      16,
-      "base_tap"
-    ],
-    "I": [
-      16,
-      "base_hold"
-    ],
-    "l": [
-      2,
-      "base_tap"
-    ],
-    "L": [
-      2,
-      "base_hold"
-    ],
-    "r": [
-      7,
-      "base_tap"
-    ],
-    "R": [
-      7,
-      "base_hold"
-    ],
-    "n": [
-      5,
-      "base_tap"
-    ],
-    "N": [
-      5,
-      "base_hold"
-    ],
-    "u": [
-      19,
-      "base_tap"
-    ],
-    "U": [
-      19,
-      "base_hold"
-    ],
-    "d": [
-      3,
-      "base_tap"
-    ],
-    "D": [
-      3,
-      "base_hold"
-    ],
-    "t": [
-      14,
-      "base_tap"
-    ],
-    "T": [
-      14,
-      "base_hold"
-    ],
-    "s": [
-      1,
-      "base_tap"
-    ],
-    "S": [
-      1,
-      "base_hold"
-    ],
-    "m": [
-      4,
-      "base_tap"
-    ],
-    "M": [
-      4,
-      "base_hold"
-    ],
-    "q": [
-      5,
-      "layer_tap"
-    ],
-    "Q": [
-      5,
+    "Y": [
+      15,
       "layer_hold"
-    ],
-    "f": [
-      14,
-      "layer_tap"
-    ],
-    "F": [
-      14,
-      "layer_hold"
-    ],
-    "p": [
-      9,
-      "base_tap"
-    ],
-    "P": [
-      9,
-      "base_hold"
-    ],
-    "j": [
-      17,
-      "layer_tap"
-    ],
-    "J": [
-      17,
-      "layer_hold"
-    ],
-    "v": [
-      18,
-      "base_tap"
-    ],
-    "V": [
-      18,
-      "base_hold"
-    ],
-    "h": [
-      4,
-      "layer_tap"
-    ],
-    "H": [
-      4,
-      "layer_hold"
-    ],
-    "'": [
-      11,
-      "layer_tap"
-    ],
-    "w": [
-      16,
-      "layer_tap"
-    ],
-    "W": [
-      16,
-      "layer_hold"
-    ],
-    ",": [
-      12,
-      "layer_tap"
-    ],
-    ".": [
-      13,
-      "layer_tap"
-    ],
-    "_": [
-      20,
-      "layer_tap"
     ],
     "y": [
       15,
       "layer_tap"
     ],
-    "Y": [
-      15,
+    "I": [
+      16,
+      "base_hold"
+    ],
+    "W": [
+      16,
       "layer_hold"
     ],
-    "z": [
-      1,
+    "i": [
+      16,
+      "base_tap"
+    ],
+    "w": [
+      16,
       "layer_tap"
     ],
-    "Z": [
-      1,
+    "E": [
+      17,
+      "base_hold"
+    ],
+    "J": [
+      17,
       "layer_hold"
     ],
-    "k": [
-      2,
-      "layer_tap"
+    "e": [
+      17,
+      "base_tap"
     ],
-    "K": [
-      2,
-      "layer_hold"
-    ],
-    "x": [
-      3,
-      "layer_tap"
-    ],
-    "X": [
-      3,
-      "layer_hold"
-    ],
-    "-": [
-      19,
-      "layer_tap"
-    ],
-    "b": [
-      18,
+    "j": [
+      17,
       "layer_tap"
     ],
     "B": [
       18,
       "layer_hold"
     ],
-    "g": [
-      8,
+    "V": [
+      18,
+      "base_hold"
+    ],
+    "b": [
+      18,
+      "layer_tap"
+    ],
+    "v": [
+      18,
       "base_tap"
     ],
-    "G": [
-      8,
+    "-": [
+      19,
+      "layer_tap"
+    ],
+    "U": [
+      19,
       "base_hold"
+    ],
+    "u": [
+      19,
+      "base_tap"
+    ],
+    "BKS": [
+      20,
+      "base_tap"
+    ],
+    "DEL": [
+      20,
+      "base_hold"
+    ],
+    "_": [
+      20,
+      "layer_tap"
     ]
   },
   "layer_key_index": 6,
   "lockedSlots": [
-    "20,base_tap",
-    "20,base_hold",
+    "1,base_tap",
+    "1,layer_tap",
+    "2,base_tap",
+    "2,layer_tap",
+    "3,base_tap",
+    "3,layer_tap",
+    "4,base_tap",
+    "4,layer_tap",
+    "5,base_tap",
+    "5,layer_tap",
+    "6,base_tap",
+    "7,base_tap",
+    "8,base_tap",
+    "9,base_tap",
     "10,base_hold",
     "10,base_tap",
-    "17,base_tap",
-    "15,base_tap",
-    "15,base_hold",
-    "17,base_hold",
-    "12,base_tap",
-    "13,base_tap",
-    "6,base_tap",
-    "2,base_tap",
     "11,base_tap",
-    "16,base_tap",
-    "7,base_tap",
-    "5,base_tap",
-    "3,base_tap",
-    "19,base_tap",
-    "8,base_tap",
+    "11,layer_tap",
+    "12,base_tap",
+    "12,layer_tap",
+    "13,base_tap",
+    "13,layer_tap",
     "14,base_tap",
-    "1,base_tap",
-    "4,base_tap",
     "14,layer_tap",
-    "5,layer_tap",
+    "15,base_hold",
+    "15,base_tap",
+    "15,layer_tap",
+    "16,base_tap",
     "16,layer_tap",
-    "9,base_tap",
+    "17,base_hold",
+    "17,base_tap",
     "17,layer_tap",
     "18,base_tap",
-    "13,layer_tap",
-    "4,layer_tap",
-    "11,layer_tap",
-    "12,layer_tap",
     "18,layer_tap",
-    "20,layer_tap",
-    "1,layer_tap",
-    "15,layer_tap",
+    "19,base_tap",
     "19,layer_tap",
-    "2,layer_tap",
-    "3,layer_tap"
+    "20,base_hold",
+    "20,base_tap",
+    "20,layer_tap"
   ]
 }
