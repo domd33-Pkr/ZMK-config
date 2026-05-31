@@ -22,30 +22,30 @@
         transform = <&default_transform>;
         keys
             // Left half
-            = <&key_physical_attrs 100 100 0 0 0 0 0>
-            , <&key_physical_attrs 100 100 100 0 0 0 0>
-            , <&key_physical_attrs 100 100 200 0 0 0 0>
-            , <&key_physical_attrs 100 100 300 0 0 0 0>
-            , <&key_physical_attrs 100 100 400 0 0 0 0>
+            = <&key_physical_attrs 100 100 16 182 0 0 0>   // 1: Pinky
+            , <&key_physical_attrs 100 100 116 53 0 0 0>   // 2: Ring Top
+            , <&key_physical_attrs 100 100 216 0 0 0 0>    // 3: Middle Top
+            , <&key_physical_attrs 100 100 316 63 0 0 0>   // 4: Index Top
+            , <&key_physical_attrs 100 100 266 263 0 0 0>  // 5: Thumb 3 (Inner)
             
-            , <&key_physical_attrs 100 100 0 100 0 0 0>
-            , <&key_physical_attrs 100 100 100 100 0 0 0>
-            , <&key_physical_attrs 100 100 200 100 0 0 0>
-            , <&key_physical_attrs 100 100 300 100 0 0 0>
-            , <&key_physical_attrs 100 100 400 100 0 0 0>
+            , <&key_physical_attrs 100 100 116 153 0 0 0>  // 6: Ring Bottom
+            , <&key_physical_attrs 100 100 216 100 0 0 0>  // 7: Middle Bottom
+            , <&key_physical_attrs 100 100 316 163 0 0 0>  // 8: Index Bottom
+            , <&key_physical_attrs 100 100 156 275 -12 0 0> // 9: Thumb 2 (Mid)
+            , <&key_physical_attrs 100 100 52 309 -24 0 0> // 10: Thumb 1 (Outer)
 
-            // Right half (start at x=600 to give a 200px gap)
-            , <&key_physical_attrs 100 100 600 0 0 0 0>
-            , <&key_physical_attrs 100 100 700 0 0 0 0>
-            , <&key_physical_attrs 100 100 800 0 0 0 0>
-            , <&key_physical_attrs 100 100 900 0 0 0 0>
-            , <&key_physical_attrs 100 100 1000 0 0 0 0>
+            // Right half (Mirrored, X_OFFSET = 600)
+            , <&key_physical_attrs 100 100 900 182 0 0 0>   // 11: Pinky
+            , <&key_physical_attrs 100 100 800 53 0 0 0>    // 12: Ring Top
+            , <&key_physical_attrs 100 100 700 0 0 0 0>     // 13: Middle Top
+            , <&key_physical_attrs 100 100 600 63 0 0 0>    // 14: Index Top
+            , <&key_physical_attrs 100 100 650 263 0 0 0>   // 15: Thumb 3 (Inner)
 
-            , <&key_physical_attrs 100 100 600 100 0 0 0>
-            , <&key_physical_attrs 100 100 700 100 0 0 0>
-            , <&key_physical_attrs 100 100 800 100 0 0 0>
-            , <&key_physical_attrs 100 100 900 100 0 0 0>
-            , <&key_physical_attrs 100 100 1000 100 0 0 0>
+            , <&key_physical_attrs 100 100 800 153 0 0 0>   // 16: Ring Bottom
+            , <&key_physical_attrs 100 100 700 100 0 0 0>   // 17: Middle Bottom
+            , <&key_physical_attrs 100 100 600 163 0 0 0>   // 18: Index Bottom
+            , <&key_physical_attrs 100 100 760 275 12 0 0>  // 19: Thumb 2 (Mid)
+            , <&key_physical_attrs 100 100 864 309 24 0 0>  // 20: Thumb 1 (Outer)
             ;
     };
 };
