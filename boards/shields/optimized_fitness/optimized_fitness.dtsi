@@ -31,8 +31,8 @@
             , <&key_physical_attrs 100 100 116 153 0 0 0>  // 6: Ring Bottom
             , <&key_physical_attrs 100 100 216 100 0 0 0>  // 7: Middle Bottom
             , <&key_physical_attrs 100 100 316 163 0 0 0>  // 8: Index Bottom
-            , <&key_physical_attrs 100 100 156 275 -12 0 0> // 9: Thumb 2 (Mid)
-            , <&key_physical_attrs 100 100 52 309 -24 0 0> // 10: Thumb 1 (Outer)
+            , <&key_physical_attrs 100 100 156 275 (-12) 0 0> // 9: Thumb 2 (Mid)
+            , <&key_physical_attrs 100 100 52 309 (-24) 0 0> // 10: Thumb 1 (Outer)
 
             // Right half (Mirrored, X_OFFSET = 600)
             , <&key_physical_attrs 100 100 900 182 0 0 0>   // 11: Pinky
