@@ -13,6 +13,8 @@ Navigation de la souris
 
 Chiffres
 
+Chiffres Extended
+
 Math symbols
 
 Programmation symbols
@@ -31,3 +33,5 @@ Macros
 	-CTRL + S
 
 Extended Macros
+
+Accents
