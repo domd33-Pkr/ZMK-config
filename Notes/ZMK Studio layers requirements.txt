@@ -1,0 +1,33 @@
+Navigation du clavier:
+- gestion bluetooth
+	- bluetooth 1 to 5
+	- bluetooth clear
+	- bootloader
+	- Power OFF?
+
+Navigation du bureau
+
+Navigation du curseur
+
+Navigation de la souris
+
+Chiffres
+
+Math symbols
+
+Programmation symbols
+
+Other symbols
+
+Parenthèses et cie
+
+Macros
+	-CTRL + C
+	-CTRL + X
+	-CTRL + V
+	-CTRL + A
+	-CTRL + F
+	-CTRL + H
+	-CTRL + S
+
+Extended Macros
