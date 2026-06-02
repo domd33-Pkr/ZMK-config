@@ -35,3 +35,18 @@ Macros
 Extended Macros
 
 Accents
+
+---------------------------------------------------------
+
+Use dead key to allow an accent to be typed after the character
+	- si ça ne marche pas, utiliser AHK
+
+Use combination pour les layer
+	- ex.: 	- auriculaire pour activer la layer des layers (gauche) avec des commandes de bases (droite) 
+		- auriculaire + anulaire pour activer les symboles normales
+		- auriculaire + anulaire + majeur pour activer les symboles avancés
+		- etc...
+	- Faire un fichier Excel
+
+
+
