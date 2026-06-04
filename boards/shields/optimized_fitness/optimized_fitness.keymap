@@ -14,6 +14,15 @@
             tapping-term-ms = <200>;
             bindings = <&kp>, <&kp>;
         };
+
+        mtl: mo_tap_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MO_TAP_LAYER";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&sl>;
+        };
     };
 
     keymap {
