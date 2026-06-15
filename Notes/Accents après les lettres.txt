@@ -1,0 +1,18 @@
+Excellent choix. La disposition Canadien Français (Multilingue) est la plus native et la plus fiable pour Windows/Linux car elle possède de vraies touches pour les accents.
+
+Puisque vous avez choisi cette option, j'ai mis à jour le code C dans votre fichier src/postfix_accent.c pour inclure le support complet du circonflexe (^) et du tréma (¨) en plus des accents graves et aigus.
+
+Voici comment le code réagira avec votre configuration Canadien Multilingue active sur votre PC :
+
+é (via la touche #) : Il effacera la lettre, puis enverra physiquement le scancode de la touche / (qui est le é en Canadien).
+ç (via la touche #) : Il effacera le c, puis enverra physiquement la touche ] (qui est le ç en Canadien).
+è et à (via la touche %) : Il effacera la lettre, puis enverra ' pour le è, ou \ pour le à.
+Circonflexe ê, â, etc. (via la touche $) : En Canadien, le circonflexe est une "touche morte" située sur [. Le script enverra donc le [, puis renverra la voyelle que vous aviez tapée initialement (e, a, etc.) pour que l'OS construise la lettre finale !
+Tréma ë, ï, etc. (via la touche ~) : Il enverra Shift + [ (la touche morte du tréma), puis la voyelle.
+Le code C est maintenant complet et prêt. Vous pouvez compiler et tester tout cela en poussant vers GitHub :
+
+bash
+git add .
+git commit -m "Implémentation complète de la machine à états C pour accents Canadien Multilingue"
+git push
+Faites-moi savoir comment le test se passe une fois le clavier flashé !
