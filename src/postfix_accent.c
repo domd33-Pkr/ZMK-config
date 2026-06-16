@@ -59,24 +59,24 @@ int postfix_accent_listener(const zmk_event_t *eh) {
         if (keycode == HID_USAGE_KEY_KEYBOARD_3_AND_HASH) {
             is_accent_modifier = true;
             if (last_base_keycode == HID_USAGE_KEY_KEYBOARD_E_AND_E) {
-                replacement_keycode = HID_USAGE_KEY_KEYBOARD_SLASH; // 'é' en Canadien Multilingue
+                replacement_keycode = HID_USAGE_KEY_KEYBOARD_SLASH_AND_QUESTION_MARK; // 'é' en Canadien Multilingue
             } else if (last_base_keycode == HID_USAGE_KEY_KEYBOARD_C_AND_C) {
-                replacement_keycode = HID_USAGE_KEY_KEYBOARD_RIGHT_BRACKET; // 'ç' en Canadien Multilingue
+                replacement_keycode = HID_USAGE_KEY_KEYBOARD_RIGHT_BRACKET_AND_RIGHT_BRACE; // 'ç' en Canadien Multilingue
             }
         }
         // 2. Symbole '$' (Touche 4 + Shift) -> Utilisé pour ^ (circonflexe)
         else if (keycode == HID_USAGE_KEY_KEYBOARD_4_AND_DOLLAR) {
             is_accent_modifier = true;
             // Touche morte '[' en Canadien Multilingue
-            dead_key = HID_USAGE_KEY_KEYBOARD_LEFT_BRACKET;
+            dead_key = HID_USAGE_KEY_KEYBOARD_LEFT_BRACKET_AND_LEFT_BRACE;
         }
         // 3. Symbole '%' (Touche 5 + Shift) -> Utilisé pour ` (grave)
         else if (keycode == HID_USAGE_KEY_KEYBOARD_5_AND_PERCENT) {
             is_accent_modifier = true;
             if (last_base_keycode == HID_USAGE_KEY_KEYBOARD_E_AND_E) {
-                replacement_keycode = HID_USAGE_KEY_KEYBOARD_APOSTROPHE; // 'è' en Canadien
+                replacement_keycode = HID_USAGE_KEY_KEYBOARD_APOSTROPHE_AND_QUOTE; // 'è' en Canadien
             } else if (last_base_keycode == HID_USAGE_KEY_KEYBOARD_A_AND_A) {
-                replacement_keycode = HID_USAGE_KEY_KEYBOARD_BACKSLASH; // 'à' en Canadien
+                replacement_keycode = HID_USAGE_KEY_KEYBOARD_BACKSLASH_AND_PIPE; // 'à' en Canadien
             } else if (last_base_keycode == HID_USAGE_KEY_KEYBOARD_U_AND_U) {
                 // 'ù' en Canadien est souvent 'AltGr + \' ou une touche morte complexe.
                 // Pour faire simple et robuste, on utilise la touche morte de l'accent grave
@@ -89,7 +89,7 @@ int postfix_accent_listener(const zmk_event_t *eh) {
         else if (keycode == HID_USAGE_KEY_KEYBOARD_GRAVE_ACCENT_AND_TILDE) {
             is_accent_modifier = true;
             // Touche morte Shift + '[' en Canadien Multilingue
-            dead_key = HID_USAGE_KEY_KEYBOARD_LEFT_BRACKET;
+            dead_key = HID_USAGE_KEY_KEYBOARD_LEFT_BRACKET_AND_LEFT_BRACE;
             dead_key_shift = true;
         }
 
@@ -106,14 +106,14 @@ int postfix_accent_listener(const zmk_event_t *eh) {
             } else if (dead_key != 0) {
                 // Injecte la touche morte (ex: ^ ou ¨)
                 if (dead_key_shift) {
-                    zmk_hid_keyboard_press(HID_USAGE_KEY_KEYBOARD_LEFT_SHIFT);
+                    zmk_hid_keyboard_press(HID_USAGE_KEY_KEYBOARD_LEFTSHIFT);
                 }
                 zmk_hid_keyboard_press(dead_key);
                 zmk_endpoints_send_report(HID_USAGE_KEY);
                 
                 zmk_hid_keyboard_release(dead_key);
                 if (dead_key_shift) {
-                    zmk_hid_keyboard_release(HID_USAGE_KEY_KEYBOARD_LEFT_SHIFT);
+                    zmk_hid_keyboard_release(HID_USAGE_KEY_KEYBOARD_LEFTSHIFT);
                 }
                 zmk_endpoints_send_report(HID_USAGE_KEY);
                 
