@@ -1,2 +1,1 @@
-zephyr_library()
-zephyr_library_sources(src/postfix_accent.c)
+target_sources(app PRIVATE src/postfix_accent.c)
