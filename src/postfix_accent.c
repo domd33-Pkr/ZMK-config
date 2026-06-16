@@ -23,10 +23,10 @@ static void accent_timeout_handler(struct k_work *work) {
 // Fonction pour injecter rapidement une touche
 static void inject_keycode(uint16_t keycode) {
     zmk_hid_keyboard_press(keycode);
-    zmk_endpoints_send_report(HID_USAGE_KEY);
+    zmk_endpoint_send_report(HID_USAGE_KEY);
     
     zmk_hid_keyboard_release(keycode);
-    zmk_endpoints_send_report(HID_USAGE_KEY);
+    zmk_endpoint_send_report(HID_USAGE_KEY);
 }
 
 int postfix_accent_listener(const zmk_event_t *eh) {
@@ -109,13 +109,13 @@ int postfix_accent_listener(const zmk_event_t *eh) {
                     zmk_hid_keyboard_press(HID_USAGE_KEY_KEYBOARD_LEFTSHIFT);
                 }
                 zmk_hid_keyboard_press(dead_key);
-                zmk_endpoints_send_report(HID_USAGE_KEY);
+                zmk_endpoint_send_report(HID_USAGE_KEY);
                 
                 zmk_hid_keyboard_release(dead_key);
                 if (dead_key_shift) {
                     zmk_hid_keyboard_release(HID_USAGE_KEY_KEYBOARD_LEFTSHIFT);
                 }
-                zmk_endpoints_send_report(HID_USAGE_KEY);
+                zmk_endpoint_send_report(HID_USAGE_KEY);
                 
                 // Ensuite injecte la lettre de base (ex: 'e')
                 inject_keycode(last_base_keycode);
