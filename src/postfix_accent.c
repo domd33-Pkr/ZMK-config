@@ -58,9 +58,9 @@ int postfix_accent_listener(const zmk_event_t *eh) {
         // 1. Symbole '#' (Touche 3 + Shift) -> Utilisé pour é et ç
         if (keycode == HID_USAGE_KEY_KEYBOARD_3_AND_HASH) {
             is_accent_modifier = true;
-            if (last_base_keycode == HID_USAGE_KEY_KEYBOARD_E_AND_E) {
+            if (last_base_keycode == HID_USAGE_KEY_KEYBOARD_E) {
                 replacement_keycode = HID_USAGE_KEY_KEYBOARD_SLASH_AND_QUESTION_MARK; // 'é' en Canadien Multilingue
-            } else if (last_base_keycode == HID_USAGE_KEY_KEYBOARD_C_AND_C) {
+            } else if (last_base_keycode == HID_USAGE_KEY_KEYBOARD_C) {
                 replacement_keycode = HID_USAGE_KEY_KEYBOARD_RIGHT_BRACKET_AND_RIGHT_BRACE; // 'ç' en Canadien Multilingue
             }
         }
@@ -73,11 +73,11 @@ int postfix_accent_listener(const zmk_event_t *eh) {
         // 3. Symbole '%' (Touche 5 + Shift) -> Utilisé pour ` (grave)
         else if (keycode == HID_USAGE_KEY_KEYBOARD_5_AND_PERCENT) {
             is_accent_modifier = true;
-            if (last_base_keycode == HID_USAGE_KEY_KEYBOARD_E_AND_E) {
+            if (last_base_keycode == HID_USAGE_KEY_KEYBOARD_E) {
                 replacement_keycode = HID_USAGE_KEY_KEYBOARD_APOSTROPHE_AND_QUOTE; // 'è' en Canadien
-            } else if (last_base_keycode == HID_USAGE_KEY_KEYBOARD_A_AND_A) {
+            } else if (last_base_keycode == HID_USAGE_KEY_KEYBOARD_A) {
                 replacement_keycode = HID_USAGE_KEY_KEYBOARD_BACKSLASH_AND_PIPE; // 'à' en Canadien
-            } else if (last_base_keycode == HID_USAGE_KEY_KEYBOARD_U_AND_U) {
+            } else if (last_base_keycode == HID_USAGE_KEY_KEYBOARD_U) {
                 // 'ù' en Canadien est souvent 'AltGr + \' ou une touche morte complexe.
                 // Pour faire simple et robuste, on utilise la touche morte de l'accent grave
                 // qui est AltGr + '[' ou 'Shift + \' selon les variantes.
@@ -131,12 +131,12 @@ int postfix_accent_listener(const zmk_event_t *eh) {
     }
 
     // --- DÉTECTION DES LETTRES DE BASE ---
-    if (keycode == HID_USAGE_KEY_KEYBOARD_A_AND_A ||
-        keycode == HID_USAGE_KEY_KEYBOARD_E_AND_E ||
-        keycode == HID_USAGE_KEY_KEYBOARD_I_AND_I ||
-        keycode == HID_USAGE_KEY_KEYBOARD_O_AND_O ||
-        keycode == HID_USAGE_KEY_KEYBOARD_U_AND_U ||
-        keycode == HID_USAGE_KEY_KEYBOARD_C_AND_C) {
+    if (keycode == HID_USAGE_KEY_KEYBOARD_A ||
+        keycode == HID_USAGE_KEY_KEYBOARD_E ||
+        keycode == HID_USAGE_KEY_KEYBOARD_I ||
+        keycode == HID_USAGE_KEY_KEYBOARD_O ||
+        keycode == HID_USAGE_KEY_KEYBOARD_U ||
+        keycode == HID_USAGE_KEY_KEYBOARD_C) {
         
         last_base_keycode = keycode;
         waiting_for_accent = true;
