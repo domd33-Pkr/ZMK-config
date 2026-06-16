@@ -4,7 +4,6 @@
 
 #include <zmk/events/keycode_state_changed.h>
 #include <zmk/event_manager.h>
-#include <zmk/endpoints.h>
 #include <zmk/hid.h>
 
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
@@ -22,11 +21,8 @@ static void accent_timeout_handler(struct k_work *work) {
 
 // Fonction pour injecter rapidement une touche
 static void inject_keycode(uint16_t keycode) {
-    zmk_hid_keyboard_press(keycode);
-    zmk_endpoint_send_report(HID_USAGE_KEY);
-    
-    zmk_hid_keyboard_release(keycode);
-    zmk_endpoint_send_report(HID_USAGE_KEY);
+    raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, keycode), true, k_uptime_get());
+    raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, keycode), false, k_uptime_get());
 }
 
 int postfix_accent_listener(const zmk_event_t *eh) {
@@ -106,16 +102,14 @@ int postfix_accent_listener(const zmk_event_t *eh) {
             } else if (dead_key != 0) {
                 // Injecte la touche morte (ex: ^ ou ¨)
                 if (dead_key_shift) {
-                    zmk_hid_keyboard_press(HID_USAGE_KEY_KEYBOARD_LEFTSHIFT);
+                    raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), true, k_uptime_get());
                 }
-                zmk_hid_keyboard_press(dead_key);
-                zmk_endpoint_send_report(HID_USAGE_KEY);
+                raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, dead_key), true, k_uptime_get());
                 
-                zmk_hid_keyboard_release(dead_key);
+                raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, dead_key), false, k_uptime_get());
                 if (dead_key_shift) {
-                    zmk_hid_keyboard_release(HID_USAGE_KEY_KEYBOARD_LEFTSHIFT);
+                    raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), false, k_uptime_get());
                 }
-                zmk_endpoint_send_report(HID_USAGE_KEY);
                 
                 // Ensuite injecte la lettre de base (ex: 'e')
                 inject_keycode(last_base_keycode);
