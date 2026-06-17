@@ -42,7 +42,7 @@
                 &ht ESC RET                 // 10  (P1.06)
 
                 // Right hand (Index 11 to 20)
-                &ht RSHIFT(A) A             // 11  (P0.06)
+                &ht RSFT(A) A               // 11  (P0.06)
                 &ht C C                     // 12  (P0.08)
                 &ht LS(O) O                 // 13  (P0.17)
                 &ht LS(T) T                 // 14  (P0.20)
@@ -64,7 +64,7 @@
                 &ht LS(H) H                 // 4
                 &ht LS(Q) Q                 // 5
                 &trans                      // 6
-                &ht RSHIFT(Z) Z             // 7
+                &ht RSFT(Z) Z               // 7
                 &trans                      // 8
                 &trans                      // 9
                 &trans                      // 10

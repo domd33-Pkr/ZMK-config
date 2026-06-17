@@ -457,7 +457,7 @@
           "hold": "R"
         },
         "1": {
-          "tap": "&ht RSHIFT(Z) Z",
+          "tap": "&ht RSFT(Z) Z",
           "hold": ""
         },
         "2": {
@@ -749,7 +749,7 @@
       "is_layer_key": false,
       "bindings": {
         "0": {
-          "tap": "&ht RSHIFT(A) A",
+          "tap": "&ht RSFT(A) A",
           "hold": ""
         },
         "1": {
