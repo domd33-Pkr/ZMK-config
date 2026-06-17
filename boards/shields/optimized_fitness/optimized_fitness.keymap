@@ -33,17 +33,17 @@
                 &ht LS(S) S                 // 1  (P0.06)
                 &ht LS(L) L                 // 2  (P0.08)
                 &ht LS(D) D                 // 3  (P0.17)
-                &ht LS(M) M                 // 4  (P0.20)
+                &ht ESC RET                 // 4  (P0.20)
                 &ht LS(N) N                 // 5  (P0.22)
-                &sl 1                       // 6  (P0.24)
+                &mtl 4 1                    // 6  (P0.24)
                 &ht LS(R) R                 // 7  (P1.00)
                 &ht LS(G) G                 // 8  (P0.11)
                 &ht LS(P) P                 // 9  (P1.04)
                 &ht ESC RET                 // 10  (P1.06)
-                
+
                 // Right hand (Index 11 to 20)
-                &ht LS(A) A                 // 11  (P0.06)
-                &ht LS(C) C                 // 12  (P0.08)
+                &ht RSHIFT(A) A             // 11  (P0.06)
+                &ht C C                     // 12  (P0.08)
                 &ht LS(O) O                 // 13  (P0.17)
                 &ht LS(T) T                 // 14  (P0.20)
                 &ht TAB SPC                 // 15  (P0.22)
@@ -58,14 +58,14 @@
         layer_2 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &sl 3                       // 1
+                &mtl 5 2                    // 1
                 &ht LS(K) K                 // 2
                 &ht LS(X) X                 // 3
                 &ht LS(H) H                 // 4
                 &ht LS(Q) Q                 // 5
                 &trans                      // 6
-                &ht LS(Z) Z                 // 7
-                &to 1                       // 8
+                &ht RSHIFT(Z) Z             // 7
+                &trans                      // 8
                 &trans                      // 9
                 &trans                      // 10
 
@@ -86,14 +86,42 @@
         layer_3 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &mtl 4 4                    // 1
-                &trans                      // 2
+                &mt LSHIFT LSHIFT           // 1
+                &mt RSHIFT RSHIFT           // 2
+                &mt LGUI LGUI               // 3
+                &mt LALT LALT               // 4
+                &mt RALT RALT               // 5
+                &trans                      // 6
+                &trans                      // 7
+                &mt LCTRL LCTRL             // 8
+                &mt RCTRL RCTRL             // 9
+                &mo 3                       // 10
+
+                // Right hand (Index 11 to 20)
+                &kp ENTER                   // 11
+                &kp TAB                     // 12
+                &trans                      // 13
+                &kp BSPC                    // 14
+                &kp LEFT                    // 15
+                &kp UP                      // 16
+                &kp DOWN                    // 17
+                &kp DEL                     // 18
+                &kp RIGHT                   // 19
+                &kp ESC                     // 20
+            >;
+        };
+
+        layer_4 {
+            bindings = <
+                // Left hand (Index 1 to 10)
+                &kp LCTL(S)                 // 1
+                &mt LGUI LGUI               // 2
                 &trans                      // 3
-                &trans                      // 4
+                &kp LCTL(Y)                 // 4
                 &trans                      // 5
                 &trans                      // 6
                 &trans                      // 7
-                &to 1                       // 8
+                &kp LCTL(Z)                 // 8
                 &trans                      // 9
                 &trans                      // 10
 
@@ -104,34 +132,6 @@
                 &trans                      // 14
                 &trans                      // 15
                 &trans                      // 16
-                &trans                      // 17
-                &trans                      // 18
-                &trans                      // 19
-                &trans                      // 20
-            >;
-        };
-
-        layer_4 {
-            bindings = <
-                // Left hand (Index 1 to 10)
-                &trans                      // 1
-                &kp 4                       // 2
-                &bt BT_SEL 4                // 3
-                &bt BT_CLR                  // 4
-                &bt BT_SEL 3                // 5
-                &bootloader                 // 6
-                &bt BT_SEL 2                // 7
-                &to 1                       // 8
-                &bt BT_SEL 1                // 9
-                &bt BT_SEL 0                // 10
-
-                // Right hand (Index 11 to 20)
-                &trans                      // 11
-                &trans                      // 12
-                &trans                      // 13
-                &trans                      // 14
-                &trans                      // 15
-                &bootloader                 // 16
                 &trans                      // 17
                 &trans                      // 18
                 &trans                      // 19
@@ -157,13 +157,13 @@
                 &trans                      // 11
                 &trans                      // 12
                 &trans                      // 13
-                &trans                      // 14
+                &kp LS(NUMBER_5)            // 14
                 &trans                      // 15
-                &trans                      // 16
+                &kp LS(NUMBER_4)            // 16
                 &trans                      // 17
-                &trans                      // 18
+                &kp GRAVE                   // 18
                 &trans                      // 19
-                &trans                      // 20
+                &kp RALT(SEMI)              // 20
             >;
         };
 
