@@ -43,7 +43,7 @@
 
                 // Right hand (Index 11 to 20)
                 &ht RSFT(A) A               // 11  (P0.06)
-                &ht C C                     // 12  (P0.08)
+                &ht RSFT(C) C               // 12  (P0.08)
                 &ht LS(O) O                 // 13  (P0.17)
                 &ht LS(T) T                 // 14  (P0.20)
                 &ht TAB SPC                 // 15  (P0.22)

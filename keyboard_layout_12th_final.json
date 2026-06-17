@@ -823,7 +823,7 @@
       "is_layer_key": false,
       "bindings": {
         "0": {
-          "tap": "&ht C C",
+          "tap": "&ht RSFT(C) C",
           "hold": ""
         },
         "1": {
