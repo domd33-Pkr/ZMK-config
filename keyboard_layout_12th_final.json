@@ -457,7 +457,7 @@
           "hold": "R"
         },
         "1": {
-          "tap": "&ht RSFT(Z) Z",
+          "tap": "&ht RS(Z) Z",
           "hold": ""
         },
         "2": {
@@ -749,7 +749,7 @@
       "is_layer_key": false,
       "bindings": {
         "0": {
-          "tap": "&ht RSFT(A) A",
+          "tap": "&ht RS(A) A",
           "hold": ""
         },
         "1": {
@@ -823,7 +823,7 @@
       "is_layer_key": false,
       "bindings": {
         "0": {
-          "tap": "&ht RSFT(C) C",
+          "tap": "&ht RS(C) C",
           "hold": ""
         },
         "1": {
