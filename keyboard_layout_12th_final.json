@@ -21,7 +21,7 @@
           "hold": ""
         },
         "3": {
-          "tap": "&kp LCTL(S)",
+          "tap": "&kp LC(S)",
           "hold": ""
         },
         "4": {
@@ -243,7 +243,7 @@
           "hold": ""
         },
         "3": {
-          "tap": "&kp LCTL(Y)",
+          "tap": "&kp LC(Y)",
           "hold": ""
         },
         "4": {
@@ -539,7 +539,7 @@
           "hold": ""
         },
         "3": {
-          "tap": "&kp LCTL(Z)",
+          "tap": "&kp LC(Z)",
           "hold": ""
         },
         "4": {
@@ -1431,7 +1431,7 @@
           "hold": ""
         },
         "4": {
-          "tap": "&kp RALT(SEMI)",
+          "tap": "&kp RA(SEMI)",
           "hold": ""
         },
         "5": {
