@@ -52,40 +52,29 @@ int postfix_accent_listener(const zmk_event_t *eh) {
         // --- DÉTECTION DU SYMBOLE D'ACCENT ---
         
         // 1. Symbole '#' (Touche 3 + Shift) -> Utilisé pour é et ç
+        // Sous US International, la touche morte pour l'accent aigu et la cédille est l'apostrophe (')
         if (keycode == HID_USAGE_KEY_KEYBOARD_3_AND_HASH) {
             is_accent_modifier = true;
-            if (last_base_keycode == HID_USAGE_KEY_KEYBOARD_E) {
-                replacement_keycode = HID_USAGE_KEY_KEYBOARD_SLASH_AND_QUESTION_MARK; // 'é' en Canadien Multilingue
-            } else if (last_base_keycode == HID_USAGE_KEY_KEYBOARD_C) {
-                replacement_keycode = HID_USAGE_KEY_KEYBOARD_RIGHT_BRACKET_AND_RIGHT_BRACE; // 'ç' en Canadien Multilingue
-            }
+            dead_key = HID_USAGE_KEY_KEYBOARD_APOSTROPHE_AND_QUOTE;
         }
         // 2. Symbole '$' (Touche 4 + Shift) -> Utilisé pour ^ (circonflexe)
+        // Sous US International, la touche morte pour le circonflexe est Shift + 6 (^)
         else if (keycode == HID_USAGE_KEY_KEYBOARD_4_AND_DOLLAR) {
             is_accent_modifier = true;
-            // Touche morte '[' en Canadien Multilingue
-            dead_key = HID_USAGE_KEY_KEYBOARD_LEFT_BRACKET_AND_LEFT_BRACE;
+            dead_key = HID_USAGE_KEY_KEYBOARD_6_AND_CARET;
+            dead_key_shift = true;
         }
         // 3. Symbole '%' (Touche 5 + Shift) -> Utilisé pour ` (grave)
+        // Sous US International, la touche morte pour l'accent grave est le backtick (`)
         else if (keycode == HID_USAGE_KEY_KEYBOARD_5_AND_PERCENT) {
             is_accent_modifier = true;
-            if (last_base_keycode == HID_USAGE_KEY_KEYBOARD_E) {
-                replacement_keycode = HID_USAGE_KEY_KEYBOARD_APOSTROPHE_AND_QUOTE; // 'è' en Canadien
-            } else if (last_base_keycode == HID_USAGE_KEY_KEYBOARD_A) {
-                replacement_keycode = HID_USAGE_KEY_KEYBOARD_BACKSLASH_AND_PIPE; // 'à' en Canadien
-            } else if (last_base_keycode == HID_USAGE_KEY_KEYBOARD_U) {
-                // 'ù' en Canadien est souvent 'AltGr + \' ou une touche morte complexe.
-                // Pour faire simple et robuste, on utilise la touche morte de l'accent grave
-                // qui est AltGr + '[' ou 'Shift + \' selon les variantes.
-                // Si l'utilisateur n'en a pas besoin, on laisse tel quel. On va mapper à AltGr + \ pour le ù.
-                // Comme ZMK ne gère pas AltGr facilement ici, on va ignorer le 'ù' direct ou envoyer une combinaison.
-            }
+            dead_key = HID_USAGE_KEY_KEYBOARD_GRAVE_ACCENT_AND_TILDE;
         }
         // 4. Symbole '~' (Shift + ` / Touche Grave/Tilde) -> Utilisé pour ¨ (tréma)
+        // Sous US International, la touche morte pour le tréma est Shift + ' (")
         else if (keycode == HID_USAGE_KEY_KEYBOARD_GRAVE_ACCENT_AND_TILDE) {
             is_accent_modifier = true;
-            // Touche morte Shift + '[' en Canadien Multilingue
-            dead_key = HID_USAGE_KEY_KEYBOARD_LEFT_BRACKET_AND_LEFT_BRACE;
+            dead_key = HID_USAGE_KEY_KEYBOARD_APOSTROPHE_AND_QUOTE;
             dead_key_shift = true;
         }
 
