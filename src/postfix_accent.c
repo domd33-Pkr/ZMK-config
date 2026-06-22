@@ -48,14 +48,19 @@ int postfix_accent_listener(const zmk_event_t *eh) {
         uint16_t replacement_keycode = 0;
         uint16_t dead_key = 0;
         bool dead_key_shift = false;
+        bool is_cedilla = false;
 
         // --- DÉTECTION DU SYMBOLE D'ACCENT ---
         
         // 1. Symbole '#' (Touche 3 + Shift) -> Utilisé pour é et ç
-        // Sous US International, la touche morte pour l'accent aigu et la cédille est l'apostrophe (')
+        // Sous US International, la touche morte pour l'accent aigu est l'apostrophe (')
         if (keycode == HID_USAGE_KEY_KEYBOARD_3_AND_HASH) {
             is_accent_modifier = true;
-            dead_key = HID_USAGE_KEY_KEYBOARD_APOSTROPHE_AND_QUOTE;
+            if (last_base_keycode == HID_USAGE_KEY_KEYBOARD_C) {
+                is_cedilla = true;
+            } else {
+                dead_key = HID_USAGE_KEY_KEYBOARD_APOSTROPHE_AND_QUOTE;
+            }
         }
         // 2. Symbole '$' (Touche 4 + Shift) -> Utilisé pour ^ (circonflexe)
         // Sous US International, la touche morte pour le circonflexe est Shift + 6 (^)
@@ -85,7 +90,12 @@ int postfix_accent_listener(const zmk_event_t *eh) {
             // Efface la lettre précédente (ex: 'e')
             inject_keycode(HID_USAGE_KEY_KEYBOARD_DELETE_BACKSPACE);
 
-            if (replacement_keycode != 0) {
+            if (is_cedilla) {
+                // Injecte AltGr + ',' pour faire 'ç' sous Linux en US International
+                raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHTALT), true, k_uptime_get());
+                inject_keycode(HID_USAGE_KEY_KEYBOARD_COMMA_AND_LESS_THAN);
+                raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHTALT), false, k_uptime_get());
+            } else if (replacement_keycode != 0) {
                 // Injecte la lettre accentuée directe (é, è, ç, à)
                 inject_keycode(replacement_keycode);
             } else if (dead_key != 0) {
