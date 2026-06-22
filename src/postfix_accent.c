@@ -11,6 +11,9 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 // État de la machine
 static bool waiting_for_accent = false;
 static uint16_t last_base_keycode = 0;
+static bool left_shift_held = false;
+static bool right_shift_held = false;
+static bool last_base_was_shifted = false;
 static struct k_work_delayable accent_timeout_work;
 
 static void accent_timeout_handler(struct k_work *work) {
@@ -31,12 +34,22 @@ int postfix_accent_listener(const zmk_event_t *eh) {
         return ZMK_EV_EVENT_BUBBLE;
     }
 
-    if (!ev->state) { 
-        // On ignore les relâchements de touche
+    uint16_t keycode = ev->keycode;
+
+    // Suivi de l'état des touches Shift physiques ou logiques
+    if (keycode == HID_USAGE_KEY_KEYBOARD_LEFTSHIFT) {
+        left_shift_held = ev->state;
+        return ZMK_EV_EVENT_BUBBLE;
+    }
+    if (keycode == HID_USAGE_KEY_KEYBOARD_RIGHTSHIFT) {
+        right_shift_held = ev->state;
         return ZMK_EV_EVENT_BUBBLE;
     }
 
-    uint16_t keycode = ev->keycode;
+    if (!ev->state) { 
+        // On ignore les relâchements de touche pour le reste du traitement
+        return ZMK_EV_EVENT_BUBBLE;
+    }
 
     // Ignore les modificateurs eux-mêmes pour ne pas annuler l'attente
     if (keycode >= HID_USAGE_KEY_KEYBOARD_LEFTCONTROL && keycode <= HID_USAGE_KEY_KEYBOARD_RIGHT_GUI) {
@@ -52,9 +65,8 @@ int postfix_accent_listener(const zmk_event_t *eh) {
 
         // --- DÉTECTION DU SYMBOLE D'ACCENT ---
         
-        // 1. Symbole '#' (Touche 3 + Shift) -> Utilisé pour é et ç
-        // Sous US International, la touche morte pour l'accent aigu est l'apostrophe (')
-        if (keycode == HID_USAGE_KEY_KEYBOARD_3_AND_HASH) {
+        // 1. Touche GRAVE (utilisée pour é et ç)
+        if (keycode == HID_USAGE_KEY_KEYBOARD_GRAVE_ACCENT_AND_TILDE) {
             is_accent_modifier = true;
             if (last_base_keycode == HID_USAGE_KEY_KEYBOARD_C) {
                 is_cedilla = true;
@@ -62,22 +74,19 @@ int postfix_accent_listener(const zmk_event_t *eh) {
                 dead_key = HID_USAGE_KEY_KEYBOARD_APOSTROPHE_AND_QUOTE;
             }
         }
-        // 2. Symbole '$' (Touche 4 + Shift) -> Utilisé pour ^ (circonflexe)
-        // Sous US International, la touche morte pour le circonflexe est Shift + 6 (^)
+        // 2. Touche '$' (Touche 4 + Shift) -> Utilisé pour ^ (circonflexe)
         else if (keycode == HID_USAGE_KEY_KEYBOARD_4_AND_DOLLAR) {
             is_accent_modifier = true;
             dead_key = HID_USAGE_KEY_KEYBOARD_6_AND_CARET;
             dead_key_shift = true;
         }
-        // 3. Symbole '%' (Touche 5 + Shift) -> Utilisé pour ` (grave)
-        // Sous US International, la touche morte pour l'accent grave est le backtick (`)
+        // 3. Touche '%' (Touche 5 + Shift) -> Utilisé pour ` (grave)
         else if (keycode == HID_USAGE_KEY_KEYBOARD_5_AND_PERCENT) {
             is_accent_modifier = true;
             dead_key = HID_USAGE_KEY_KEYBOARD_GRAVE_ACCENT_AND_TILDE;
         }
-        // 4. Symbole '~' (Shift + ` / Touche Grave/Tilde) -> Utilisé pour ¨ (tréma)
-        // Sous US International, la touche morte pour le tréma est Shift + ' (")
-        else if (keycode == HID_USAGE_KEY_KEYBOARD_GRAVE_ACCENT_AND_TILDE) {
+        // 4. Touche Semicolon (;) -> Utilisée pour ¨ (tréma)
+        else if (keycode == HID_USAGE_KEY_KEYBOARD_SEMICOLON_AND_COLON) {
             is_accent_modifier = true;
             dead_key = HID_USAGE_KEY_KEYBOARD_APOSTROPHE_AND_QUOTE;
             dead_key_shift = true;
@@ -87,34 +96,73 @@ int postfix_accent_listener(const zmk_event_t *eh) {
             k_work_cancel_delayable(&accent_timeout_work);
             waiting_for_accent = false;
 
+            // Sauvegarde de l'état actuel des modificateurs de Shift physiques/actifs
+            bool is_left_shift_active = left_shift_held;
+            bool is_right_shift_active = right_shift_held;
+
+            // Relâche temporairement Shift pour éviter que la touche morte soit modifiée par Shift (ex: % -> ` au lieu de ~)
+            if (is_left_shift_active) {
+                raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), false, k_uptime_get());
+            }
+            if (is_right_shift_active) {
+                raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHTSHIFT), false, k_uptime_get());
+            }
+
             // Efface la lettre précédente (ex: 'e')
             inject_keycode(HID_USAGE_KEY_KEYBOARD_DELETE_BACKSPACE);
 
             if (is_cedilla) {
                 // Injecte AltGr + ',' pour faire 'ç' sous Linux en US International
+                // Si la lettre de base était majuscule, on ajoute Shift
                 raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHTALT), true, k_uptime_get());
+                if (last_base_was_shifted) {
+                    raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), true, k_uptime_get());
+                }
                 inject_keycode(HID_USAGE_KEY_KEYBOARD_COMMA_AND_LESS_THAN);
+                if (last_base_was_shifted) {
+                    raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), false, k_uptime_get());
+                }
                 raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHTALT), false, k_uptime_get());
             } else if (replacement_keycode != 0) {
-                // Injecte la lettre accentuée directe (é, è, ç, à)
+                // Injecte la lettre accentuée directe (si présente)
+                if (last_base_was_shifted) {
+                    raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), true, k_uptime_get());
+                }
                 inject_keycode(replacement_keycode);
+                if (last_base_was_shifted) {
+                    raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), false, k_uptime_get());
+                }
             } else if (dead_key != 0) {
                 // Injecte la touche morte (ex: ^ ou ¨)
                 if (dead_key_shift) {
                     raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), true, k_uptime_get());
                 }
                 raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, dead_key), true, k_uptime_get());
-                
                 raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, dead_key), false, k_uptime_get());
                 if (dead_key_shift) {
                     raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), false, k_uptime_get());
                 }
                 
                 // Ensuite injecte la lettre de base (ex: 'e')
+                // Si la lettre de base était majuscule, on ajoute Shift
+                if (last_base_was_shifted) {
+                    raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), true, k_uptime_get());
+                }
                 inject_keycode(last_base_keycode);
+                if (last_base_was_shifted) {
+                    raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), false, k_uptime_get());
+                }
+            }
+
+            // Restaure le modificateur Shift si nécessaire pour la suite de la saisie
+            if (is_left_shift_active) {
+                raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), true, k_uptime_get());
+            }
+            if (is_right_shift_active) {
+                raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHTSHIFT), true, k_uptime_get());
             }
             
-            // On bloque la touche '#' (ou autre) pour qu'elle ne s'affiche pas
+            // On bloque la touche de déclenchement d'accent pour qu'elle ne s'affiche pas
             return ZMK_EV_EVENT_HANDLED;
         } else {
             // Une autre touche normale a été tapée, on annule l'attente et on la laisse passer
@@ -132,6 +180,7 @@ int postfix_accent_listener(const zmk_event_t *eh) {
         keycode == HID_USAGE_KEY_KEYBOARD_C) {
         
         last_base_keycode = keycode;
+        last_base_was_shifted = (left_shift_held || right_shift_held);
         waiting_for_accent = true;
         
         // Lance ou relance le timer de 2000 ms (2 secondes)
