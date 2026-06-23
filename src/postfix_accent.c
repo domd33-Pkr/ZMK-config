@@ -65,8 +65,8 @@ int postfix_accent_listener(const zmk_event_t *eh) {
 
         // --- DÉTECTION DU SYMBOLE D'ACCENT ---
         
-        // 1. Touche GRAVE (utilisée pour é et ç)
-        if (keycode == HID_USAGE_KEY_KEYBOARD_GRAVE_ACCENT_AND_TILDE) {
+        // 1. Symbole '#' (Touche 3 + Shift) -> Utilisé pour é et ç
+        if (keycode == HID_USAGE_KEY_KEYBOARD_3_AND_HASH) {
             is_accent_modifier = true;
             if (last_base_keycode == HID_USAGE_KEY_KEYBOARD_C) {
                 is_cedilla = true;
@@ -85,8 +85,8 @@ int postfix_accent_listener(const zmk_event_t *eh) {
             is_accent_modifier = true;
             dead_key = HID_USAGE_KEY_KEYBOARD_GRAVE_ACCENT_AND_TILDE;
         }
-        // 4. Touche Semicolon (;) -> Utilisée pour ¨ (tréma)
-        else if (keycode == HID_USAGE_KEY_KEYBOARD_SEMICOLON_AND_COLON) {
+        // 4. Symbole '~' (Shift + ` / Touche Grave/Tilde) -> Utilisé pour ¨ (tréma)
+        else if (keycode == HID_USAGE_KEY_KEYBOARD_GRAVE_ACCENT_AND_TILDE) {
             is_accent_modifier = true;
             dead_key = HID_USAGE_KEY_KEYBOARD_APOSTROPHE_AND_QUOTE;
             dead_key_shift = true;
