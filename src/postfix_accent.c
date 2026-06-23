@@ -100,31 +100,52 @@ int postfix_accent_listener(const zmk_event_t *eh) {
             bool is_left_shift_active = left_shift_held;
             bool is_right_shift_active = right_shift_held;
 
-            // Relâche temporairement Shift pour éviter que la touche morte soit modifiée par Shift (ex: % -> ` au lieu de ~)
-            if (is_left_shift_active) {
-                raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), false, k_uptime_get());
-            }
-            if (is_right_shift_active) {
-                raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHTSHIFT), false, k_uptime_get());
+            bool is_shift_active = is_left_shift_active || is_right_shift_active;
+
+            // Set active shift state to match what the dead key needs (dead_key_shift)
+            if (is_shift_active && !dead_key_shift) {
+                if (is_left_shift_active) {
+                    raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), false, k_uptime_get());
+                }
+                if (is_right_shift_active) {
+                    raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHTSHIFT), false, k_uptime_get());
+                }
+            } else if (!is_shift_active && dead_key_shift) {
+                raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), true, k_uptime_get());
             }
 
-            // Efface la lettre précédente (ex: 'e')
+            // Delete the previous letter (e.g. 'e')
             inject_keycode(HID_USAGE_KEY_KEYBOARD_DELETE_BACKSPACE);
 
             if (is_cedilla) {
-                // Injecte AltGr + ',' pour faire 'ç' sous Linux en US International
-                // Si la lettre de base était majuscule, on ajoute Shift
-                raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHTALT), true, k_uptime_get());
-                if (last_base_was_shifted) {
+                // AltGr + ',' produces 'ç' under US International. Shift + AltGr + ',' produces 'Ç'.
+                if (is_shift_active && !last_base_was_shifted) {
+                    if (is_left_shift_active) {
+                        raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), false, k_uptime_get());
+                    }
+                    if (is_right_shift_active) {
+                        raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHTSHIFT), false, k_uptime_get());
+                    }
+                } else if (!is_shift_active && last_base_was_shifted) {
                     raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), true, k_uptime_get());
                 }
+
+                raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHTALT), true, k_uptime_get());
                 inject_keycode(HID_USAGE_KEY_KEYBOARD_COMMA_AND_LESS_THAN);
-                if (last_base_was_shifted) {
+                raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHTALT), false, k_uptime_get());
+
+                // Restore Shift state for cedilla
+                if (is_shift_active && !last_base_was_shifted) {
+                    if (is_left_shift_active) {
+                        raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), true, k_uptime_get());
+                    }
+                    if (is_right_shift_active) {
+                        raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHTSHIFT), true, k_uptime_get());
+                    }
+                } else if (!is_shift_active && last_base_was_shifted) {
                     raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), false, k_uptime_get());
                 }
-                raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHTALT), false, k_uptime_get());
             } else if (replacement_keycode != 0) {
-                // Injecte la lettre accentuée directe (si présente)
                 if (last_base_was_shifted) {
                     raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), true, k_uptime_get());
                 }
@@ -133,33 +154,38 @@ int postfix_accent_listener(const zmk_event_t *eh) {
                     raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), false, k_uptime_get());
                 }
             } else if (dead_key != 0) {
-                // Injecte la touche morte (ex: ^ ou ¨)
-                if (dead_key_shift) {
-                    raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), true, k_uptime_get());
-                }
-                raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, dead_key), true, k_uptime_get());
-                raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, dead_key), false, k_uptime_get());
-                if (dead_key_shift) {
-                    raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), false, k_uptime_get());
-                }
+                // Inject dead key
+                inject_keycode(dead_key);
                 
-                // Ensuite injecte la lettre de base (ex: 'e')
-                // Si la lettre de base était majuscule, on ajoute Shift
-                if (last_base_was_shifted) {
+                // Adjust Shift for the base letter (e.g. 'e')
+                bool current_shift_state = dead_key_shift;
+                if (current_shift_state && !last_base_was_shifted) {
+                    raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), false, k_uptime_get());
+                } else if (!current_shift_state && last_base_was_shifted) {
                     raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), true, k_uptime_get());
                 }
+
+                // Inject base letter
                 inject_keycode(last_base_keycode);
-                if (last_base_was_shifted) {
+
+                // Restore Shift state post base-letter
+                if (current_shift_state && !last_base_was_shifted) {
+                    raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), true, k_uptime_get());
+                } else if (!current_shift_state && last_base_was_shifted) {
                     raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), false, k_uptime_get());
                 }
             }
 
-            // Restaure le modificateur Shift si nécessaire pour la suite de la saisie
-            if (is_left_shift_active) {
-                raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), true, k_uptime_get());
-            }
-            if (is_right_shift_active) {
-                raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHTSHIFT), true, k_uptime_get());
+            // Finally, restore the initial physical Shift state if it was altered
+            if (is_shift_active && !dead_key_shift) {
+                if (is_left_shift_active) {
+                    raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), true, k_uptime_get());
+                }
+                if (is_right_shift_active) {
+                    raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHTSHIFT), true, k_uptime_get());
+                }
+            } else if (!is_shift_active && dead_key_shift) {
+                raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), false, k_uptime_get());
             }
             
             // On bloque la touche de déclenchement d'accent pour qu'elle ne s'affiche pas
