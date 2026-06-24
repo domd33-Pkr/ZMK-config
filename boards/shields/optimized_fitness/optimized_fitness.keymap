@@ -31,27 +31,27 @@
             bindings = <
                 // Left hand (Index 1 to 10)
                 &ht LS(I) I                // 1
-                l                          // 2
-                d                          // 3
+                &kp L                      // 2
+                &kp D                      // 3
                 &ht ESC RET                // 4
-                n                          // 5
+                &kp N                      // 5
                 &mtl 4 1                   // 6
-                r                          // 7
-                g                          // 8
-                p                          // 9
+                &kp R                      // 7
+                &kp G                      // 8
+                &kp P                      // 9
                 &ht ESC RET                // 10
 
                 // Right hand (Index 11 to 20)
-                &ht RSHIFT(A) A            // 11
+                &ht RS(A) A                // 11
                 &ht C C                    // 12
                 &ht LS(O) O                // 13
                 &kp LS(NUMBER_5)           // 14
-                SPC                        // 15
+                &kp SPC                    // 15
                 &kp LS(NUMBER_4)           // 16
-                e                          // 17
+                &kp E                      // 17
                 &kp LS(NUMBER_3)           // 18
-                u                          // 19
-                BKS                        // 20
+                &kp U                      // 19
+                &kp BSPC                   // 20
             >;
         };
 
@@ -59,27 +59,27 @@
             bindings = <
                 // Left hand (Index 1 to 10)
                 &mtl 5 2                   // 1
-                k                          // 2
-                x                          // 3
-                h                          // 4
-                q                          // 5
+                &kp K                      // 2
+                &kp X                      // 3
+                &kp H                      // 4
+                &kp Q                      // 5
                 &trans                     // 6
-                &ht RSHIFT(Z) Z            // 7
+                &ht RS(Z) Z                // 7
                 &trans                     // 8
                 &trans                     // 9
                 &trans                     // 10
 
                 // Right hand (Index 11 to 20)
-                '                          // 11
-                ,                          // 12
-                .                          // 13
-                f                          // 14
-                y                          // 15
-                w                          // 16
-                j                          // 17
-                b                          // 18
-                -                          // 19
-                _                          // 20
+                &kp '                      // 11
+                &kp ,                      // 12
+                &kp .                      // 13
+                &kp F                      // 14
+                &kp Y                      // 15
+                &kp W                      // 16
+                &kp J                      // 17
+                &kp B                      // 18
+                &kp -                      // 19
+                &kp _                      // 20
             >;
         };
 
@@ -163,7 +163,7 @@
                 &trans                     // 17
                 &kp GRAVE                  // 18
                 &trans                     // 19
-                &kp RALT(SEMI)             // 20
+                &kp RA(SEMI)               // 20
             >;
         };
 
