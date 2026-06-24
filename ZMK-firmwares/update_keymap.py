@@ -19,6 +19,24 @@ def generate_keymap():
     def pad(text, width=27):
         return text.ljust(width)
 
+    def format_binding(tap):
+        if not tap:
+            return "&trans"
+        
+        tap = tap.replace("RSHIFT(", "RS(").replace("LSHIFT(", "LS(")
+        tap = tap.replace("RCTRL(", "RC(").replace("LCTRL(", "LC(")
+        tap = tap.replace("RALT(", "RA(").replace("LALT(", "LA(")
+        tap = tap.replace("RGUI(", "RG(").replace("LGUI(", "LG(")
+        
+        if not tap.startswith("&") and tap != "":
+            tap = tap.upper()
+            if tap == "BKS": tap = "BSPC"
+            elif tap == "SPACE": tap = "SPC"
+            elif tap == "ENTER": tap = "RET"
+            tap = f"&kp {tap}"
+            
+        return tap
+
     new_keymap = []
     new_keymap.append('    keymap {')
     new_keymap.append('        compatible = "zmk,keymap";\n')
@@ -34,8 +52,7 @@ def generate_keymap():
             if i in keys_by_index:
                 b = keys_by_index[i].get("bindings", {}).get(layer_str, {})
                 tap = b.get("tap", "").strip()
-                if tap:
-                    binding = tap
+                binding = format_binding(tap)
             new_keymap.append(f'                {pad(binding)}// {i}')
             
         new_keymap.append('')
@@ -45,8 +62,7 @@ def generate_keymap():
             if i in keys_by_index:
                 b = keys_by_index[i].get("bindings", {}).get(layer_str, {})
                 tap = b.get("tap", "").strip()
-                if tap:
-                    binding = tap
+                binding = format_binding(tap)
             new_keymap.append(f'                {pad(binding)}// {i}')
             
         new_keymap.append('            >;')
