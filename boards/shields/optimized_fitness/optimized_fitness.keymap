@@ -70,16 +70,16 @@
                 &trans                     // 10
 
                 // Right hand (Index 11 to 20)
-                &kp '                      // 11
-                &kp ,                      // 12
-                &kp .                      // 13
+                &kp SQT                    // 11
+                &kp COMMA                  // 12
+                &kp DOT                    // 13
                 &kp F                      // 14
                 &kp Y                      // 15
                 &kp W                      // 16
                 &kp J                      // 17
                 &kp B                      // 18
-                &kp -                      // 19
-                &kp _                      // 20
+                &kp MINUS                  // 19
+                &kp UNDER                  // 20
             >;
         };
 
