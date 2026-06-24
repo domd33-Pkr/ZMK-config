@@ -25,7 +25,13 @@ def generate_keymap():
         
         tap = tap.replace("RSHIFT(", "RS(").replace("LSHIFT(", "LS(")
         tap = tap.replace("RCTRL(", "RC(").replace("LCTRL(", "LC(")
+        tap = tap.replace("RCTL(", "RC(").replace("LCTL(", "LC(")
         tap = tap.replace("RALT(", "RA(").replace("LALT(", "LA(")
+        tap = tap.replace("RGUI(", "RG(").replace("LGUI(", "LG(")
+        
+        tap = tap.replace(" ENTER", " RET").replace("(ENTER)", "(RET)")
+        tap = tap.replace(" SPACE", " SPC").replace("(SPACE)", "(SPC)")
+        tap = tap.replace(" BKS", " BSPC").replace("(BKS)", "(BSPC)")
         tap = tap.replace("RGUI(", "RG(").replace("LGUI(", "LG(")
         
         if not tap.startswith("&") and tap != "":
