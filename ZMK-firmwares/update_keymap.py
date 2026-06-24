@@ -30,9 +30,26 @@ def generate_keymap():
         
         if not tap.startswith("&") and tap != "":
             tap = tap.upper()
-            if tap == "BKS": tap = "BSPC"
-            elif tap == "SPACE": tap = "SPC"
-            elif tap == "ENTER": tap = "RET"
+            aliases = {
+                "'": "SQT",
+                ",": "COMMA",
+                ".": "DOT",
+                "-": "MINUS",
+                "_": "UNDER",
+                "=": "EQUAL",
+                "+": "PLUS",
+                "[": "LBKT",
+                "]": "RBKT",
+                "\\": "BSLH",
+                ";": "SEMI",
+                "/": "FSLH",
+                "`": "GRAVE",
+                "SPACE": "SPC",
+                "ENTER": "RET",
+                "BKS": "BSPC"
+            }
+            if tap in aliases:
+                tap = aliases[tap]
             tap = f"&kp {tap}"
             
         return tap
