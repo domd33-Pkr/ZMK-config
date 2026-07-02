@@ -30,23 +30,23 @@
         layer_1 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &ht LS(I) I                // 1
-                &kp L                      // 2
-                &kp D                      // 3
-                &ht ESC RET                // 4
+                &mo 5                      // 1
+                &sl 1                      // 2
+                &mo 7                      // 3
+                &ht LS(Q) Q                // 4
                 &kp N                      // 5
-                &mtl 4 1                   // 6
-                &kp R                      // 7
+                &ht LS(D) D                // 6
+                &ht LS(D) D                // 7
                 &kp G                      // 8
                 &kp P                      // 9
-                &ht ESC RET                // 10
+                &mo 3                      // 10
 
                 // Right hand (Index 11 to 20)
-                &ht RS(A) A                // 11
+                &ht LS(A) A                // 11
                 &ht C C                    // 12
                 &ht LS(O) O                // 13
                 &kp LS(NUMBER_5)           // 14
-                &kp SPC                    // 15
+                &ht LS(I) I                // 15
                 &kp LS(NUMBER_4)           // 16
                 &kp E                      // 17
                 &kp LS(NUMBER_3)           // 18
@@ -58,8 +58,8 @@
         layer_2 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &mtl 5 2                   // 1
-                &kp K                      // 2
+                &ht LS(W) W                // 1
+                &trans                     // 2
                 &kp X                      // 3
                 &kp H                      // 4
                 &kp Q                      // 5
@@ -67,19 +67,19 @@
                 &ht RS(Z) Z                // 7
                 &trans                     // 8
                 &trans                     // 9
-                &trans                     // 10
+                &mo 2                      // 10
 
                 // Right hand (Index 11 to 20)
-                &kp SQT                    // 11
-                &kp COMMA                  // 12
-                &kp DOT                    // 13
-                &kp F                      // 14
+                &ht LS(SQT) SQT            // 11
+                &ht DOT COMMA              // 12
+                &ht LS(SEMI) SEMI          // 13
+                &kp PRCNT                  // 14
                 &kp Y                      // 15
-                &kp W                      // 16
+                &kp DLLR                   // 16
                 &kp J                      // 17
-                &kp B                      // 18
+                &kp HASH                   // 18
                 &kp MINUS                  // 19
-                &kp UNDER                  // 20
+                &kp LS(GRAVE)              // 20
             >;
         };
 
