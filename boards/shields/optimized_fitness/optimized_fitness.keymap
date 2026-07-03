@@ -34,7 +34,7 @@
                 &sl 1                      // 2
                 &mo 7                      // 3
                 &ht LS(Q) Q                // 4
-                &kp N                      // 5
+                &ht LS(N) N                // 5
                 &ht LS(D) D                // 6
                 &ht LS(D) D                // 7
                 &kp G                      // 8
@@ -45,13 +45,13 @@
                 &ht LS(A) A                // 11
                 &ht C C                    // 12
                 &ht LS(O) O                // 13
-                &kp LS(NUMBER_5)           // 14
+                &ht LS(A) A                // 14
                 &ht LS(I) I                // 15
-                &kp LS(NUMBER_4)           // 16
+                &ht LS(B) B                // 16
                 &kp E                      // 17
-                &kp LS(NUMBER_3)           // 18
+                &ht LS(C) C                // 18
                 &kp U                      // 19
-                &kp BSPC                   // 20
+                &kp LS(GRAVE)              // 20
             >;
         };
 
