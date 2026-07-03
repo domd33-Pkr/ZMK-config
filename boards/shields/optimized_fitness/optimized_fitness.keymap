@@ -179,19 +179,19 @@
                 &trans                     // 7
                 &trans                     // 8
                 &trans                     // 9
-                &trans                     // 10
+                &mo 6                      // 10
 
                 // Right hand (Index 11 to 20)
-                &trans                     // 11
-                &trans                     // 12
-                &trans                     // 13
-                &trans                     // 14
-                &trans                     // 15
-                &trans                     // 16
-                &trans                     // 17
-                &trans                     // 18
-                &trans                     // 19
-                &trans                     // 20
+                &kp NUMBER_7               // 11
+                &kp NUMBER_8               // 12
+                &kp NUMBER_9               // 13
+                &kp NUMBER_1               // 14
+                &kp NUMBER_4               // 15
+                &kp NUMBER_2               // 16
+                &kp NUMBER_5               // 17
+                &kp NUMBER_3               // 18
+                &kp NUMBER_6               // 19
+                &kp NUMBER_0               // 20
             >;
         };
 
