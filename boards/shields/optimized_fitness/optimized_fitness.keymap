@@ -73,11 +73,11 @@
                 &ht LS(SQT) SQT            // 11
                 &ht DOT COMMA              // 12
                 &ht LS(SEMI) SEMI          // 13
-                &kp PRCNT                  // 14
+                &kp LS(NUMBER_5)           // 14
                 &kp Y                      // 15
-                &kp DLLR                   // 16
+                &kp LS(NUMBER_4)           // 16
                 &kp J                      // 17
-                &kp HASH                   // 18
+                &kp LS(NUMBER_3)           // 18
                 &kp MINUS                  // 19
                 &kp LS(GRAVE)              // 20
             >;
@@ -98,9 +98,9 @@
                 &mo 3                      // 10
 
                 // Right hand (Index 11 to 20)
-                &kp RET                    // 11
-                &kp TAB                    // 12
-                &trans                     // 13
+                &kp BSPC                   // 11
+                &kp DEL                    // 12
+                &kp LS(NUMBER_2)           // 13
                 &kp BSPC                   // 14
                 &kp LEFT                   // 15
                 &kp UP                     // 16
