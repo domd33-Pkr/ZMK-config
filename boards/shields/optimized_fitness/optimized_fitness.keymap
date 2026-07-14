@@ -213,11 +213,11 @@
                 &trans                     // 11
                 &trans                     // 12
                 &trans                     // 13
-                &trans                     // 14
+                &kp LS(NUMBER_5)           // 14
                 &trans                     // 15
-                &trans                     // 16
+                &kp LS(NUMBER_4)           // 16
                 &trans                     // 17
-                &trans                     // 18
+                &kp LS(NUMBER_3)           // 18
                 &trans                     // 19
                 &trans                     // 20
             >;
