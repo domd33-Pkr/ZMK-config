@@ -24,6 +24,15 @@
             bindings = <&mo>, <&sl>;
         };
     };
+
+    macros {
+        single_tilde: single_tilde {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LS(GRAVE) &kp SPACE>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -51,7 +60,7 @@
                 &kp E                      // 17
                 &ht LS(C) C                // 18
                 &kp U                      // 19
-                &kp LS(GRAVE)              // 20
+                &single_tilde              // 20
             >;
         };
 
@@ -79,7 +88,7 @@
                 &kp J                      // 17
                 &kp LS(NUMBER_3)           // 18
                 &kp MINUS                  // 19
-                &kp LS(GRAVE)              // 20
+                &single_tilde              // 20
             >;
         };
 
@@ -219,7 +228,7 @@
                 &trans                     // 17
                 &kp LS(NUMBER_3)           // 18
                 &trans                     // 19
-                &kp LS(GRAVE)              // 20
+                &single_tilde              // 20
             >;
         };
 
