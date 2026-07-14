@@ -219,7 +219,7 @@
                 &trans                     // 17
                 &kp LS(NUMBER_3)           // 18
                 &trans                     // 19
-                &trans                     // 20
+                &kp LS(GRAVE)              // 20
             >;
         };
 
