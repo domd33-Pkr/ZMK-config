@@ -32,7 +32,6 @@
             bindings = <&macro_tap &kp LS(GRAVE) &kp SPACE>;
         };
     };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -60,7 +59,7 @@
                 &kp E                      // 17
                 &ht LS(C) C                // 18
                 &kp U                      // 19
-                &single_tilde              // 20
+                &kp LS(GRAVE)              // 20
             >;
         };
 
@@ -88,7 +87,7 @@
                 &kp J                      // 17
                 &kp LS(NUMBER_3)           // 18
                 &kp MINUS                  // 19
-                &single_tilde              // 20
+                &kp LS(GRAVE)              // 20
             >;
         };
 
@@ -123,27 +122,27 @@
         layer_4 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &kp LC(S)                  // 1
-                &mt LGUI LGUI              // 2
+                &to 4                      // 1
+                &kp LGUI                   // 2
                 &trans                     // 3
-                &kp LC(Y)                  // 4
-                &trans                     // 5
-                &trans                     // 6
+                &kp LALT                   // 4
+                &kp RALT                   // 5
+                &kp LSHIFT                 // 6
                 &trans                     // 7
-                &kp LC(Z)                  // 8
+                &kp LCTRL                  // 8
                 &trans                     // 9
                 &trans                     // 10
 
                 // Right hand (Index 11 to 20)
-                &trans                     // 11
+                &kp HOME                   // 11
                 &trans                     // 12
-                &trans                     // 13
-                &trans                     // 14
-                &trans                     // 15
-                &trans                     // 16
-                &trans                     // 17
-                &trans                     // 18
-                &trans                     // 19
+                &kp END                    // 13
+                &kp PG_DN                  // 14
+                &kp LEFT                   // 15
+                &kp UP                     // 16
+                &kp DOWN                   // 17
+                &kp PG_UP                  // 18
+                &kp RIGHT                  // 19
                 &trans                     // 20
             >;
         };
@@ -228,7 +227,7 @@
                 &trans                     // 17
                 &kp LS(NUMBER_3)           // 18
                 &trans                     // 19
-                &single_tilde              // 20
+                &kp LS(GRAVE)              // 20
             >;
         };
 
