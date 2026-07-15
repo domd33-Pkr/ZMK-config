@@ -134,14 +134,14 @@
                 &trans                     // 10
 
                 // Right hand (Index 11 to 20)
-                &kp HOME                   // 11
+                &kp PG_DN                  // 11
                 &trans                     // 12
-                &kp END                    // 13
-                &kp PG_DN                  // 14
+                &kp PG_UP                  // 13
+                &kp HOME                   // 14
                 &kp LEFT                   // 15
                 &kp UP                     // 16
                 &kp DOWN                   // 17
-                &kp PG_UP                  // 18
+                &kp END                    // 18
                 &kp RIGHT                  // 19
                 &trans                     // 20
             >;
