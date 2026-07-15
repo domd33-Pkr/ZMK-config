@@ -135,8 +135,8 @@
 
                 // Right hand (Index 11 to 20)
                 &kp PG_DN                  // 11
-                &trans                     // 12
-                &kp PG_UP                  // 13
+                &kp PG_UP                  // 12
+                &trans                     // 13
                 &kp HOME                   // 14
                 &kp LEFT                   // 15
                 &kp UP                     // 16
