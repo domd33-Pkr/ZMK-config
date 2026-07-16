@@ -94,27 +94,27 @@
         layer_3 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &mt LSHIFT LSHIFT          // 1
-                &mt RSHIFT RSHIFT          // 2
+                &trans                     // 1
+                &mo 1                      // 2
                 &mt LGUI LGUI              // 3
-                &mt LALT LALT              // 4
-                &mt RALT RALT              // 5
-                &trans                     // 6
-                &trans                     // 7
-                &mt LCTRL LCTRL            // 8
-                &mt RCTRL RCTRL            // 9
-                &mo 3                      // 10
+                &bt BT_SEL 2               // 4
+                &bt BT_CLR                 // 5
+                &bt BT_SEL 1               // 6
+                &bt BT_SEL 4               // 7
+                &bt BT_SEL 0               // 8
+                &bt BT_SEL 3               // 9
+                &trans                     // 10
 
                 // Right hand (Index 11 to 20)
                 &kp BSPC                   // 11
                 &kp DEL                    // 12
                 &kp LS(NUMBER_2)           // 13
-                &kp BSPC                   // 14
-                &kp LEFT                   // 15
-                &kp UP                     // 16
-                &kp DOWN                   // 17
-                &kp DEL                    // 18
-                &kp RIGHT                  // 19
+                &kp LS(RET)                // 14
+                &kp LS(TAB)                // 15
+                &kp RET                    // 16
+                &kp TAB                    // 17
+                &trans                     // 18
+                &trans                     // 19
                 &kp ESC                    // 20
             >;
         };
@@ -159,19 +159,19 @@
                 &trans                     // 7
                 &trans                     // 8
                 &trans                     // 9
-                &trans                     // 10
+                &mo 3                      // 10
 
                 // Right hand (Index 11 to 20)
-                &trans                     // 11
-                &trans                     // 12
+                &kp LC(Z)                  // 11
+                &kp LC(S)                  // 12
                 &trans                     // 13
-                &kp LS(NUMBER_5)           // 14
-                &trans                     // 15
-                &kp LS(NUMBER_4)           // 16
-                &trans                     // 17
-                &kp GRAVE                  // 18
-                &trans                     // 19
-                &kp RA(SEMI)               // 20
+                &kp LC(V)                  // 14
+                &kp LC(A)                  // 15
+                &kp LC(C)                  // 16
+                &kp LC(F)                  // 17
+                &kp LC(X)                  // 18
+                &kp LC(H)                  // 19
+                &kp LC(Y)                  // 20
             >;
         };
 
@@ -181,12 +181,12 @@
                 &trans                     // 1
                 &trans                     // 2
                 &trans                     // 3
-                &trans                     // 4
-                &trans                     // 5
-                &trans                     // 6
-                &trans                     // 7
-                &trans                     // 8
-                &trans                     // 9
+                &kp LS(NUMBER_8)           // 4
+                &kp FSLH                   // 5
+                &kp LS(EQUAL)              // 6
+                &kp MINUS                  // 7
+                &kp LS(NUMBER_6)           // 8
+                &kp EQUAL                  // 9
                 &mo 6                      // 10
 
                 // Right hand (Index 11 to 20)
@@ -206,28 +206,28 @@
         layer_7 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &trans                     // 1
-                &trans                     // 2
+                &mo 5                      // 1
+                &kp DELTA                  // 2
                 &trans                     // 3
-                &trans                     // 4
-                &trans                     // 5
-                &trans                     // 6
-                &trans                     // 7
-                &trans                     // 8
-                &trans                     // 9
+                &kp DEGREE                 // 4
+                &kp BSLH                   // 5
+                &kp OHM                    // 6
+                &kp LS(BSLH)               // 7
+                &kp LS(NUMBER_3)           // 8
+                &kp LS(GRAVE)              // 9
                 &trans                     // 10
 
                 // Right hand (Index 11 to 20)
-                &trans                     // 11
-                &trans                     // 12
-                &trans                     // 13
-                &kp LS(NUMBER_5)           // 14
-                &trans                     // 15
-                &kp LS(NUMBER_4)           // 16
-                &trans                     // 17
-                &kp LS(NUMBER_3)           // 18
-                &trans                     // 19
-                &kp LS(GRAVE)              // 20
+                &ht LS(SQT) SQT            // 11
+                &ht DOT COMMA              // 12
+                &ht LS(SEMI) SEMI          // 13
+                &ht LS(NUMBER_0) LS(NUMBER_9)// 14
+                &kp LS(NUMBER_7)           // 15
+                &ht LS(RBKT) LS(LBKT)      // 16
+                &kp LS(NUMBER_5)           // 17
+                &ht RBKT LBKT              // 18
+                &kp LS(NUMBER_4)           // 19
+                &ht LS(DOT) LS(COMMA)      // 20
             >;
         };
 
