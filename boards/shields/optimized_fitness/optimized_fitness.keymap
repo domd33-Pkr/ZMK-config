@@ -231,7 +231,7 @@
                 // Left hand (Index 1 to 10)
                 &mo 5                      // 1
                 &uc_delta                  // 2
-                &trans                     // 3
+                &uc_pi                     // 3
                 &kp DEGREE                 // 4
                 &kp BSLH                   // 5
                 &kp RC(LS(Q))              // 6
