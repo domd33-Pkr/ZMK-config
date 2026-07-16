@@ -3,6 +3,9 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
+#define DELTA RA(LS(D))
+#define OHM RA(LS(Q))
+#define DEGREE RA(LS(SEMI))
 
 / {
     behaviors {
