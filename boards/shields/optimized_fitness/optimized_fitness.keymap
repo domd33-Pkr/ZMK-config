@@ -54,6 +54,17 @@
                      , <&macro_release &kp LCTRL &kp LSHFT>
                      , <&macro_tap &kp NUMBER_0 &kp NUMBER_3 &kp C &kp NUMBER_0 &kp RET>;
         };
+
+        uc_ohm: uc_ohm {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <1>;
+            wait-ms = <1>;
+            bindings = <&macro_press &kp LCTRL &kp LSHFT>
+                     , <&macro_tap &kp U>
+                     , <&macro_release &kp LCTRL &kp LSHFT>
+                     , <&macro_tap &kp NUMBER_0 &kp NUMBER_3 &kp A &kp NUMBER_9 &kp RET>;
+        };
     };
     keymap {
         compatible = "zmk,keymap";
@@ -82,7 +93,7 @@
                 &kp E                      // 17
                 &ht LS(C) C                // 18
                 &kp U                      // 19
-                &kp LS(GRAVE)              // 20
+                &single_tilde              // 20
             >;
         };
 
@@ -110,7 +121,7 @@
                 &kp J                      // 17
                 &kp LS(NUMBER_3)           // 18
                 &kp MINUS                  // 19
-                &kp LS(GRAVE)              // 20
+                &single_tilde              // 20
             >;
         };
 
@@ -234,10 +245,10 @@
                 &uc_pi                     // 3
                 &kp DEGREE                 // 4
                 &kp BSLH                   // 5
-                &kp RC(LS(Q))              // 6
+                &uc_ohm                    // 6
                 &kp LS(BSLH)               // 7
                 &kp LS(NUMBER_3)           // 8
-                &kp LS(GRAVE)              // 9
+                &single_tilde              // 9
                 &trans                     // 10
 
                 // Right hand (Index 11 to 20)

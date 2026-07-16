@@ -24,11 +24,13 @@ def generate_keymap():
             return "&trans"
         
         if tap == "&kp OHM" or tap == "OHM":
-            return "&kp RC(LS(Q))"
+            return "&uc_ohm"
         if tap == "&kp DELTA" or tap == "DELTA":
             return "&uc_delta"
         if tap == "&kp PI" or tap == "PI":
             return "&uc_pi"
+        if tap == "&kp LS(GRAVE)" or tap == "LS(GRAVE)":
+            return "&single_tilde"
         
         tap = tap.replace("RSHIFT(", "RS(").replace("LSHIFT(", "LS(")
         tap = tap.replace("RCTRL(", "RC(").replace("LCTRL(", "LC(")
