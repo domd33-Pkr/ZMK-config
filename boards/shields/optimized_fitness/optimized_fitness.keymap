@@ -193,12 +193,12 @@
                 &kp NUMBER_7               // 11
                 &kp NUMBER_8               // 12
                 &kp NUMBER_9               // 13
-                &kp NUMBER_1               // 14
-                &kp NUMBER_4               // 15
-                &kp NUMBER_2               // 16
-                &kp NUMBER_5               // 17
-                &kp NUMBER_3               // 18
-                &kp NUMBER_6               // 19
+                &ht LS(A) NUMBER_1         // 14
+                &ht LS(D) NUMBER_4         // 15
+                &ht LS(B) NUMBER_2         // 16
+                &ht LS(E) NUMBER_5         // 17
+                &ht LS(C) NUMBER_3         // 18
+                &ht LS(F) NUMBER_6         // 19
                 &kp NUMBER_0               // 20
             >;
         };
