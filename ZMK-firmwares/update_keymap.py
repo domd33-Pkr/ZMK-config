@@ -23,6 +23,13 @@ def generate_keymap():
         if not tap:
             return "&trans"
         
+        if tap == "&kp OHM" or tap == "OHM":
+            return "&kp RC(LS(Q))"
+        if tap == "&kp DELTA" or tap == "DELTA":
+            return "&uc_delta"
+        if tap == "&kp PI" or tap == "PI":
+            return "&uc_pi"
+        
         tap = tap.replace("RSHIFT(", "RS(").replace("LSHIFT(", "LS(")
         tap = tap.replace("RCTRL(", "RC(").replace("LCTRL(", "LC(")
         tap = tap.replace("RCTL(", "RC(").replace("LCTL(", "LC(")
