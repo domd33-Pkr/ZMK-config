@@ -15,6 +15,8 @@ def generate_keymap():
         data = json.load(f)
 
     keys_by_index = { k["index"]: k for k in data.get("keys", []) }
+    layer_mapping = data.get("layerMapping", [f"layer_{i}" for i in range(16)])
+    layer_id_to_index = {nid: str(idx) for idx, nid in enumerate(layer_mapping)}
 
     def pad(text, width=27):
         return text.ljust(width)
@@ -22,6 +24,10 @@ def generate_keymap():
     def format_binding(tap):
         if not tap:
             return "&trans"
+        
+        # Translate named layer ID references to physical layer numbers
+        for nid, p_idx in layer_id_to_index.items():
+            tap = re.sub(r'\b' + re.escape(nid) + r'\b', p_idx, tap)
         
         if tap == "&kp OHM" or tap == "OHM":
             return "&uc_ohm"
@@ -74,7 +80,7 @@ def generate_keymap():
     new_keymap.append('        compatible = "zmk,keymap";\n')
 
     for layer in range(16):
-        layer_str = str(layer)
+        named_layer_id = layer_mapping[layer] if layer < len(layer_mapping) else f"layer_{layer}"
         new_keymap.append(f'        layer_{layer + 1} {{')
         new_keymap.append('            bindings = <')
         new_keymap.append('                // Left hand (Index 1 to 10)')
@@ -82,7 +88,7 @@ def generate_keymap():
         for i in range(1, 11):
             binding = "&trans"
             if i in keys_by_index:
-                b = keys_by_index[i].get("bindings", {}).get(layer_str, {})
+                b = keys_by_index[i].get("bindings", {}).get(named_layer_id, {})
                 tap = b.get("tap", "").strip()
                 binding = format_binding(tap)
             new_keymap.append(f'                {pad(binding)}// {i}')
@@ -92,7 +98,7 @@ def generate_keymap():
         for i in range(11, 21):
             binding = "&trans"
             if i in keys_by_index:
-                b = keys_by_index[i].get("bindings", {}).get(layer_str, {})
+                b = keys_by_index[i].get("bindings", {}).get(named_layer_id, {})
                 tap = b.get("tap", "").strip()
                 binding = format_binding(tap)
             new_keymap.append(f'                {pad(binding)}// {i}')
