@@ -171,10 +171,10 @@
                 &kp BSPC                   // 11
                 &kp DEL                    // 12
                 &kp LS(NUMBER_2)           // 13
-                &kp LS(RET)                // 14
-                &kp LS(TAB)                // 15
-                &kp RET                    // 16
-                &kp TAB                    // 17
+                &kp RET                    // 14
+                &trans                     // 15
+                &kp TAB                    // 16
+                &trans                     // 17
                 &trans                     // 18
                 &trans                     // 19
                 &kp ESC                    // 20
