@@ -79,8 +79,8 @@
                 &ht LS(N) N                // 5
                 &ht LS(D) D                // 6
                 &ht LS(D) D                // 7
-                &kp g                      // 8
-                &kp p                      // 9
+                &kp G                      // 8
+                &kp P                      // 9
                 &mo 2                      // 10
 
                 // Right hand (Index 11 to 20)
@@ -90,9 +90,9 @@
                 &ht LS(A) A                // 14
                 &ht LS(I) I                // 15
                 &ht LS(B) B                // 16
-                &kp e                      // 17
+                &kp E                      // 17
                 &ht LS(C) C                // 18
-                &kp u                      // 19
+                &kp U                      // 19
                 &single_tilde              // 20
             >;
         };
@@ -102,9 +102,9 @@
                 // Left hand (Index 1 to 10)
                 &ht LS(W) W                // 1
                 &trans                     // 2
-                &kp x                      // 3
-                &kp h                      // 4
-                &kp q                      // 5
+                &kp X                      // 3
+                &kp H                      // 4
+                &kp Q                      // 5
                 &trans                     // 6
                 &ht RS(Z) Z                // 7
                 &trans                     // 8
@@ -116,11 +116,11 @@
                 &ht DOT COMMA              // 12
                 &ht LS(SEMI) SEMI          // 13
                 &kp LS(NUMBER_5)           // 14
-                &kp y                      // 15
+                &kp Y                      // 15
                 &kp LS(NUMBER_4)           // 16
-                &kp j                      // 17
+                &kp J                      // 17
                 &kp LS(NUMBER_3)           // 18
-                &kp -                      // 19
+                &kp MINUS                  // 19
                 &single_tilde              // 20
             >;
         };

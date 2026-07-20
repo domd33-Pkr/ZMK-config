@@ -18,6 +18,45 @@ def generate_keymap():
     layer_mapping = data.get("layerMapping", [f"layer_{i}" for i in range(16)])
     layer_id_to_index = {nid: str(idx) for idx, nid in enumerate(layer_mapping)}
 
+    def clean_keycode(code):
+        code = code.upper().strip()
+        aliases = {
+            "'": "SQT",
+            ",": "COMMA",
+            ".": "DOT",
+            "-": "MINUS",
+            "_": "UNDER",
+            "=": "EQUAL",
+            "+": "PLUS",
+            "[": "LBKT",
+            "]": "RBKT",
+            "\\": "BSLH",
+            ";": "SEMI",
+            "/": "FSLH",
+            "`": "GRAVE",
+            "SPACE": "SPC",
+            "ENTER": "RET",
+            "BKS": "BSPC"
+        }
+        
+        # Check for nested modifier format, e.g., LS(key) or RSFT(key)
+        match = re.match(r'^([A-ZFTL_]+)\((.+)\)$', code)
+        if match:
+            mod = match.group(1)
+            inner = match.group(2)
+            mod_aliases = {
+                'RSHIFT': 'RS', 'LSFT': 'LS', 'LSHIFT': 'LS', 'RSFT': 'RS',
+                'RCTRL': 'RC', 'LCTRL': 'LC', 'LCTL': 'LC', 'RCTL': 'RC',
+                'LALT': 'LA', 'RALT': 'RA', 'LGUI': 'LG', 'RGUI': 'RG'
+            }
+            if mod in mod_aliases:
+                mod = mod_aliases[mod]
+            return f"{mod}({clean_keycode(inner)})"
+            
+        if code in aliases:
+            return aliases[code]
+        return code
+
     def pad(text, width=27):
         return text.ljust(width)
 
@@ -28,6 +67,22 @@ def generate_keymap():
         # Translate named layer ID references to physical layer numbers
         for nid, p_idx in layer_id_to_index.items():
             tap = re.sub(r'\b' + re.escape(nid) + r'\b', p_idx, tap)
+            
+        # Force uppercase and clean behavior parameters to avoid devicetree parse errors
+        if tap.startswith("&kp "):
+            tap = "&kp " + clean_keycode(tap[4:])
+        elif tap.startswith("&mt "):
+            parts = tap.split(None, 2)
+            if len(parts) >= 3:
+                tap = f"{parts[0]} {clean_keycode(parts[1])} {clean_keycode(parts[2])}"
+        elif tap.startswith("&lt "):
+            parts = tap.split(None, 2)
+            if len(parts) >= 3:
+                tap = f"{parts[0]} {parts[1]} {clean_keycode(parts[2])}"
+        elif tap.startswith("&ht "):
+            parts = tap.split(None, 2)
+            if len(parts) >= 3:
+                tap = f"{parts[0]} {clean_keycode(parts[1])} {clean_keycode(parts[2])}"
         
         if tap == "&kp OHM" or tap == "OHM":
             return "&uc_ohm"
@@ -50,27 +105,7 @@ def generate_keymap():
         tap = tap.replace("RGUI(", "RG(").replace("LGUI(", "LG(")
         
         if not tap.startswith("&") and tap != "":
-            tap = tap.upper()
-            aliases = {
-                "'": "SQT",
-                ",": "COMMA",
-                ".": "DOT",
-                "-": "MINUS",
-                "_": "UNDER",
-                "=": "EQUAL",
-                "+": "PLUS",
-                "[": "LBKT",
-                "]": "RBKT",
-                "\\": "BSLH",
-                ";": "SEMI",
-                "/": "FSLH",
-                "`": "GRAVE",
-                "SPACE": "SPC",
-                "ENTER": "RET",
-                "BKS": "BSPC"
-            }
-            if tap in aliases:
-                tap = aliases[tap]
+            tap = clean_keycode(tap)
             tap = f"&kp {tap}"
             
         return tap
