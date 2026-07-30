@@ -85,7 +85,7 @@
 
                 // Right hand (Index 11 to 20)
                 &ht LS(D) D                // 11
-                &ht C C                    // 12
+                &ht LS(C) C                // 12
                 &ht LS(T) T                // 13
                 &kp SPC                    // 14
                 &ht LS(S) S                // 15
