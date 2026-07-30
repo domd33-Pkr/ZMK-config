@@ -75,23 +75,23 @@
                 &mo 5                      // 1
                 &sl 1                      // 2
                 &mo 7                      // 3
-                &ht LS(L) L                // 4
+                &ht LS(I) I                // 4
                 &ht LS(N) N                // 5
-                &ht LS(R) R                // 6
-                &ht LS(I) I                // 7
+                &ht LS(A) A                // 6
+                &ht LS(R) R                // 7
                 &ht LS(G) G                // 8
-                &ht LS(U) U                // 9
+                &ht LS(B) B                // 9
                 &mo 2                      // 10
 
                 // Right hand (Index 11 to 20)
                 &ht LS(D) D                // 11
                 &ht LS(C) C                // 12
                 &ht LS(T) T                // 13
-                &kp SPC                    // 14
-                &ht LS(S) S                // 15
+                &ht LS(S) S                // 14
+                &ht LS(L) L                // 15
                 &ht LS(E) E                // 16
-                &ht LS(A) A                // 17
-                &ht LS(B) B                // 18
+                &kp SPC                    // 17
+                &ht LS(U) U                // 18
                 &ht LS(M) M                // 19
                 &ht LS(O) O                // 20
             >;
@@ -103,20 +103,20 @@
                 &trans                     // 1
                 &trans                     // 2
                 &trans                     // 3
-                &ht LS(Y) Y                // 4
-                &ht LS(K) K                // 5
-                &ht LS(J) J                // 6
-                &ht LS(Q) Q                // 7
-                &ht LS(X) X                // 8
-                &ht LS(Z) Z                // 9
+                &ht LS(Q) Q                // 4
+                &ht LS(J) J                // 5
+                &ht LS(K) K                // 6
+                &ht LS(Y) Y                // 7
+                &ht LS(Z) Z                // 8
+                &ht LC(X) X                // 9
                 &mo 3                      // 10
 
                 // Right hand (Index 11 to 20)
-                &ht LS(F) F                // 11
-                &ht LS(P) P                // 12
-                &ht LS(V) V                // 13
+                &ht LS(V) V                // 11
+                &ht LS(H) H                // 12
+                &ht LS(F) F                // 13
                 &ht LS(NUMBER_4) LS(NUMBER_5)// 14
-                &ht LS(H) H                // 15
+                &ht LS(P) P                // 15
                 &ht LS(GRAVE) LS(NUMBER_3) // 16
                 &ht LS(W) W                // 17
                 &ht MINUS RA(SQT)          // 18
