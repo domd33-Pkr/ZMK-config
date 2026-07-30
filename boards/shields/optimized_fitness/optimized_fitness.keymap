@@ -119,7 +119,7 @@
                 &ht LS(H) H                // 15
                 &ht LS(GRAVE) LS(NUMBER_3) // 16
                 &ht LS(W) W                // 17
-                &ht MINUS SQT              // 18
+                &ht MINUS RA(SQT)          // 18
                 &ht DOT COMMA              // 19
                 &ht SEMI LS(SEMI)          // 20
             >;
