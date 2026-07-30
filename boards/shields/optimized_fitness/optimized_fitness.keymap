@@ -75,53 +75,53 @@
                 &mo 5                      // 1
                 &sl 1                      // 2
                 &mo 7                      // 3
-                &ht LS(Q) Q                // 4
+                &ht LS(L) L                // 4
                 &ht LS(N) N                // 5
-                &ht LS(D) D                // 6
-                &ht LS(D) D                // 7
-                &kp G                      // 8
-                &kp P                      // 9
+                &ht LS(R) R                // 6
+                &ht LS(I) I                // 7
+                &ht LS(G) G                // 8
+                &ht LS(U) U                // 9
                 &mo 2                      // 10
 
                 // Right hand (Index 11 to 20)
-                &ht LS(A) A                // 11
+                &ht LS(D) D                // 11
                 &ht C C                    // 12
-                &ht LS(O) O                // 13
-                &ht LS(A) A                // 14
-                &ht LS(I) I                // 15
-                &ht LS(B) B                // 16
-                &kp E                      // 17
-                &ht LS(C) C                // 18
-                &kp U                      // 19
-                &single_tilde              // 20
+                &ht LS(T) T                // 13
+                &kp SPC                    // 14
+                &ht LS(S) S                // 15
+                &ht LS(E) E                // 16
+                &ht LS(A) A                // 17
+                &ht LS(B) B                // 18
+                &ht LS(M) M                // 19
+                &ht LS(O) O                // 20
             >;
         };
 
         layer_2 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &ht LS(W) W                // 1
+                &trans                     // 1
                 &trans                     // 2
-                &kp X                      // 3
-                &kp H                      // 4
-                &kp Q                      // 5
-                &trans                     // 6
-                &ht RS(Z) Z                // 7
-                &trans                     // 8
-                &trans                     // 9
+                &trans                     // 3
+                &ht LS(Y) Y                // 4
+                &ht LS(K) K                // 5
+                &ht LS(J) J                // 6
+                &ht LS(Q) Q                // 7
+                &ht LS(X) X                // 8
+                &ht LS(Z) Z                // 9
                 &mo 3                      // 10
 
                 // Right hand (Index 11 to 20)
-                &ht LS(SQT) SQT            // 11
-                &ht DOT COMMA              // 12
-                &ht LS(SEMI) SEMI          // 13
-                &kp LS(NUMBER_5)           // 14
-                &kp Y                      // 15
-                &kp LS(NUMBER_4)           // 16
-                &kp J                      // 17
-                &kp LS(NUMBER_3)           // 18
-                &kp MINUS                  // 19
-                &single_tilde              // 20
+                &ht LS(F) F                // 11
+                &ht LS(P) P                // 12
+                &ht LS(V) V                // 13
+                &ht LS(NUMBER_4) LS(NUMBER_5)// 14
+                &ht LS(H) H                // 15
+                &ht LS(GRAVE) LS(NUMBER_3) // 16
+                &ht LS(W) W                // 17
+                &ht MINUS SQT              // 18
+                &ht DOT COMMA              // 19
+                &ht SEMI LS(SEMI)          // 20
             >;
         };
 
