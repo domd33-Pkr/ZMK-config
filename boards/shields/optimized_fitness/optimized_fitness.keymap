@@ -108,7 +108,7 @@
                 &ht LS(K) K                // 6
                 &ht LS(Y) Y                // 7
                 &ht LS(Z) Z                // 8
-                &ht LC(X) X                // 9
+                &ht LS(X) X                // 9
                 &mo 3                      // 10
 
                 // Right hand (Index 11 to 20)
