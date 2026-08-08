@@ -85,8 +85,8 @@
 
                 // Right hand (Index 11 to 20)
                 &ht MINUS RA(SQT)          // 11
-                &kp SPC                    // 12
-                &ht LS(E) E                // 13
+                &ht LS(E) E                // 12
+                &kp SPC                    // 13
                 &ht LS(C) C                // 14
                 &ht LS(U) U                // 15
                 &ht LS(T) T                // 16
