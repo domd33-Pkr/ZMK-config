@@ -73,8 +73,8 @@
             bindings = <
                 // Left hand (Index 1 to 10)
                 &sl 6                      // 1
-                &sl 1                      // 2
-                &sl 2                      // 3
+                &sl 2                      // 2
+                &sl 1                      // 3
                 &ht LS(N) N                // 4
                 &ht LS(S) S                // 5
                 &ht LS(L) L                // 6
