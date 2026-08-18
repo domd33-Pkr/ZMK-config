@@ -75,21 +75,21 @@
                 &sl 6                      // 1
                 &sl 2                      // 2
                 &sl 1                      // 3
-                &ht LS(N) N                // 4
-                &ht LS(S) S                // 5
-                &ht LS(L) L                // 6
-                &ht LS(R) R                // 7
-                &ht LS(D) D                // 8
-                &ht LS(B) B                // 9
+                &ht LS(T) T                // 4
+                &ht LS(D) D                // 5
+                &ht LS(R) R                // 6
+                &ht LS(N) N                // 7
+                &ht LS(B) B                // 8
+                &ht LS(G) G                // 9
                 &mo 3                      // 10
 
                 // Right hand (Index 11 to 20)
-                &ht MINUS RA(SQT)          // 11
+                &ht LS(L) L                // 11
                 &ht LS(E) E                // 12
-                &kp SPC                    // 13
-                &ht LS(C) C                // 14
+                &ht LS(S) S                // 13
+                &kp SPC                    // 14
                 &ht LS(U) U                // 15
-                &ht LS(T) T                // 16
+                &ht LS(C) C                // 16
                 &ht LS(O) O                // 17
                 &ht LS(M) M                // 18
                 &ht LS(I) I                // 19
@@ -105,8 +105,8 @@
                 &trans                     // 3
                 &ht LS(K) K                // 4
                 &ht LS(Q) Q                // 5
-                &ht LS(J) J                // 6
-                &ht LS(W) W                // 7
+                &ht LS(W) W                // 6
+                &ht RA(SQT) MINUS          // 7
                 &ht LS(X) X                // 8
                 &ht LS(Z) Z                // 9
                 &mo 4                      // 10
@@ -115,11 +115,11 @@
                 &ht SEMI LS(SEMI)          // 11
                 &ht LS(NUMBER_4) LS(NUMBER_5)// 12
                 &ht LS(GRAVE) LS(NUMBER_3) // 13
-                &ht LS(P) P                // 14
-                &ht LS(V) V                // 15
-                &ht LS(G) G                // 16
+                &ht LS(J) J                // 14
+                &ht LS(P) P                // 15
+                &ht LS(H) H                // 16
                 &ht LS(F) F                // 17
-                &ht LS(H) H                // 18
+                &ht LS(V) V                // 18
                 &ht LS(Y) Y                // 19
                 &ht DOT COMMA              // 20
             >;
