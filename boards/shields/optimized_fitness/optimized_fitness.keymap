@@ -75,12 +75,12 @@
                 &sl 6                      // 1
                 &sl 2                      // 2
                 &sl 1                      // 3
-                &ht LS(T) T                // 4
-                &ht LS(D) D                // 5
+                &ht LS(D) D                // 4
+                &ht LS(T) T                // 5
                 &ht LS(R) R                // 6
                 &ht LS(N) N                // 7
-                &ht LS(B) B                // 8
-                &ht LS(G) G                // 9
+                &ht LS(G) G                // 8
+                &ht LS(B) B                // 9
                 &mo 3                      // 10
 
                 // Right hand (Index 11 to 20)
@@ -101,27 +101,27 @@
             bindings = <
                 // Left hand (Index 1 to 10)
                 &trans                     // 1
-                &mo 1                      // 2
+                &trans                     // 2
                 &trans                     // 3
-                &ht LS(K) K                // 4
+                &ht LS(Z) Z                // 4
                 &ht LS(Q) Q                // 5
-                &ht LS(W) W                // 6
-                &ht RA(SQT) MINUS          // 7
-                &ht LS(X) X                // 8
-                &ht LS(Z) Z                // 9
+                &ht LS(X) X                // 6
+                &ht LS(K) K                // 7
+                &trans                     // 8
+                &trans                     // 9
                 &mo 4                      // 10
 
                 // Right hand (Index 11 to 20)
-                &ht SEMI LS(SEMI)          // 11
+                &ht LS(V) V                // 11
                 &ht LS(NUMBER_4) LS(NUMBER_5)// 12
                 &ht LS(GRAVE) LS(NUMBER_3) // 13
-                &ht LS(J) J                // 14
-                &ht LS(P) P                // 15
+                &ht LS(P) P                // 14
+                &ht LS(F) F                // 15
                 &ht LS(H) H                // 16
-                &ht LS(F) F                // 17
-                &ht LS(V) V                // 18
+                &ht LS(J) J                // 17
+                &trans                     // 18
                 &ht LS(Y) Y                // 19
-                &ht DOT COMMA              // 20
+                &ht LS(W) W                // 20
             >;
         };
 
