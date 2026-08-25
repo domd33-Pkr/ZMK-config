@@ -131,25 +131,25 @@
                 &trans                     // 1
                 &mo 2                      // 2
                 &trans                     // 3
-                &trans                     // 4
-                &trans                     // 5
-                &trans                     // 6
-                &trans                     // 7
+                &kp FSLH                   // 4
+                &kp BSLH                   // 5
+                &kp LS(BSLH)               // 6
+                &kp LS(NUMBER_7)           // 7
                 &trans                     // 8
-                &trans                     // 9
+                &kp LS(NUMBER_2)           // 9
                 &trans                     // 10
 
                 // Right hand (Index 11 to 20)
-                &trans                     // 11
-                &trans                     // 12
-                &trans                     // 13
-                &trans                     // 14
-                &trans                     // 15
-                &trans                     // 16
-                &trans                     // 17
-                &trans                     // 18
-                &trans                     // 19
-                &trans                     // 20
+                &ht SEMI LS(SEMI)          // 11
+                &ht DOT COMMA              // 12
+                &ht MINUS SQT              // 13
+                &ht LS(DLLR) LS(PRCNT)     // 14
+                &ht LS(NUMBER_0) LS(NUMBER_9)// 15
+                &ht LS(GRAVE) HASH         // 16
+                &ht LS(RBKT) LS(LBKT)      // 17
+                &ht LS(NUMBER_1) LS(FSLH)  // 18
+                &ht RBKT LBKT              // 19
+                &ht LS(DOT) LS(COMMA)      // 20
             >;
         };
 
