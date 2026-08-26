@@ -123,9 +123,9 @@
                 &ht LS(L) L                // 11
                 &ht LS(E) E                // 12
                 &ht LS(S) S                // 13
-                &kp SPC                    // 14
+                &ht LS(C) C                // 14
                 &ht LS(U) U                // 15
-                &ht LS(C) C                // 16
+                &kp SPC                    // 16
                 &ht LS(O) O                // 17
                 &ht LS(M) M                // 18
                 &ht LS(I) I                // 19
@@ -232,9 +232,9 @@
                 &sl 3                      // 10
 
                 // Right hand (Index 11 to 20)
-                &trans                     // 11
-                &kp BSPC                   // 12
-                &kp DEL                    // 13
+                &kp BSPC                   // 11
+                &kp DEL                    // 12
+                &trans                     // 13
                 &kp RET                    // 14
                 &kp TAB                    // 15
                 &trans                     // 16
