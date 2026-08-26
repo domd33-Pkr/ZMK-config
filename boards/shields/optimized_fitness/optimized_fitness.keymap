@@ -17,7 +17,7 @@
 
         ht_delta_deg: ht_delta_deg {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             bindings = <&uc_delta &deg>;
@@ -25,7 +25,7 @@
 
         ht_deg_delta: ht_deg_delta {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             bindings = <&deg &uc_delta>;
@@ -33,7 +33,7 @@
 
         ht_pi_ohm: ht_pi_ohm {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             bindings = <&uc_pi &uc_ohm>;
@@ -41,7 +41,7 @@
 
         ht_ohm_pi: ht_ohm_pi {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             bindings = <&uc_ohm &uc_pi>;
@@ -307,9 +307,9 @@
                 &trans                     // 1
                 &uc_delta                  // 2
                 &mo 7                      // 3
-                &ht_delta_deg              // 4
+                &ht_delta_deg 0 0          // 4
                 &kp BSLH                   // 5
-                &ht_pi_ohm                 // 6
+                &ht_pi_ohm 0 0             // 6
                 &kp LS(BSLH)               // 7
                 &kp LS(NUMBER_3)           // 8
                 &single_tilde              // 9

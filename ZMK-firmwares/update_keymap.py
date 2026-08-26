@@ -3,8 +3,9 @@ import json
 import os
 import re
 
-json_path = "/home/dominic/Documents/Claviers/Key Configurator/Archives/keyboard_layout_updated.json"
-keymap_path = "/home/dominic/Documents/Claviers/ZMK-config/boards/shields/optimized_fitness/optimized_fitness.keymap"
+script_dir = os.path.dirname(os.path.abspath(__file__))
+json_path = os.path.abspath(os.path.join(script_dir, "../../Key Configurator/Archives/keyboard_layout_updated.json"))
+keymap_path = os.path.abspath(os.path.join(script_dir, "../boards/shields/optimized_fitness/optimized_fitness.keymap"))
 
 def generate_keymap():
     if not os.path.exists(json_path):
@@ -84,6 +85,15 @@ def generate_keymap():
             if len(parts) >= 3:
                 tap = f"{parts[0]} {clean_keycode(parts[1])} {clean_keycode(parts[2])}"
         
+        if tap in ("&ht DELTA DEGREE", "&ht DELTA RA(LS(SEMI))"):
+            return "&ht_delta_deg 0 0"
+        if tap in ("&ht DEGREE DELTA", "&ht RA(LS(SEMI)) DELTA"):
+            return "&ht_deg_delta 0 0"
+        if tap == "&ht PI OHM":
+            return "&ht_pi_ohm 0 0"
+        if tap == "&ht OHM PI":
+            return "&ht_ohm_pi 0 0"
+
         if tap == "&kp OHM" or tap == "OHM":
             return "&uc_ohm"
         if tap == "&kp DELTA" or tap == "DELTA":
