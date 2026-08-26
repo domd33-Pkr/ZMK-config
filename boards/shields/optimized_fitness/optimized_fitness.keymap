@@ -129,15 +129,15 @@
             bindings = <
                 // Left hand (Index 1 to 10)
                 &trans                     // 1
-                &mo 2                      // 2
-                &trans                     // 3
+                &trans                     // 2
+                &mo 2                      // 3
                 &kp FSLH                   // 4
                 &kp BSLH                   // 5
                 &kp LS(BSLH)               // 6
                 &kp LS(NUMBER_7)           // 7
                 &trans                     // 8
                 &kp LS(NUMBER_2)           // 9
-                &trans                     // 10
+                &mo 3                      // 10
 
                 // Right hand (Index 11 to 20)
                 &ht SEMI LS(SEMI)          // 11
@@ -249,7 +249,7 @@
                 &kp MINUS                  // 7
                 &kp LS(NUMBER_6)           // 8
                 &kp EQUAL                  // 9
-                &mo 7                      // 10
+                &mo 3                      // 10
 
                 // Right hand (Index 11 to 20)
                 &kp NUMBER_0               // 11
@@ -268,16 +268,16 @@
         layer_8 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &mo 6                      // 1
+                &trans                     // 1
                 &uc_delta                  // 2
-                &uc_pi                     // 3
-                &kp DEGREE                 // 4
+                &mo 7                      // 3
+                &ht DELTA DEGREE           // 4
                 &kp BSLH                   // 5
-                &uc_ohm                    // 6
+                &ht PI OHM                 // 6
                 &kp LS(BSLH)               // 7
                 &kp LS(NUMBER_3)           // 8
                 &single_tilde              // 9
-                &trans                     // 10
+                &mo 3                      // 10
 
                 // Right hand (Index 11 to 20)
                 &ht LS(SQT) SQT            // 11
@@ -298,14 +298,14 @@
                 // Left hand (Index 1 to 10)
                 &trans                     // 1
                 &mo 8                      // 2
-                &trans                     // 3
+                &mo 7                      // 3
                 &trans                     // 4
                 &trans                     // 5
                 &trans                     // 6
                 &trans                     // 7
                 &trans                     // 8
                 &trans                     // 9
-                &trans                     // 10
+                &mo 3                      // 10
 
                 // Right hand (Index 11 to 20)
                 &kp LS(A)                  // 11
