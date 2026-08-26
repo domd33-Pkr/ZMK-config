@@ -16,6 +16,42 @@
             bindings = <&kp>, <&kp>;
         };
 
+        ht_delta_deg: ht_delta_deg {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_DELTA_DEG";
+            #binding-cells = <0>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&uc_delta>, <&kp DEGREE>;
+        };
+
+        ht_deg_delta: ht_deg_delta {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_DEG_DELTA";
+            #binding-cells = <0>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&kp DEGREE>, <&uc_delta>;
+        };
+
+        ht_pi_ohm: ht_pi_ohm {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_PI_OHM";
+            #binding-cells = <0>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&uc_pi>, <&uc_ohm>;
+        };
+
+        ht_ohm_pi: ht_ohm_pi {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_OHM_PI";
+            #binding-cells = <0>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&uc_ohm>, <&uc_pi>;
+        };
+
         mtl: mo_tap_layer {
             compatible = "zmk,behavior-hold-tap";
             label = "MO_TAP_LAYER";
@@ -271,9 +307,9 @@
                 &trans                     // 1
                 &uc_delta                  // 2
                 &mo 7                      // 3
-                &ht DELTA DEGREE           // 4
+                &ht_delta_deg              // 4
                 &kp BSLH                   // 5
-                &ht PI OHM                 // 6
+                &ht_pi_ohm                 // 6
                 &kp LS(BSLH)               // 7
                 &kp LS(NUMBER_3)           // 8
                 &single_tilde              // 9
