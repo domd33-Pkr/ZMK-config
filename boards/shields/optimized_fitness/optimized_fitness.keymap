@@ -54,6 +54,20 @@
             tapping-term-ms = <200>;
             bindings = <&mo &sl>;
         };
+
+        sk: sticky_key {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            bindings = <&kp>;
+            release-after-ms = <1000>;
+        };
+
+        sl: sticky_layer {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            bindings = <&mo>;
+            release-after-ms = <1000>;
+        };
     };
 
     macros {
@@ -122,10 +136,10 @@
                 // Right hand (Index 11 to 20)
                 &ht LS(L) L                // 11
                 &ht LS(E) E                // 12
-                &ht LS(S) S                // 13
+                &kp SPC                    // 13
                 &ht LS(C) C                // 14
                 &ht LS(U) U                // 15
-                &kp SPC                    // 16
+                &ht LS(S) S                // 16
                 &ht LS(O) O                // 17
                 &ht LS(M) M                // 18
                 &ht LS(I) I                // 19
