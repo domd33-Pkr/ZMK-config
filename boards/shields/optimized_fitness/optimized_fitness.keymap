@@ -134,8 +134,8 @@
                 &mo 4                      // 10
 
                 // Right hand (Index 11 to 20)
-                &ht LS(E) E                // 11
-                &kp SPC                    // 12
+                &kp SPC                    // 11
+                &ht LS(E) E                // 12
                 &none                      // 13
                 &ht LS(C) C                // 14
                 &ht LS(U) U                // 15
@@ -178,8 +178,8 @@
         layer_3 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &trans                     // 1
-                &trans                     // 2
+                &ht_pi_ohm 0 0             // 1
+                &ht_delta_deg 0 0          // 2
                 &mo 2                      // 3
                 &kp FSLH                   // 4
                 &kp BSLH                   // 5
@@ -319,27 +319,27 @@
             bindings = <
                 // Left hand (Index 1 to 10)
                 &trans                     // 1
-                &uc_delta                  // 2
+                &none                      // 2
                 &none                      // 3
-                &ht_delta_deg 0 0          // 4
-                &kp BSLH                   // 5
-                &ht_pi_ohm 0 0             // 6
-                &kp LS(BSLH)               // 7
+                &ht BSLH FSLH              // 4
+                &none                      // 5
+                &ht LS(BSLH) LS(NUMBER_7)  // 6
+                &none                      // 7
                 &trans                     // 8
                 &trans                     // 9
                 &mo 7                      // 10
 
                 // Right hand (Index 11 to 20)
-                &ht LS(SQT) SQT            // 11
-                &ht DOT COMMA              // 12
+                &ht DOT COMMA              // 11
+                &ht LS(NUMBER_0) LS(NUMBER_9)// 12
                 &none                      // 13
-                &ht LS(NUMBER_0) LS(NUMBER_9)// 14
-                &ht LS(SEMI) SEMI          // 15
-                &ht LS(RBKT) LS(LBKT)      // 16
-                &kp LS(NUMBER_7)           // 17
-                &ht RBKT LBKT              // 18
-                &trans                     // 19
-                &ht LS(DOT) LS(COMMA)      // 20
+                &ht LS(SQT) SQT            // 14
+                &ht LS(RBKT) LS(LBKT)      // 15
+                &ht LS(SEMI) SEMI          // 16
+                &ht RBKT LBKT              // 17
+                &ht LS(NUMBER_1) LS(FSLH)  // 18
+                &ht LS(DOT) LS(COMMA)      // 19
+                &none                      // 20
             >;
         };
 
