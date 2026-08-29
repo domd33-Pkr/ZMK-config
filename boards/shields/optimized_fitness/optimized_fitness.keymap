@@ -122,8 +122,8 @@
         layer_1 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &sl 6                      // 1
-                &sl 1                      // 2
+                &sl 1                      // 1
+                &sl 6                      // 2
                 &none                      // 3
                 &ht LS(L) L                // 4
                 &ht LS(T) T                // 5
