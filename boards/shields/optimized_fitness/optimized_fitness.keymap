@@ -150,8 +150,8 @@
         layer_2 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &sl 2                      // 1
-                &sl 1                      // 2
+                &trans                     // 1
+                &sl 2                      // 2
                 &none                      // 3
                 &ht LS(Z) Z                // 4
                 &ht LS(Q) Q                // 5
@@ -178,8 +178,8 @@
         layer_3 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &mo 2                      // 1
-                &sl 3                      // 2
+                &mo 3                      // 1
+                &trans                     // 2
                 &none                      // 3
                 &kp EQUAL                  // 4
                 &kp NUMBER_0               // 5
@@ -187,7 +187,7 @@
                 &kp MINUS                  // 7
                 &kp LS(NUMBER_8)           // 8
                 &kp BSLH                   // 9
-                &mo 4                      // 10
+                &sl 0                      // 10
 
                 // Right hand (Index 11 to 20)
                 &kp NUMBER_1               // 11
@@ -207,9 +207,9 @@
             bindings = <
                 // Left hand (Index 1 to 10)
                 &trans                     // 1
-                &mo 3                      // 2
+                &mo 2                      // 2
                 &none                      // 3
-                &trans                     // 4
+                &kp RET                    // 4
                 &trans                     // 5
                 &trans                     // 6
                 &trans                     // 7
@@ -253,7 +253,7 @@
                 &ht LS(RBKT) LS(LBKT)      // 15
                 &ht LS(SEMI) SEMI          // 16
                 &ht RBKT LBKT              // 17
-                &ht LS(NUMBER_1) LS(FSLH)  // 18
+                &ht LS(FSLH) LS(NUMBER_1)  // 18
                 &ht LS(DOT) LS(COMMA)      // 19
                 &none                      // 20
             >;
