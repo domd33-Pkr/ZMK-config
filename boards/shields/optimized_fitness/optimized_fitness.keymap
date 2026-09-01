@@ -125,12 +125,12 @@
                 &sl 1                      // 1
                 &sl 2                      // 2
                 &none                      // 3
-                &ht LS(L) L                // 4
-                &ht LS(T) T                // 5
-                &ht LS(R) R                // 6
-                &ht LS(N) N                // 7
-                &ht LS(M) M                // 8
-                &ht LS(B) B                // 9
+                &ht LS(R) R                // 4
+                &ht LS(L) L                // 5
+                &ht LS(T) T                // 6
+                &ht LS(B) B                // 7
+                &ht LS(N) N                // 8
+                &ht LS(M) M                // 9
                 &mo 5                      // 10
 
                 // Right hand (Index 11 to 20)
