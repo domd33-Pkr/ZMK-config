@@ -122,7 +122,7 @@
         layer_1 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &sl 1                      // 1
+                &mo 5                      // 1
                 &sl 2                      // 2
                 &none                      // 3
                 &ht LS(R) R                // 4
@@ -131,7 +131,7 @@
                 &ht LS(B) B                // 7
                 &ht LS(N) N                // 8
                 &ht LS(M) M                // 9
-                &mo 5                      // 10
+                &sl 1                      // 10
 
                 // Right hand (Index 11 to 20)
                 &kp SPC                    // 11
@@ -262,7 +262,7 @@
         layer_6 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &mo 7                      // 1
+                &mo 5                      // 1
                 &mo 6                      // 2
                 &none                      // 3
                 &kp LALT                   // 4
@@ -271,7 +271,7 @@
                 &kp LGUI                   // 7
                 &kp LCTRL                  // 8
                 &trans                     // 9
-                &sl 5                      // 10
+                &mo 7                      // 10
 
                 // Right hand (Index 11 to 20)
                 &kp BSPC                   // 11
