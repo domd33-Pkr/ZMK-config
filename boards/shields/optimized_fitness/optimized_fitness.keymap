@@ -158,7 +158,7 @@
                 &ht LS(X) X                // 6
                 &ht LS(K) K                // 7
                 &ht LS(W) W                // 8
-                &trans                     // 9
+                &kp BSPC                   // 9
                 &sl 4                      // 10
 
                 // Right hand (Index 11 to 20)
