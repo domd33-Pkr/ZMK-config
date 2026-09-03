@@ -158,18 +158,18 @@
                 &ht LS(X) X                // 6
                 &ht LS(K) K                // 7
                 &ht LS(W) W                // 8
-                &kp BSPC                   // 9
+                &caps_word                 // 9
                 &sl 4                      // 10
 
                 // Right hand (Index 11 to 20)
-                &ht LS(NUMBER_4) LS(NUMBER_5)// 11
-                &ht LS(GRAVE) LS(NUMBER_3) // 12
+                &ht LS(J) J                // 11
+                &ht LS(F) F                // 12
                 &none                      // 13
                 &ht LS(P) P                // 14
-                &ht LS(F) F                // 15
-                &ht LS(H) H                // 16
-                &ht LS(J) J                // 17
-                &ht LS(G) G                // 18
+                &ht LS(H) H                // 15
+                &ht LS(NUMBER_4) LS(NUMBER_5)// 16
+                &ht LS(G) G                // 17
+                &ht LS(GRAVE) LS(NUMBER_3) // 18
                 &ht LS(Y) Y                // 19
                 &ht LS(V) V                // 20
             >;
