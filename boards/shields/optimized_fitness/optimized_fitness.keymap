@@ -277,11 +277,11 @@
                 &kp BSPC                   // 11
                 &kp DEL                    // 12
                 &none                      // 13
-                &ht LS(NUMBER_4) LS(NUMBER_5)// 14
+                &kp LS(NUMBER_5)           // 14
                 &kp TAB                    // 15
-                &ht LS(GRAVE) LS(NUMBER_3) // 16
+                &ht LS(GRAVE) LS(NUMBER_4) // 16
                 &kp RET                    // 17
-                &trans                     // 18
+                &kp LS(NUMBER_3)           // 18
                 &trans                     // 19
                 &kp ESC                    // 20
             >;
