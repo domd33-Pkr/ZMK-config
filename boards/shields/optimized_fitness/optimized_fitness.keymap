@@ -162,14 +162,14 @@
                 &sl 4                      // 10
 
                 // Right hand (Index 11 to 20)
-                &ht LS(J) J                // 11
-                &ht LS(F) F                // 12
+                &kp BSPC                   // 11
+                &kp DEL                    // 12
                 &none                      // 13
                 &ht LS(P) P                // 14
-                &ht LS(H) H                // 15
-                &ht LS(NUMBER_4) LS(NUMBER_5)// 16
-                &ht LS(G) G                // 17
-                &ht LS(GRAVE) LS(NUMBER_3) // 18
+                &ht LS(F) F                // 15
+                &ht LS(H) H                // 16
+                &ht LS(J) J                // 17
+                &ht LS(G) G                // 18
                 &ht LS(Y) Y                // 19
                 &ht LS(V) V                // 20
             >;
@@ -277,10 +277,10 @@
                 &kp BSPC                   // 11
                 &kp DEL                    // 12
                 &none                      // 13
-                &kp RET                    // 14
+                &ht LS(NUMBER_4) LS(NUMBER_5)// 14
                 &kp TAB                    // 15
-                &trans                     // 16
-                &trans                     // 17
+                &ht LS(GRAVE) LS(NUMBER_3) // 16
+                &kp RET                    // 17
                 &trans                     // 18
                 &trans                     // 19
                 &kp ESC                    // 20
