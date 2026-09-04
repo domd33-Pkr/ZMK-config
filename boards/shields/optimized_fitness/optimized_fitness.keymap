@@ -51,21 +51,21 @@
         mm_agrave: mod_morph_agrave {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&macro_agrave>, <&macro_Agrave>;
+            bindings = <&macro_agrave>, <&macro_agrave_maj>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         mm_egrave: mod_morph_egrave {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&macro_egrave>, <&macro_Egrave>;
+            bindings = <&macro_egrave>, <&macro_egrave_maj>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         mm_ccedilla: mod_morph_ccedilla {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&macro_ccedilla>, <&macro_Ccedilla>;
+            bindings = <&macro_ccedilla>, <&macro_ccedilla_maj>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -113,7 +113,7 @@
             bindings = <&macro_tap &kp SQT &kp A>;
         };
 
-        macro_Agrave: macro_Agrave {
+        macro_agrave_maj: macro_agrave_maj {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <10>;
@@ -129,7 +129,7 @@
             bindings = <&macro_tap &kp SQT &kp E>;
         };
 
-        macro_Egrave: macro_Egrave {
+        macro_egrave_maj: macro_egrave_maj {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <10>;
@@ -145,7 +145,7 @@
             bindings = <&macro_tap &kp RBKT &kp C>;
         };
 
-        macro_Ccedilla: macro_Ccedilla {
+        macro_ccedilla_maj: macro_ccedilla_maj {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <10>;
