@@ -2,6 +2,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/modifiers.h>
 
 #define DEGREE RA(LS(SEMI))
 
@@ -47,6 +48,27 @@
             bindings = <&uc_ohm &uc_pi>;
         };
 
+        mm_agrave: mod_morph_agrave {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&macro_agrave>, <&macro_Agrave>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_egrave: mod_morph_egrave {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&macro_egrave>, <&macro_Egrave>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_ccedilla: mod_morph_ccedilla {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&macro_ccedilla>, <&macro_Ccedilla>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
         mtl: mo_tap_layer {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -81,6 +103,54 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_tap &kp LS(GRAVE) &kp SPACE>;
+        };
+
+        macro_agrave: macro_agrave {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp SQT &kp A>;
+        };
+
+        macro_Agrave: macro_Agrave {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp SQT &kp LS(A)>;
+        };
+
+        macro_egrave: macro_egrave {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp SQT &kp E>;
+        };
+
+        macro_Egrave: macro_Egrave {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp SQT &kp LS(E)>;
+        };
+
+        macro_ccedilla: macro_ccedilla {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp RBKT &kp C>;
+        };
+
+        macro_Ccedilla: macro_Ccedilla {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp RBKT &kp LS(C)>;
         };
 
         uc_delta: uc_delta {
@@ -290,8 +360,8 @@
         layer_7 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &mo 6                      // 1
-                &trans                     // 2
+                &trans                     // 1
+                &mo 6                      // 2
                 &none                      // 3
                 &trans                     // 4
                 &trans                     // 5
@@ -348,7 +418,7 @@
                 // Left hand (Index 1 to 10)
                 &ht_pi_ohm 0 0             // 1
                 &ht_delta_deg 0 0          // 2
-                &mo 8                      // 3
+                &none                      // 3
                 &kp FSLH                   // 4
                 &kp BSLH                   // 5
                 &kp LS(BSLH)               // 6
@@ -360,13 +430,13 @@
                 // Right hand (Index 11 to 20)
                 &ht SEMI LS(SEMI)          // 11
                 &ht DOT COMMA              // 12
-                &ht MINUS SQT              // 13
-                &ht LS(DLLR) LS(PRCNT)     // 14
-                &ht LS(NUMBER_0) LS(NUMBER_9)// 15
-                &ht LS(GRAVE) HASH         // 16
-                &ht LS(RBKT) LS(LBKT)      // 17
-                &ht LS(NUMBER_1) LS(FSLH)  // 18
-                &ht RBKT LBKT              // 19
+                &none                      // 13
+                &mm_egrave                 // 14
+                &mm_agrave                 // 15
+                &kp LS(NUMBER_4)           // 16
+                &single_tilde              // 17
+                &kp FSLH                   // 18
+                &mm_ccedilla               // 19
                 &ht LS(DOT) LS(COMMA)      // 20
             >;
         };
