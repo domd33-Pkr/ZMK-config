@@ -68,7 +68,7 @@ int postfix_accent_listener(const zmk_event_t *eh) {
         if (keycode == HID_USAGE_KEY_KEYBOARD_3_AND_HASH) {
             is_accent_modifier = true;
             if (last_base_keycode == HID_USAGE_KEY_KEYBOARD_C) {
-                dead_key = HID_USAGE_KEY_KEYBOARD_CLOSE_BRACKET_AND_CLOSE_BRACE; // Dead cedilla sur ']'
+                dead_key = HID_USAGE_KEY_KEYBOARD_RIGHT_BRACKET_AND_RIGHT_BRACE; // Dead cedilla sur ']'
                 dead_key_shift = false;
             } else if (last_base_keycode == HID_USAGE_KEY_KEYBOARD_E) {
                 replacement_keycode = HID_USAGE_KEY_KEYBOARD_SLASH_AND_QUESTION_MARK; // Touche direct é sur '/'
@@ -77,7 +77,7 @@ int postfix_accent_listener(const zmk_event_t *eh) {
         // 2. Touche '$' (Touche 4 + Shift) -> Utilisé pour ^ (circonflexe)
         else if (keycode == HID_USAGE_KEY_KEYBOARD_4_AND_DOLLAR) {
             is_accent_modifier = true;
-            dead_key = HID_USAGE_KEY_KEYBOARD_OPEN_BRACKET_AND_OPEN_BRACE; // Dead circumflex sur '['
+            dead_key = HID_USAGE_KEY_KEYBOARD_LEFT_BRACKET_AND_LEFT_BRACE; // Dead circumflex sur '['
             dead_key_shift = false;
         }
         // 3. Touche '%' (Touche 5 + Shift) -> Utilisé pour ` (grave pour à, è, ù)
@@ -89,7 +89,7 @@ int postfix_accent_listener(const zmk_event_t *eh) {
         // 4. Symbole '~' (Shift + ` / Touche Grave/Tilde) -> Utilisé pour ¨ (tréma)
         else if (keycode == HID_USAGE_KEY_KEYBOARD_GRAVE_ACCENT_AND_TILDE) {
             is_accent_modifier = true;
-            dead_key = HID_USAGE_KEY_KEYBOARD_CLOSE_BRACKET_AND_CLOSE_BRACE; // Dead diaeresis sur Shift + ']'
+            dead_key = HID_USAGE_KEY_KEYBOARD_RIGHT_BRACKET_AND_RIGHT_BRACE; // Dead diaeresis sur Shift + ']'
             dead_key_shift = true;
         }
 
