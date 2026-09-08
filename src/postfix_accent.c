@@ -61,7 +61,6 @@ int postfix_accent_listener(const zmk_event_t *eh) {
         uint16_t replacement_keycode = 0;
         uint16_t dead_key = 0;
         bool dead_key_shift = false;
-        bool is_cedilla = false;
 
         // --- DÉTECTION DU SYMBOLE D'ACCENT ---
         
@@ -69,26 +68,28 @@ int postfix_accent_listener(const zmk_event_t *eh) {
         if (keycode == HID_USAGE_KEY_KEYBOARD_3_AND_HASH) {
             is_accent_modifier = true;
             if (last_base_keycode == HID_USAGE_KEY_KEYBOARD_C) {
-                is_cedilla = true;
-            } else {
-                dead_key = HID_USAGE_KEY_KEYBOARD_APOSTROPHE_AND_QUOTE;
+                dead_key = HID_USAGE_KEY_KEYBOARD_CLOSE_BRACKET_AND_CLOSE_BRACE; // Dead cedilla sur ']'
+                dead_key_shift = false;
+            } else if (last_base_keycode == HID_USAGE_KEY_KEYBOARD_E) {
+                replacement_keycode = HID_USAGE_KEY_KEYBOARD_SLASH_AND_QUESTION_MARK; // Touche direct é sur '/'
             }
         }
         // 2. Touche '$' (Touche 4 + Shift) -> Utilisé pour ^ (circonflexe)
         else if (keycode == HID_USAGE_KEY_KEYBOARD_4_AND_DOLLAR) {
             is_accent_modifier = true;
-            dead_key = HID_USAGE_KEY_KEYBOARD_6_AND_CARET;
-            dead_key_shift = true;
+            dead_key = HID_USAGE_KEY_KEYBOARD_OPEN_BRACKET_AND_OPEN_BRACE; // Dead circumflex sur '['
+            dead_key_shift = false;
         }
-        // 3. Touche '%' (Touche 5 + Shift) -> Utilisé pour ` (grave)
+        // 3. Touche '%' (Touche 5 + Shift) -> Utilisé pour ` (grave pour à, è, ù)
         else if (keycode == HID_USAGE_KEY_KEYBOARD_5_AND_PERCENT) {
             is_accent_modifier = true;
-            dead_key = HID_USAGE_KEY_KEYBOARD_GRAVE_ACCENT_AND_TILDE;
+            dead_key = HID_USAGE_KEY_KEYBOARD_APOSTROPHE_AND_QUOTE; // Dead grave sur '''
+            dead_key_shift = false;
         }
         // 4. Symbole '~' (Shift + ` / Touche Grave/Tilde) -> Utilisé pour ¨ (tréma)
         else if (keycode == HID_USAGE_KEY_KEYBOARD_GRAVE_ACCENT_AND_TILDE) {
             is_accent_modifier = true;
-            dead_key = HID_USAGE_KEY_KEYBOARD_APOSTROPHE_AND_QUOTE;
+            dead_key = HID_USAGE_KEY_KEYBOARD_CLOSE_BRACKET_AND_CLOSE_BRACE; // Dead diaeresis sur Shift + ']'
             dead_key_shift = true;
         }
 
@@ -117,35 +118,7 @@ int postfix_accent_listener(const zmk_event_t *eh) {
             // Delete the previous letter (e.g. 'e')
             inject_keycode(HID_USAGE_KEY_KEYBOARD_DELETE_BACKSPACE);
 
-            if (is_cedilla) {
-                // AltGr + ',' produces 'ç' under US International. Shift + AltGr + ',' produces 'Ç'.
-                if (is_shift_active && !last_base_was_shifted) {
-                    if (is_left_shift_active) {
-                        raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), false, k_uptime_get());
-                    }
-                    if (is_right_shift_active) {
-                        raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHTSHIFT), false, k_uptime_get());
-                    }
-                } else if (!is_shift_active && last_base_was_shifted) {
-                    raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), true, k_uptime_get());
-                }
-
-                raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHTALT), true, k_uptime_get());
-                inject_keycode(HID_USAGE_KEY_KEYBOARD_COMMA_AND_LESS_THAN);
-                raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHTALT), false, k_uptime_get());
-
-                // Restore Shift state for cedilla
-                if (is_shift_active && !last_base_was_shifted) {
-                    if (is_left_shift_active) {
-                        raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), true, k_uptime_get());
-                    }
-                    if (is_right_shift_active) {
-                        raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHTSHIFT), true, k_uptime_get());
-                    }
-                } else if (!is_shift_active && last_base_was_shifted) {
-                    raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), false, k_uptime_get());
-                }
-            } else if (replacement_keycode != 0) {
+            if (replacement_keycode != 0) {
                 if (last_base_was_shifted) {
                     raise_zmk_keycode_state_changed_from_encoded(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT), true, k_uptime_get());
                 }

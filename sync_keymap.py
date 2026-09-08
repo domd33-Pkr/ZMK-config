@@ -213,7 +213,7 @@ def recompose_binding(behavior, tap_key, tap_mod, hold_key, hold_mod):
     if not behavior.startswith("&"):
         behavior = "&" + behavior
         
-    if behavior in ["&trans", "&none", "&studio_unlock"]:
+    if behavior in ["&trans", "&none", "&studio_unlock", "&caps_word", "&mm_agrave", "&mm_egrave", "&mm_ccedilla"]:
         return behavior
         
     if behavior == "&ht":
@@ -410,6 +410,7 @@ def write_ods_sheets(template_ods_path, output_ods_path, layers, metadata):
         ["&bt", "Bluetooth", "Gere les profils et connexions Bluetooth", "1 ou 2", "&bt BT_CLR", "Efface la connexion Bluetooth actuelle"],
         ["&out", "Output selection", "Selectionne la sortie USB ou Bluetooth", "1", "&out OUT_TOG", "Alterne entre USB et Bluetooth"],
         ["&studio_unlock", "Studio Unlock", "Deverrouille la connexion avec ZMK Studio", "0", "&studio_unlock", "Active le mode appairage ZMK Studio"],
+        ["&caps_word", "Caps Word", "Met en majuscule tout le mot suivant (jusqu'a un espace/separateur)", "0", "&caps_word", "Active Caps Word pour le mot suivant"],
         ["&mtl", "Mo-Tap-Layer", "Active un calque si maintenu, ou un Sticky calque si tape", "2", "&mtl 1 1", "Maintenu = active calque 1, Tape = sticky calque 1"],
         ["&to", "To Layer", "Active un calque de maniere permanente et desactive les autres", "1", "&to 1", "Active le calque 1"]
     ]
