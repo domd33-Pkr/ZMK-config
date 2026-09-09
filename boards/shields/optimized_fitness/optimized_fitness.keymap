@@ -459,7 +459,7 @@
                 &kp BSPC                   // 11
                 &kp DEL                    // 12
                 &none                      // 13
-                &kp GRAVE                  // 14
+                &kp LS(COMMA)              // 14
                 &kp COMMA                  // 15
                 &kp MINUS                  // 16
                 &kp DOT                    // 17
