@@ -345,14 +345,14 @@
 
                 // Right hand (Index 11 to 20)
                 &kp BSPC                   // 11
-                &kp DEL                    // 12
+                &kp FSLH                   // 12
                 &none                      // 13
                 &mm_egrave                 // 14
                 &mm_agrave                 // 15
-                &ht LS(GRAVE) LS(NUMBER_4) // 16
+                &kp LS(NUMBER_4)           // 16
                 &single_tilde              // 17
-                &kp FSLH                   // 18
-                &mm_ccedilla               // 19
+                &mm_ccedilla               // 18
+                &none                      // 19
                 &kp RET                    // 20
             >;
         };
