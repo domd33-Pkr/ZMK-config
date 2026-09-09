@@ -256,7 +256,7 @@
                 &kp LS(EQUAL)              // 6
                 &kp MINUS                  // 7
                 &kp LS(NUMBER_8)           // 8
-                &kp BSLH                   // 9
+                &none                      // 9
                 &sl 0                      // 10
 
                 // Right hand (Index 11 to 20)
@@ -319,12 +319,12 @@
                 &kp LS(NUMBER_9)           // 11
                 &kp LS(NUMBER_0)           // 12
                 &none                      // 13
-                &kp LS(LBKT)               // 14
-                &kp LS(RBKT)               // 15
-                &kp LBKT                   // 16
-                &kp RBKT                   // 17
-                &kp LS(COMMA)              // 18
-                &kp LS(DOT)                // 19
+                &kp RA(SQT)                // 14
+                &kp RA(BSLH)               // 15
+                &kp RA(LBKT)               // 16
+                &kp RA(RBKT)               // 17
+                &kp BSLH                   // 18
+                &kp LS(BSLH)               // 19
                 &kp LS(SQT)                // 20
             >;
         };
@@ -350,7 +350,7 @@
                 &mm_egrave                 // 14
                 &mm_agrave                 // 15
                 &kp LS(NUMBER_4)           // 16
-                &single_tilde              // 17
+                &kp RA(SEMI)               // 17
                 &mm_ccedilla               // 18
                 &none                      // 19
                 &kp RET                    // 20
@@ -464,7 +464,7 @@
                 &kp MINUS                  // 16
                 &kp DOT                    // 17
                 &ht LS(SEMI) SEMI          // 18
-                &ht LS(FSLH) LS(NUMBER_1)  // 19
+                &ht LS(NUMBER_6) LS(NUMBER_1)// 19
                 &kp TAB                    // 20
             >;
         };
