@@ -223,12 +223,12 @@
                 &sl 2                      // 1
                 &sl 4                      // 2
                 &none                      // 3
-                &ht LS(Z) Z                // 4
+                &ht LS(K) K                // 4
                 &ht LS(Q) Q                // 5
                 &ht LS(X) X                // 6
-                &ht LS(K) K                // 7
+                &ht LS(Z) Z                // 7
                 &ht LS(W) W                // 8
-                &caps_word                 // 9
+                &none                      // 9
                 &mo 1                      // 10
 
                 // Right hand (Index 11 to 20)
@@ -344,11 +344,11 @@
                 &mo 7                      // 10
 
                 // Right hand (Index 11 to 20)
-                &kp BSPC                   // 11
+                &mm_egrave                 // 11
                 &kp FSLH                   // 12
                 &none                      // 13
-                &mm_egrave                 // 14
-                &mm_agrave                 // 15
+                &mm_agrave                 // 14
+                &none                      // 15
                 &kp LS(NUMBER_4)           // 16
                 &kp RA(SEMI)               // 17
                 &mm_ccedilla               // 18
