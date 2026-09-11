@@ -456,15 +456,15 @@
                 &mo 10                     // 10
 
                 // Right hand (Index 11 to 20)
-                &kp BSPC                   // 11
-                &kp DEL                    // 12
+                &kp COMMA                  // 11
+                &kp DOT                    // 12
                 &none                      // 13
                 &kp LS(COMMA)              // 14
-                &kp COMMA                  // 15
-                &kp MINUS                  // 16
-                &kp DOT                    // 17
-                &ht LS(SEMI) SEMI          // 18
-                &ht LS(NUMBER_6) LS(NUMBER_1)// 19
+                &kp MINUS                  // 15
+                &kp SEMI                   // 16
+                &kp LS(SEMI)               // 17
+                &kp LS(NUMBER_1)           // 18
+                &kp LS(NUMBER_6)           // 19
                 &kp TAB                    // 20
             >;
         };
