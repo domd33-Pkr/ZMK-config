@@ -273,7 +273,7 @@
             bindings = <
                 // Left hand (Index 1 to 10)
                 &mo 2                      // 1
-                &sl 4                      // 2
+                &mo 4                      // 2
                 &none                      // 3
                 &kp NUMBER_0               // 4
                 &kp DOT                    // 5
@@ -301,7 +301,7 @@
             bindings = <
                 // Left hand (Index 1 to 10)
                 &mo 2                      // 1
-                &sl 4                      // 2
+                &mo 4                      // 2
                 &none                      // 3
                 &kp RET                    // 4
                 &uc_deg                    // 5
@@ -328,7 +328,7 @@
         layer_5 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &none                      // 1
+                &trans                     // 1
                 &mo 4                      // 2
                 &none                      // 3
                 &none                      // 4
@@ -337,7 +337,7 @@
                 &none                      // 7
                 &none                      // 8
                 &none                      // 9
-                &none                      // 10
+                &trans                     // 10
 
                 // Right hand (Index 11 to 20)
                 &kp LS(NUMBER_9)           // 11
@@ -412,7 +412,7 @@
         layer_8 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &trans                     // 1
+                &mo 7                      // 1
                 &trans                     // 2
                 &none                      // 3
                 &trans                     // 4
@@ -421,7 +421,7 @@
                 &trans                     // 7
                 &trans                     // 8
                 &trans                     // 9
-                &trans                     // 10
+                &mo 6                      // 10
 
                 // Right hand (Index 11 to 20)
                 &kp LC(Z)                  // 11
