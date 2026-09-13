@@ -4,7 +4,7 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/modifiers.h>
 
-#define DEGREE RA(LS(SEMI))
+#define DEGREE RA(NUBS)
 
 / {
     behaviors {
@@ -96,7 +96,23 @@
         deg: deg {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp DEGREE>;
+            tap-ms = <1>;
+            wait-ms = <1>;
+            bindings = <&macro_press &kp LCTRL &kp LSHFT>
+                     , <&macro_tap &kp U>
+                     , <&macro_release &kp LCTRL &kp LSHFT>
+                     , <&macro_tap &kp NUMBER_0 &kp NUMBER_0 &kp B &kp NUMBER_0 &kp RET>;
+        };
+
+        uc_deg: uc_deg {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <1>;
+            wait-ms = <1>;
+            bindings = <&macro_press &kp LCTRL &kp LSHFT>
+                     , <&macro_tap &kp U>
+                     , <&macro_release &kp LCTRL &kp LSHFT>
+                     , <&macro_tap &kp NUMBER_0 &kp NUMBER_0 &kp B &kp NUMBER_0 &kp RET>;
         };
 
         single_tilde: single_tilde {
@@ -280,7 +296,7 @@
                 &mo 3                      // 2
                 &none                      // 3
                 &kp RET                    // 4
-                &kp DEGREE                 // 5
+                &uc_deg                    // 5
                 &uc_delta                  // 6
                 &uc_ohm                    // 7
                 &kp CARET                  // 8
@@ -333,13 +349,13 @@
             bindings = <
                 // Left hand (Index 1 to 10)
                 &mo 5                      // 1
-                &sl 7                      // 2
+                &trans                     // 2
                 &none                      // 3
-                &kp LALT                   // 4
-                &kp RALT                   // 5
-                &kp LSHIFT                 // 6
-                &kp LGUI                   // 7
-                &kp LCTRL                  // 8
+                &mo 7                      // 4
+                &trans                     // 5
+                &kp LGUI                   // 6
+                &trans                     // 7
+                &trans                     // 8
                 &trans                     // 9
                 &mo 6                      // 10
 
@@ -352,7 +368,7 @@
                 &kp LS(NUMBER_4)           // 16
                 &kp RA(SEMI)               // 17
                 &mm_ccedilla               // 18
-                &none                      // 19
+                &kp TAB                    // 19
                 &kp RET                    // 20
             >;
         };
@@ -360,16 +376,16 @@
         layer_7 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &sl 5                      // 1
-                &sl 9                      // 2
+                &mo 7                      // 1
+                &trans                     // 2
                 &none                      // 3
                 &kp LALT                   // 4
-                &kp RALT                   // 5
+                &trans                     // 5
                 &kp LSHIFT                 // 6
-                &kp LGUI                   // 7
+                &trans                     // 7
                 &kp LCTRL                  // 8
-                &mo 7                      // 9
-                &mo 5                      // 10
+                &trans                     // 9
+                &mo 6                      // 10
 
                 // Right hand (Index 11 to 20)
                 &kp LEFT                   // 11
@@ -389,7 +405,7 @@
             bindings = <
                 // Left hand (Index 1 to 10)
                 &trans                     // 1
-                &mo 7                      // 2
+                &trans                     // 2
                 &none                      // 3
                 &trans                     // 4
                 &trans                     // 5
@@ -397,7 +413,7 @@
                 &trans                     // 7
                 &trans                     // 8
                 &trans                     // 9
-                &mo 6                      // 10
+                &trans                     // 10
 
                 // Right hand (Index 11 to 20)
                 &kp LC(Z)                  // 11
@@ -453,7 +469,7 @@
                 &trans                     // 7
                 &trans                     // 8
                 &trans                     // 9
-                &mo 10                     // 10
+                &trans                     // 10
 
                 // Right hand (Index 11 to 20)
                 &kp COMMA                  // 11
@@ -465,7 +481,7 @@
                 &kp LS(SEMI)               // 17
                 &kp LS(NUMBER_1)           // 18
                 &kp LS(NUMBER_6)           // 19
-                &kp TAB                    // 20
+                &kp ESC                    // 20
             >;
         };
 
