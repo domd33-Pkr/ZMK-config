@@ -273,7 +273,7 @@
             bindings = <
                 // Left hand (Index 1 to 10)
                 &mo 2                      // 1
-                &mo 9                      // 2
+                &sl 4                      // 2
                 &none                      // 3
                 &kp NUMBER_0               // 4
                 &kp DOT                    // 5
@@ -281,7 +281,7 @@
                 &kp MINUS                  // 7
                 &kp LS(NUMBER_8)           // 8
                 &kp LS(NUMBER_3)           // 9
-                &sl 3                      // 10
+                &mo 3                      // 10
 
                 // Right hand (Index 11 to 20)
                 &kp NUMBER_1               // 11
@@ -301,7 +301,7 @@
             bindings = <
                 // Left hand (Index 1 to 10)
                 &mo 2                      // 1
-                &mo 3                      // 2
+                &sl 4                      // 2
                 &none                      // 3
                 &kp RET                    // 4
                 &uc_deg                    // 5
@@ -309,7 +309,7 @@
                 &uc_ohm                    // 7
                 &single_caret              // 8
                 &uc_pi                     // 9
-                &mo 6                      // 10
+                &mo 3                      // 10
 
                 // Right hand (Index 11 to 20)
                 &kp LS(A)                  // 11
