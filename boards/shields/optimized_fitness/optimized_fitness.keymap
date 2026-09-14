@@ -219,25 +219,25 @@
                 &sl 5                      // 1
                 &sl 9                      // 2
                 &none                      // 3
-                &ht LS(R) R                // 4
-                &ht LS(L) L                // 5
-                &ht LS(T) T                // 6
-                &ht LS(B) B                // 7
-                &ht LS(N) N                // 8
-                &ht LS(M) M                // 9
+                &kp R                      // 4
+                &kp L                      // 5
+                &kp T                      // 6
+                &kp B                      // 7
+                &kp N                      // 8
+                &kp M                      // 9
                 &sl 1                      // 10
 
                 // Right hand (Index 11 to 20)
                 &kp SPC                    // 11
-                &ht LS(E) E                // 12
+                &kp E                      // 12
                 &none                      // 13
-                &ht LS(C) C                // 14
-                &ht LS(U) U                // 15
-                &ht LS(S) S                // 16
-                &ht LS(O) O                // 17
-                &ht LS(D) D                // 18
-                &ht LS(I) I                // 19
-                &ht LS(A) A                // 20
+                &kp C                      // 14
+                &kp U                      // 15
+                &kp S                      // 16
+                &kp O                      // 17
+                &kp D                      // 18
+                &kp I                      // 19
+                &kp A                      // 20
             >;
         };
 
@@ -247,11 +247,11 @@
                 &sl 2                      // 1
                 &sl 4                      // 2
                 &none                      // 3
-                &ht LS(K) K                // 4
-                &ht LS(Q) Q                // 5
-                &ht LS(X) X                // 6
-                &ht LS(Z) Z                // 7
-                &ht LS(W) W                // 8
+                &kp Q                      // 4
+                &kp K                      // 5
+                &kp X                      // 6
+                &kp Z                      // 7
+                &kp W                      // 8
                 &none                      // 9
                 &mo 1                      // 10
 
@@ -259,13 +259,13 @@
                 &kp BSPC                   // 11
                 &kp DEL                    // 12
                 &none                      // 13
-                &ht LS(P) P                // 14
-                &ht LS(F) F                // 15
-                &ht LS(H) H                // 16
-                &ht LS(J) J                // 17
-                &ht LS(G) G                // 18
-                &ht LS(Y) Y                // 19
-                &ht LS(V) V                // 20
+                &kp P                      // 14
+                &kp F                      // 15
+                &kp H                      // 16
+                &kp J                      // 17
+                &kp G                      // 18
+                &kp Y                      // 19
+                &kp V                      // 20
             >;
         };
 
