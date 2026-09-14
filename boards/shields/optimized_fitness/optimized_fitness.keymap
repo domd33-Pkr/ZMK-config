@@ -363,8 +363,8 @@
                 &trans                     // 5
                 &kp LGUI                   // 6
                 &trans                     // 7
-                &trans                     // 8
-                &trans                     // 9
+                &sk LSHIFT                 // 8
+                &caps_word                 // 9
                 &mo 6                      // 10
 
                 // Right hand (Index 11 to 20)
