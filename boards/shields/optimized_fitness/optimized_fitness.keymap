@@ -216,8 +216,8 @@
         layer_1 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &mo 5                      // 1
-                &mo 9                      // 2
+                &sl 5                      // 1
+                &sl 9                      // 2
                 &none                      // 3
                 &kp R                      // 4
                 &kp L                      // 5
@@ -372,12 +372,12 @@
                 &kp FSLH                   // 12
                 &none                      // 13
                 &mm_agrave                 // 14
-                &none                      // 15
+                &kp RET                    // 15
                 &kp LS(NUMBER_4)           // 16
                 &kp RA(SEMI)               // 17
                 &mm_ccedilla               // 18
                 &kp TAB                    // 19
-                &kp RET                    // 20
+                &kp ESC                    // 20
             >;
         };
 
@@ -489,7 +489,7 @@
                 &kp LS(SEMI)               // 17
                 &kp LS(NUMBER_1)           // 18
                 &kp LS(NUMBER_6)           // 19
-                &kp ESC                    // 20
+                &kp LS(NUMBER_2)           // 20
             >;
         };
 
