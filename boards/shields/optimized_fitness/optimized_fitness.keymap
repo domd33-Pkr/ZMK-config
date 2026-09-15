@@ -216,8 +216,8 @@
         layer_1 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &sl 5                      // 1
-                &sl 9                      // 2
+                &mo 5                      // 1
+                &mo 9                      // 2
                 &none                      // 3
                 &kp R                      // 4
                 &kp L                      // 5
@@ -244,8 +244,8 @@
         layer_2 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &sl 2                      // 1
-                &sl 4                      // 2
+                &mo 2                      // 1
+                &mo 4                      // 2
                 &none                      // 3
                 &kp Q                      // 4
                 &kp K                      // 5
@@ -349,7 +349,7 @@
                 &kp RA(RBKT)               // 17
                 &kp BSLH                   // 18
                 &kp LS(BSLH)               // 19
-                &kp LS(SQT)                // 20
+                &kp LS(NUMBER_2)           // 20
             >;
         };
 
@@ -360,7 +360,7 @@
                 &trans                     // 2
                 &none                      // 3
                 &mo 7                      // 4
-                &trans                     // 5
+                &mo 10                     // 5
                 &kp LGUI                   // 6
                 &trans                     // 7
                 &sk LSHIFT                 // 8
