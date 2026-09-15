@@ -508,7 +508,7 @@
                 &trans                     // 10
 
                 // Right hand (Index 11 to 20)
-                &trans                     // 11
+                &kp LC(LS(T))              // 11
                 &trans                     // 12
                 &trans                     // 13
                 &trans                     // 14
