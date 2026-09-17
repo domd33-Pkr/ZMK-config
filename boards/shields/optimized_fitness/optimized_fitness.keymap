@@ -55,6 +55,13 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
+        mm_acirc: mod_morph_acirc {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&macro_acirc>, <&macro_acirc_maj>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
         mm_egrave: mod_morph_egrave {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -247,6 +254,22 @@
             wait-ms = <10>;
             tap-ms = <10>;
             bindings = <&macro_tap &kp SQT &kp LS(U)>;
+        };
+
+        macro_acirc: macro_acirc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LBKT &kp A>;
+        };
+
+        macro_acirc_maj: macro_acirc_maj {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LBKT &kp LS(A)>;
         };
 
         macro_ocirc: macro_ocirc {
@@ -552,16 +575,16 @@
                 &mo 6                      // 10
 
                 // Right hand (Index 11 to 20)
-                &mm_egrave                 // 11
-                &ht ECIRC EGRAVE           // 12
+                &mm_ecirc                  // 11
+                &ht ETREMA EGRAVE          // 12
                 &none                      // 13
                 &mm_ccedilla               // 14
-                &kp RET                    // 15
+                &mm_ucirc                  // 15
                 &ht RA(SEMI) LS(NUMBER_4)  // 16
                 &kp RET                    // 17
                 &kp ESC                    // 18
-                &kp TAB                    // 19
-                &mm_agrave                 // 20
+                &mm_itrema                 // 19
+                &mm_acirc                  // 20
             >;
         };
 
