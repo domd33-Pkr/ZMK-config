@@ -572,7 +572,7 @@
                 &kp X                      // 6
                 &kp Z                      // 7
                 &kp W                      // 8
-                &none                      // 9
+                &kp V                      // 9
                 &mo 1                      // 10
 
                 // Right hand (Index 11 to 20)
@@ -585,7 +585,7 @@
                 &kp J                      // 17
                 &kp G                      // 18
                 &kp Y                      // 19
-                &kp V                      // 20
+                &kp RET                    // 20
             >;
         };
 
@@ -693,8 +693,8 @@
                 &none                      // 13
                 &mm_ccedilla               // 14
                 &mm_ucirc                  // 15
-                &ht RA(SEMI) LS(NUMBER_4)  // 16
-                &kp RET                    // 17
+                &kp RET                    // 16
+                &kp TAB                    // 17
                 &kp ESC                    // 18
                 &mm_itrema                 // 19
                 &mm_acirc                  // 20
@@ -797,7 +797,7 @@
                 &trans                     // 7
                 &trans                     // 8
                 &trans                     // 9
-                &trans                     // 10
+                &mo 5                      // 10
 
                 // Right hand (Index 11 to 20)
                 &kp COMMA                  // 11
@@ -863,9 +863,9 @@
                 &trans                     // 15
                 &trans                     // 16
                 &trans                     // 17
-                &trans                     // 18
-                &trans                     // 19
-                &trans                     // 20
+                &kp ESC                    // 18
+                &kp TAB                    // 19
+                &kp RET                    // 20
             >;
         };
 
