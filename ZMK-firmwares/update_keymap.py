@@ -37,7 +37,8 @@ def generate_keymap():
             "`": "GRAVE",
             "SPACE": "SPC",
             "ENTER": "RET",
-            "BKS": "BSPC"
+            "BKS": "BSPC",
+            "EACUTE": "FSLH"
         }
         
         # Check for nested modifier format, e.g., LS(key) or RSFT(key)
@@ -83,32 +84,85 @@ def generate_keymap():
         elif tap.startswith("&ht "):
             parts = tap.split(None, 2)
             if len(parts) >= 3:
-                tap = f"{parts[0]} {clean_keycode(parts[1])} {clean_keycode(parts[2])}"
-        
-        if tap in ("&ht DELTA DEGREE", "&ht DELTA RA(LS(SEMI))"):
-            return "&ht_delta_deg 0 0"
-        if tap in ("&ht DEGREE DELTA", "&ht RA(LS(SEMI)) DELTA"):
-            return "&ht_deg_delta 0 0"
-        if tap == "&ht PI OHM":
-            return "&ht_pi_ohm 0 0"
-        if tap == "&ht OHM PI":
-            return "&ht_ohm_pi 0 0"
+                hold_key = clean_keycode(parts[1])
+                tap_key = clean_keycode(parts[2])
 
-        if tap == "&kp OHM" or tap == "OHM":
+                if (hold_key, tap_key) in [("DELTA", "DEGREE"), ("DELTA", "RA(LS(SEMI))"), ("DELTA", "RA(NUBS)")]:
+                    return "&ht_delta_deg 0 0"
+                if (hold_key, tap_key) in [("DEGREE", "DELTA"), ("RA(LS(SEMI))", "DELTA"), ("RA(NUBS)", "DELTA")]:
+                    return "&ht_deg_delta 0 0"
+                if (hold_key, tap_key) == ("PI", "OHM"):
+                    return "&ht_pi_ohm 0 0"
+                if (hold_key, tap_key) == ("OHM", "PI"):
+                    return "&ht_ohm_pi 0 0"
+
+                accent_map = {
+                    "AGRAVE": "agrave",
+                    "ACIRC": "acirc",
+                    "EGRAVE": "egrave",
+                    "ECIRC": "ecirc",
+                    "CCEDIL": "ccedilla",
+                    "UGRAVE": "ugrave",
+                    "UCIRC": "ucirc",
+                    "OCIRC": "ocirc",
+                    "ICIRC": "icirc",
+                    "ITREMA": "itrema",
+                    "UTREMA": "utrema",
+                    "ETREMA": "etrema",
+                }
+
+                if hold_key in accent_map and tap_key in accent_map:
+                    if hold_key == "ETREMA" and tap_key == "EGRAVE":
+                        return "&ht_etrema_egrave 0 0"
+                    if hold_key == "ECIRC" and tap_key == "EGRAVE":
+                        return "&ht_ecirc_egrave 0 0"
+                    return f"&ht_{accent_map[hold_key]}_{accent_map[tap_key]} 0 0"
+
+                if hold_key in accent_map:
+                    return f"&ht_{accent_map[hold_key]}_kp 0 {tap_key}"
+
+                if tap_key in accent_map:
+                    return f"&ht_kp_{accent_map[tap_key]} {hold_key} 0"
+
+                return f"&ht {hold_key} {tap_key}"
+
+        if tap in ("&kp OHM", "OHM"):
             return "&uc_ohm"
-        if tap == "&kp DELTA" or tap == "DELTA":
+        if tap in ("&kp DELTA", "DELTA"):
             return "&uc_delta"
-        if tap == "&kp PI" or tap == "PI":
+        if tap in ("&kp PI", "PI"):
             return "&uc_pi"
-        if tap == "&kp LS(GRAVE)" or tap == "LS(GRAVE)":
+        if tap in ("&kp DEGREE", "DEGREE"):
+            return "&uc_deg"
+        if tap in ("&kp CARET", "CARET", "&single_caret", "single_caret"):
+            return "&single_caret"
+        if tap in ("&kp LS(GRAVE)", "LS(GRAVE)"):
             return "&single_tilde"
 
         if tap in ("&kp AGRAVE", "AGRAVE", "&mm_agrave", "mm_agrave"):
             return "&mm_agrave"
+        if tap in ("&kp ACIRC", "ACIRC", "&kp ACIRCUMFLEX", "ACIRCUMFLEX", "&mm_acirc", "mm_acirc"):
+            return "&mm_acirc"
         if tap in ("&kp EGRAVE", "EGRAVE", "&mm_egrave", "mm_egrave"):
             return "&mm_egrave"
         if tap in ("&kp CCEDIL", "CCEDIL", "&mm_ccedilla", "mm_ccedilla"):
             return "&mm_ccedilla"
+        if tap in ("&kp UGRAVE", "UGRAVE", "&mm_ugrave", "mm_ugrave"):
+            return "&mm_ugrave"
+        if tap in ("&kp OCIRC", "OCIRC", "&kp OCIRCUMFLEX", "OCIRCUMFLEX", "&mm_ocirc", "mm_ocirc"):
+            return "&mm_ocirc"
+        if tap in ("&kp ICIRC", "ICIRC", "&kp ICIRCUMFLEX", "ICIRCUMFLEX", "&mm_icirc", "mm_icirc"):
+            return "&mm_icirc"
+        if tap in ("&kp ECIRC", "ECIRC", "&kp ECIRCUMFLEX", "ECIRCUMFLEX", "&mm_ecirc", "mm_ecirc"):
+            return "&mm_ecirc"
+        if tap in ("&kp UCIRC", "UCIRC", "&kp UCIRCUMFLEX", "UCIRCUMFLEX", "&mm_ucirc", "mm_ucirc"):
+            return "&mm_ucirc"
+        if tap in ("&kp ITREMA", "ITREMA", "&kp IDIER", "IDIER", "&kp IDIAER", "IDIAER", "&mm_itrema", "mm_itrema", "&mm_idier", "mm_idier"):
+            return "&mm_itrema"
+        if tap in ("&kp UTREMA", "UTREMA", "&kp UDIER", "UDIER", "&kp UDIAER", "UDIAER", "&mm_utrema", "mm_utrema", "&mm_udier", "mm_udier"):
+            return "&mm_utrema"
+        if tap in ("&kp ETREMA", "ETREMA", "&kp EDIER", "EDIER", "&kp EDIAER", "EDIAER", "&mm_etrema", "mm_etrema", "&mm_edier", "mm_edier"):
+            return "&mm_etrema"
         if tap in ("&kp EACUTE", "EACUTE"):
             return "&kp FSLH"
         
@@ -198,7 +252,8 @@ def generate_keymap():
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/modifiers.h>
 
-#define DEGREE RA(LS(SEMI))
+#define DEGREE RA(NUBS)
+#define EACUTE FSLH
 
 / {{
     behaviors {{
@@ -242,10 +297,129 @@ def generate_keymap():
             bindings = <&uc_ohm &uc_pi>;
         }};
 
+        ht_agrave_kp: ht_agrave_kp {{
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "{ht_flavor}";
+            tapping-term-ms = <{ht_term}>;{ht_extra}
+            bindings = <&mm_agrave &kp>;
+        }};
+
+        ht_acirc_kp: ht_acirc_kp {{
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "{ht_flavor}";
+            tapping-term-ms = <{ht_term}>;{ht_extra}
+            bindings = <&mm_acirc &kp>;
+        }};
+
+        ht_egrave_kp: ht_egrave_kp {{
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "{ht_flavor}";
+            tapping-term-ms = <{ht_term}>;{ht_extra}
+            bindings = <&mm_egrave &kp>;
+        }};
+
+        ht_ecirc_kp: ht_ecirc_kp {{
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "{ht_flavor}";
+            tapping-term-ms = <{ht_term}>;{ht_extra}
+            bindings = <&mm_ecirc &kp>;
+        }};
+
+        ht_ccedilla_kp: ht_ccedilla_kp {{
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "{ht_flavor}";
+            tapping-term-ms = <{ht_term}>;{ht_extra}
+            bindings = <&mm_ccedilla &kp>;
+        }};
+
+        ht_ugrave_kp: ht_ugrave_kp {{
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "{ht_flavor}";
+            tapping-term-ms = <{ht_term}>;{ht_extra}
+            bindings = <&mm_ugrave &kp>;
+        }};
+
+        ht_ucirc_kp: ht_ucirc_kp {{
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "{ht_flavor}";
+            tapping-term-ms = <{ht_term}>;{ht_extra}
+            bindings = <&mm_ucirc &kp>;
+        }};
+
+        ht_ocirc_kp: ht_ocirc_kp {{
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "{ht_flavor}";
+            tapping-term-ms = <{ht_term}>;{ht_extra}
+            bindings = <&mm_ocirc &kp>;
+        }};
+
+        ht_icirc_kp: ht_icirc_kp {{
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "{ht_flavor}";
+            tapping-term-ms = <{ht_term}>;{ht_extra}
+            bindings = <&mm_icirc &kp>;
+        }};
+
+        ht_itrema_kp: ht_itrema_kp {{
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "{ht_flavor}";
+            tapping-term-ms = <{ht_term}>;{ht_extra}
+            bindings = <&mm_itrema &kp>;
+        }};
+
+        ht_utrema_kp: ht_utrema_kp {{
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "{ht_flavor}";
+            tapping-term-ms = <{ht_term}>;{ht_extra}
+            bindings = <&mm_utrema &kp>;
+        }};
+
+        ht_etrema_kp: ht_etrema_kp {{
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "{ht_flavor}";
+            tapping-term-ms = <{ht_term}>;{ht_extra}
+            bindings = <&mm_etrema &kp>;
+        }};
+
+        ht_etrema_egrave: ht_etrema_egrave {{
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "{ht_flavor}";
+            tapping-term-ms = <{ht_term}>;{ht_extra}
+            bindings = <&mm_etrema &mm_egrave>;
+        }};
+
+        ht_ecirc_egrave: ht_ecirc_egrave {{
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "{ht_flavor}";
+            tapping-term-ms = <{ht_term}>;{ht_extra}
+            bindings = <&mm_ecirc &mm_egrave>;
+        }};
+
         mm_agrave: mod_morph_agrave {{
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&macro_agrave>, <&macro_agrave_maj>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        }};
+
+        mm_acirc: mod_morph_acirc {{
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&macro_acirc>, <&macro_acirc_maj>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         }};
 
@@ -260,6 +434,62 @@ def generate_keymap():
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&macro_ccedilla>, <&macro_ccedilla_maj>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        }};
+
+        mm_ugrave: mod_morph_ugrave {{
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&macro_ugrave>, <&macro_ugrave_maj>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        }};
+
+        mm_ocirc: mod_morph_ocirc {{
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&macro_ocirc>, <&macro_ocirc_maj>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        }};
+
+        mm_icirc: mod_morph_icirc {{
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&macro_icirc>, <&macro_icirc_maj>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        }};
+
+        mm_ecirc: mod_morph_ecirc {{
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&macro_ecirc>, <&macro_ecirc_maj>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        }};
+
+        mm_ucirc: mod_morph_ucirc {{
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&macro_ucirc>, <&macro_ucirc_maj>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        }};
+
+        mm_itrema: mod_morph_itrema {{
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&macro_itrema>, <&macro_itrema_maj>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        }};
+
+        mm_utrema: mod_morph_utrema {{
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&macro_utrema>, <&macro_utrema_maj>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        }};
+
+        mm_etrema: mod_morph_etrema {{
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&macro_etrema>, <&macro_etrema_maj>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         }};
 
@@ -290,13 +520,37 @@ def generate_keymap():
         deg: deg {{
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp DEGREE>;
+            tap-ms = <{macro_tap}>;
+            wait-ms = <{macro_wait}>;
+            bindings = <&macro_press &kp LCTRL &kp LSHFT>
+                     , <&macro_tap &kp U>
+                     , <&macro_release &kp LCTRL &kp LSHFT>
+                     , <&macro_tap &kp NUMBER_0 &kp NUMBER_0 &kp B &kp NUMBER_0 &kp RET>;
+        }};
+
+        uc_deg: uc_deg {{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <{macro_tap}>;
+            wait-ms = <{macro_wait}>;
+            bindings = <&macro_press &kp LCTRL &kp LSHFT>
+                     , <&macro_tap &kp U>
+                     , <&macro_release &kp LCTRL &kp LSHFT>
+                     , <&macro_tap &kp NUMBER_0 &kp NUMBER_0 &kp B &kp NUMBER_0 &kp RET>;
         }};
 
         single_tilde: single_tilde {{
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_tap &kp LS(GRAVE) &kp SPACE>;
+        }};
+
+        single_caret: single_caret {{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LBKT &kp SPACE>;
         }};
 
         macro_agrave: macro_agrave {{
@@ -345,6 +599,150 @@ def generate_keymap():
             wait-ms = <10>;
             tap-ms = <10>;
             bindings = <&macro_tap &kp RBKT &kp LS(C)>;
+        }};
+
+        macro_ugrave: macro_ugrave {{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp SQT &kp U>;
+        }};
+
+        macro_ugrave_maj: macro_ugrave_maj {{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp SQT &kp LS(U)>;
+        }};
+
+        macro_acirc: macro_acirc {{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LBKT &kp A>;
+        }};
+
+        macro_acirc_maj: macro_acirc_maj {{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LBKT &kp LS(A)>;
+        }};
+
+        macro_ocirc: macro_ocirc {{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LBKT &kp O>;
+        }};
+
+        macro_ocirc_maj: macro_ocirc_maj {{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LBKT &kp LS(O)>;
+        }};
+
+        macro_icirc: macro_icirc {{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LBKT &kp I>;
+        }};
+
+        macro_icirc_maj: macro_icirc_maj {{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LBKT &kp LS(I)>;
+        }};
+
+        macro_ecirc: macro_ecirc {{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LBKT &kp E>;
+        }};
+
+        macro_ecirc_maj: macro_ecirc_maj {{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LBKT &kp LS(E)>;
+        }};
+
+        macro_ucirc: macro_ucirc {{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LBKT &kp U>;
+        }};
+
+        macro_ucirc_maj: macro_ucirc_maj {{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LBKT &kp LS(U)>;
+        }};
+
+        macro_itrema: macro_itrema {{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LS(RBKT) &kp I>;
+        }};
+
+        macro_itrema_maj: macro_itrema_maj {{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LS(RBKT) &kp LS(I)>;
+        }};
+
+        macro_utrema: macro_utrema {{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LS(RBKT) &kp U>;
+        }};
+
+        macro_utrema_maj: macro_utrema_maj {{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LS(RBKT) &kp LS(U)>;
+        }};
+
+        macro_etrema: macro_etrema {{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LS(RBKT) &kp E>;
+        }};
+
+        macro_etrema_maj: macro_etrema_maj {{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LS(RBKT) &kp LS(E)>;
         }};
 
         uc_delta: uc_delta {{

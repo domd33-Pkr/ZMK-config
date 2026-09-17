@@ -5,6 +5,7 @@
 #include <dt-bindings/zmk/modifiers.h>
 
 #define DEGREE RA(NUBS)
+#define EACUTE FSLH
 
 / {
     behaviors {
@@ -46,6 +47,118 @@
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             bindings = <&uc_ohm &uc_pi>;
+        };
+
+        ht_agrave_kp: ht_agrave_kp {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mm_agrave &kp>;
+        };
+
+        ht_acirc_kp: ht_acirc_kp {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mm_acirc &kp>;
+        };
+
+        ht_egrave_kp: ht_egrave_kp {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mm_egrave &kp>;
+        };
+
+        ht_ecirc_kp: ht_ecirc_kp {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mm_ecirc &kp>;
+        };
+
+        ht_ccedilla_kp: ht_ccedilla_kp {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mm_ccedilla &kp>;
+        };
+
+        ht_ugrave_kp: ht_ugrave_kp {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mm_ugrave &kp>;
+        };
+
+        ht_ucirc_kp: ht_ucirc_kp {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mm_ucirc &kp>;
+        };
+
+        ht_ocirc_kp: ht_ocirc_kp {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mm_ocirc &kp>;
+        };
+
+        ht_icirc_kp: ht_icirc_kp {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mm_icirc &kp>;
+        };
+
+        ht_itrema_kp: ht_itrema_kp {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mm_itrema &kp>;
+        };
+
+        ht_utrema_kp: ht_utrema_kp {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mm_utrema &kp>;
+        };
+
+        ht_etrema_kp: ht_etrema_kp {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mm_etrema &kp>;
+        };
+
+        ht_etrema_egrave: ht_etrema_egrave {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mm_etrema &mm_egrave>;
+        };
+
+        ht_ecirc_egrave: ht_ecirc_egrave {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mm_ecirc &mm_egrave>;
         };
 
         mm_agrave: mod_morph_agrave {
@@ -438,13 +551,13 @@
                 &kp SPC                    // 11
                 &ht FSLH E                 // 12
                 &none                      // 13
-                &ht CCEDIL C               // 14
-                &ht UGRAVE U               // 15
+                &ht_ccedilla_kp 0 C        // 14
+                &ht_ugrave_kp 0 U          // 15
                 &kp S                      // 16
-                &ht OCIRC O                // 17
+                &ht_ocirc_kp 0 O           // 17
                 &kp D                      // 18
-                &ht ICIRC I                // 19
-                &ht AGRAVE A               // 20
+                &ht_icirc_kp 0 I           // 19
+                &ht_agrave_kp 0 A          // 20
             >;
         };
 
@@ -576,7 +689,7 @@
 
                 // Right hand (Index 11 to 20)
                 &mm_ecirc                  // 11
-                &ht ETREMA EGRAVE          // 12
+                &ht_etrema_egrave 0 0      // 12
                 &none                      // 13
                 &mm_ccedilla               // 14
                 &mm_ucirc                  // 15

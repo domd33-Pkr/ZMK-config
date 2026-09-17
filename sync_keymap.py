@@ -213,7 +213,7 @@ def recompose_binding(behavior, tap_key, tap_mod, hold_key, hold_mod):
     if not behavior.startswith("&"):
         behavior = "&" + behavior
         
-    if behavior in ["&trans", "&none", "&studio_unlock", "&caps_word", "&mm_agrave", "&mm_egrave", "&mm_ccedilla"]:
+    if behavior in ["&trans", "&none", "&studio_unlock", "&caps_word", "&mm_agrave", "&mm_acirc", "&mm_egrave", "&mm_ccedilla", "&mm_ugrave", "&mm_ocirc", "&mm_icirc", "&mm_ecirc", "&mm_ucirc", "&mm_itrema", "&mm_utrema", "&mm_etrema", "&uc_delta", "&uc_ohm", "&uc_pi", "&uc_deg", "&deg", "&single_caret", "&single_tilde"]:
         return behavior
         
     if behavior == "&ht":

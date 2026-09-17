@@ -4,6 +4,15 @@ Configuration pour la disposition standard « French (Canada) » :
 - à / À : comportement mod-morph mm_agrave (envoie dead_grave sur ' puis a/A)
 - è / È : comportement mod-morph mm_egrave (envoie dead_grave sur ' puis e/E)
 - ç / Ç : comportement mod-morph mm_ccedilla (envoie dead_cedilla sur ] puis c/C)
+- ù / Ù : comportement mod-morph mm_ugrave (envoie dead_grave sur ' puis u/U)
+- ô / Ô : comportement mod-morph mm_ocirc (envoie dead_circumflex sur [ puis o/O)
+- â / Â : comportement mod-morph mm_acirc (envoie dead_circumflex sur [ puis a/A)
+- î / Î : comportement mod-morph mm_icirc (envoie dead_circumflex sur [ puis i/I)
+- ê / Ê : comportement mod-morph mm_ecirc (envoie dead_circumflex sur [ puis e/E)
+- û / Û : comportement mod-morph mm_ucirc (envoie dead_circumflex sur [ puis u/U)
+- ï / Ï : comportement mod-morph mm_itrema (envoie dead_trema sur Shift + ] puis i/I)
+- ü / Ü : comportement mod-morph mm_utrema (envoie dead_trema sur Shift + ] puis u/U)
+- ë / Ë : comportement mod-morph mm_etrema (envoie dead_trema sur Shift + ] puis e/E)
 - é / É : touche directe sur / (scancode FSLH)
 
 2. Mode Postfix (accents tapés après les lettres) :
