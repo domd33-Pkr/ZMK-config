@@ -69,6 +69,62 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
+        mm_ugrave: mod_morph_ugrave {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&macro_ugrave>, <&macro_ugrave_maj>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_ocirc: mod_morph_ocirc {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&macro_ocirc>, <&macro_ocirc_maj>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_icirc: mod_morph_icirc {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&macro_icirc>, <&macro_icirc_maj>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_ecirc: mod_morph_ecirc {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&macro_ecirc>, <&macro_ecirc_maj>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_ucirc: mod_morph_ucirc {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&macro_ucirc>, <&macro_ucirc_maj>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_itrema: mod_morph_itrema {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&macro_itrema>, <&macro_itrema_maj>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_utrema: mod_morph_utrema {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&macro_utrema>, <&macro_utrema_maj>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_etrema: mod_morph_etrema {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&macro_etrema>, <&macro_etrema_maj>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
         mtl: mo_tap_layer {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -177,6 +233,134 @@
             bindings = <&macro_tap &kp RBKT &kp LS(C)>;
         };
 
+        macro_ugrave: macro_ugrave {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp SQT &kp U>;
+        };
+
+        macro_ugrave_maj: macro_ugrave_maj {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp SQT &kp LS(U)>;
+        };
+
+        macro_ocirc: macro_ocirc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LBKT &kp O>;
+        };
+
+        macro_ocirc_maj: macro_ocirc_maj {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LBKT &kp LS(O)>;
+        };
+
+        macro_icirc: macro_icirc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LBKT &kp I>;
+        };
+
+        macro_icirc_maj: macro_icirc_maj {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LBKT &kp LS(I)>;
+        };
+
+        macro_ecirc: macro_ecirc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LBKT &kp E>;
+        };
+
+        macro_ecirc_maj: macro_ecirc_maj {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LBKT &kp LS(E)>;
+        };
+
+        macro_ucirc: macro_ucirc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LBKT &kp U>;
+        };
+
+        macro_ucirc_maj: macro_ucirc_maj {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LBKT &kp LS(U)>;
+        };
+
+        macro_itrema: macro_itrema {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LS(RBKT) &kp I>;
+        };
+
+        macro_itrema_maj: macro_itrema_maj {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LS(RBKT) &kp LS(I)>;
+        };
+
+        macro_utrema: macro_utrema {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LS(RBKT) &kp U>;
+        };
+
+        macro_utrema_maj: macro_utrema_maj {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LS(RBKT) &kp LS(U)>;
+        };
+
+        macro_etrema: macro_etrema {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LS(RBKT) &kp E>;
+        };
+
+        macro_etrema_maj: macro_etrema_maj {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_tap &kp LS(RBKT) &kp LS(E)>;
+        };
+
         uc_delta: uc_delta {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -229,15 +413,15 @@
 
                 // Right hand (Index 11 to 20)
                 &kp SPC                    // 11
-                &kp E                      // 12
+                &ht FSLH E                 // 12
                 &none                      // 13
-                &kp C                      // 14
-                &kp U                      // 15
+                &ht CCEDIL C               // 14
+                &ht UGRAVE U               // 15
                 &kp S                      // 16
-                &kp O                      // 17
+                &ht OCIRC O                // 17
                 &kp D                      // 18
-                &kp I                      // 19
-                &kp A                      // 20
+                &ht ICIRC I                // 19
+                &ht AGRAVE A               // 20
             >;
         };
 
@@ -369,15 +553,15 @@
 
                 // Right hand (Index 11 to 20)
                 &mm_egrave                 // 11
-                &kp FSLH                   // 12
+                &ht ECIRC EGRAVE           // 12
                 &none                      // 13
-                &mm_agrave                 // 14
+                &mm_ccedilla               // 14
                 &kp RET                    // 15
-                &kp LS(NUMBER_4)           // 16
-                &kp RA(SEMI)               // 17
-                &mm_ccedilla               // 18
+                &ht RA(SEMI) LS(NUMBER_4)  // 16
+                &kp RET                    // 17
+                &kp ESC                    // 18
                 &kp TAB                    // 19
-                &kp ESC                    // 20
+                &mm_agrave                 // 20
             >;
         };
 
