@@ -536,7 +536,7 @@
         layer_1 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &sl 5                      // 1
+                &sl 11                     // 1
                 &sl 9                      // 2
                 &none                      // 3
                 &kp R                      // 4
@@ -693,9 +693,9 @@
                 &none                      // 13
                 &mm_ccedilla               // 14
                 &mm_ucirc                  // 15
-                &kp RET                    // 16
-                &kp TAB                    // 17
-                &kp ESC                    // 18
+                &none                      // 16
+                &none                      // 17
+                &none                      // 18
                 &mm_itrema                 // 19
                 &mm_acirc                  // 20
             >;
@@ -829,7 +829,7 @@
 
                 // Right hand (Index 11 to 20)
                 &kp LC(LS(T))              // 11
-                &trans                     // 12
+                &kp LC(LS(S))              // 12
                 &trans                     // 13
                 &trans                     // 14
                 &trans                     // 15
