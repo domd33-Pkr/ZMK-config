@@ -536,7 +536,7 @@
         layer_1 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &sl 11                     // 1
+                &sl 5                      // 1
                 &sl 9                      // 2
                 &none                      // 3
                 &kp R                      // 4
@@ -573,7 +573,7 @@
                 &kp Z                      // 7
                 &kp W                      // 8
                 &kp V                      // 9
-                &mo 1                      // 10
+                &mo 6                      // 10
 
                 // Right hand (Index 11 to 20)
                 &kp BSPC                   // 11
@@ -651,12 +651,12 @@
                 &trans                     // 1
                 &mo 4                      // 2
                 &none                      // 3
-                &none                      // 4
-                &none                      // 5
-                &none                      // 6
-                &none                      // 7
-                &none                      // 8
-                &none                      // 9
+                &kp EQUAL                  // 4
+                &kp RA(EQUAL)              // 5
+                &kp RA(NUMBER_8)           // 6
+                &kp RA(MINUS)              // 7
+                &kp RA(NUMBER_9)           // 8
+                &kp RA(NUMBER_0)           // 9
                 &trans                     // 10
 
                 // Right hand (Index 11 to 20)
@@ -775,13 +775,13 @@
                 &ht SEMI LS(SEMI)          // 11
                 &ht DOT COMMA              // 12
                 &none                      // 13
-                &mm_egrave                 // 14
-                &mm_agrave                 // 15
-                &kp LS(NUMBER_4)           // 16
+                &kp RA(NUMBER_2)           // 14
+                &kp LS(NUMBER_5)           // 15
+                &kp GRAVE                  // 16
                 &single_tilde              // 17
-                &kp FSLH                   // 18
-                &mm_ccedilla               // 19
-                &ht LS(DOT) LS(COMMA)      // 20
+                &kp LS(NUMBER_4)           // 18
+                &kp RA(NUMBER_1)           // 19
+                &ht LS(DOT) RA(NUMBER_3)   // 20
             >;
         };
 
@@ -791,13 +791,13 @@
                 &trans                     // 1
                 &mo 9                      // 2
                 &none                      // 3
-                &trans                     // 4
+                &kp TAB                    // 4
                 &trans                     // 5
-                &trans                     // 6
+                &kp RET                    // 6
                 &trans                     // 7
-                &trans                     // 8
+                &kp ESC                    // 8
                 &trans                     // 9
-                &mo 5                      // 10
+                &trans                     // 10
 
                 // Right hand (Index 11 to 20)
                 &kp COMMA                  // 11
@@ -809,7 +809,7 @@
                 &kp LS(SEMI)               // 17
                 &kp LS(NUMBER_1)           // 18
                 &kp LS(NUMBER_6)           // 19
-                &kp LS(NUMBER_2)           // 20
+                &kp LS(MINUS)              // 20
             >;
         };
 
