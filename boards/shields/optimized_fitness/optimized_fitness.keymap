@@ -624,9 +624,9 @@
                 &mo 4                      // 2
                 &none                      // 3
                 &kp RET                    // 4
-                &uc_deg                    // 5
-                &uc_delta                  // 6
-                &uc_ohm                    // 7
+                &kp TAB                    // 5
+                &kp LS(NUMBER_7)           // 6
+                &single_tilde              // 7
                 &single_caret              // 8
                 &uc_pi                     // 9
                 &mo 3                      // 10
@@ -639,9 +639,9 @@
                 &kp LS(D)                  // 15
                 &kp LS(E)                  // 16
                 &kp LS(F)                  // 17
-                &kp LS(NUMBER_7)           // 18
-                &single_tilde              // 19
-                &kp RA(GRAVE)              // 20
+                &uc_delta                  // 18
+                &uc_deg                    // 19
+                &uc_ohm                    // 20
             >;
         };
 
@@ -679,8 +679,8 @@
                 &mo 5                      // 1
                 &trans                     // 2
                 &none                      // 3
-                &mo 7                      // 4
-                &mo 10                     // 5
+                &trans                     // 4
+                &trans                     // 5
                 &kp LGUI                   // 6
                 &trans                     // 7
                 &sk LSHIFT                 // 8
@@ -693,9 +693,9 @@
                 &none                      // 13
                 &mm_ccedilla               // 14
                 &mm_ucirc                  // 15
-                &none                      // 16
-                &none                      // 17
-                &none                      // 18
+                &kp RET                    // 16
+                &kp TAB                    // 17
+                &kp ESC                    // 18
                 &mm_itrema                 // 19
                 &mm_acirc                  // 20
             >;
@@ -763,7 +763,7 @@
                 &ht_pi_ohm 0 0             // 1
                 &ht_delta_deg 0 0          // 2
                 &none                      // 3
-                &kp FSLH                   // 4
+                &kp RA(GRAVE)              // 4
                 &kp BSLH                   // 5
                 &kp LS(BSLH)               // 6
                 &kp LS(NUMBER_7)           // 7
@@ -791,11 +791,11 @@
                 &trans                     // 1
                 &mo 9                      // 2
                 &none                      // 3
-                &kp TAB                    // 4
-                &trans                     // 5
-                &kp RET                    // 6
+                &mo 7                      // 4
+                &mo 10                     // 5
+                &mo 8                      // 6
                 &trans                     // 7
-                &kp ESC                    // 8
+                &trans                     // 8
                 &trans                     // 9
                 &trans                     // 10
 
