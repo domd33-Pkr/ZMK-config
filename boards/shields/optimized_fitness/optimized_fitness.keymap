@@ -717,15 +717,15 @@
 
                 // Right hand (Index 11 to 20)
                 &kp LEFT                   // 11
-                &kp RIGHT                  // 12
+                &kp HOME                   // 12
                 &none                      // 13
                 &kp UP                     // 14
                 &kp DOWN                   // 15
                 &kp PG_UP                  // 16
                 &kp PG_DN                  // 17
                 &trans                     // 18
-                &kp HOME                   // 19
-                &kp END                    // 20
+                &kp END                    // 19
+                &kp RIGHT                  // 20
             >;
         };
 
@@ -800,8 +800,8 @@
                 &trans                     // 10
 
                 // Right hand (Index 11 to 20)
-                &kp COMMA                  // 11
-                &kp DOT                    // 12
+                &kp DOT                    // 11
+                &kp COMMA                  // 12
                 &none                      // 13
                 &kp LS(COMMA)              // 14
                 &kp MINUS                  // 15
