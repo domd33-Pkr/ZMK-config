@@ -549,10 +549,10 @@
 
                 // Right hand (Index 11 to 20)
                 &kp SPC                    // 11
-                &ht_ugrave_kp 0 U          // 12
+                &ht FSLH E                 // 12
                 &none                      // 13
                 &ht_ccedilla_kp 0 C        // 14
-                &ht FSLH E                 // 15
+                &ht_ugrave_kp 0 U          // 15
                 &kp S                      // 16
                 &ht_icirc_kp 0 I           // 17
                 &kp D                      // 18
@@ -577,10 +577,10 @@
 
                 // Right hand (Index 11 to 20)
                 &kp BSPC                   // 11
-                &kp F                      // 12
+                &kp DEL                    // 12
                 &none                      // 13
                 &kp P                      // 14
-                &kp DEL                    // 15
+                &kp F                      // 15
                 &kp H                      // 16
                 &kp Y                      // 17
                 &kp G                      // 18
@@ -605,10 +605,10 @@
 
                 // Right hand (Index 11 to 20)
                 &kp NUMBER_1               // 11
-                &kp NUMBER_4               // 12
+                &kp NUMBER_2               // 12
                 &none                      // 13
                 &kp NUMBER_3               // 14
-                &kp NUMBER_2               // 15
+                &kp NUMBER_4               // 15
                 &kp NUMBER_5               // 16
                 &kp NUMBER_8               // 17
                 &kp NUMBER_7               // 18
@@ -633,10 +633,10 @@
 
                 // Right hand (Index 11 to 20)
                 &kp LS(A)                  // 11
-                &kp LS(D)                  // 12
+                &kp LS(B)                  // 12
                 &none                      // 13
                 &kp LS(C)                  // 14
-                &kp LS(B)                  // 15
+                &kp LS(D)                  // 15
                 &kp LS(E)                  // 16
                 &uc_deg                    // 17
                 &uc_delta                  // 18
@@ -661,10 +661,10 @@
 
                 // Right hand (Index 11 to 20)
                 &kp LS(NUMBER_9)           // 11
-                &kp RA(BSLH)               // 12
+                &kp LS(NUMBER_0)           // 12
                 &none                      // 13
                 &kp RA(SQT)                // 14
-                &kp LS(NUMBER_0)           // 15
+                &kp RA(BSLH)               // 15
                 &kp RA(LBKT)               // 16
                 &kp LS(BSLH)               // 17
                 &kp BSLH                   // 18
@@ -689,10 +689,10 @@
 
                 // Right hand (Index 11 to 20)
                 &mm_ecirc                  // 11
-                &mm_ucirc                  // 12
+                &ht_etrema_egrave 0 0      // 12
                 &none                      // 13
                 &mm_ccedilla               // 14
-                &ht_etrema_egrave 0 0      // 15
+                &mm_ucirc                  // 15
                 &kp RET                    // 16
                 &mm_itrema                 // 17
                 &kp ESC                    // 18
@@ -717,10 +717,10 @@
 
                 // Right hand (Index 11 to 20)
                 &kp LEFT                   // 11
-                &kp DOWN                   // 12
+                &kp HOME                   // 12
                 &none                      // 13
                 &kp UP                     // 14
-                &kp HOME                   // 15
+                &kp DOWN                   // 15
                 &kp PG_UP                  // 16
                 &kp END                    // 17
                 &trans                     // 18
@@ -745,10 +745,10 @@
 
                 // Right hand (Index 11 to 20)
                 &kp LC(Z)                  // 11
-                &kp LC(A)                  // 12
+                &kp LC(S)                  // 12
                 &none                      // 13
                 &kp LC(C)                  // 14
-                &kp LC(S)                  // 15
+                &kp LC(A)                  // 15
                 &kp LC(V)                  // 16
                 &kp LC(H)                  // 17
                 &kp LC(X)                  // 18
@@ -773,10 +773,10 @@
 
                 // Right hand (Index 11 to 20)
                 &ht SEMI LS(SEMI)          // 11
-                &kp LS(NUMBER_5)           // 12
+                &ht DOT COMMA              // 12
                 &none                      // 13
                 &kp RA(NUMBER_2)           // 14
-                &ht DOT COMMA              // 15
+                &kp LS(NUMBER_5)           // 15
                 &kp GRAVE                  // 16
                 &kp RA(NUMBER_1)           // 17
                 &kp LS(NUMBER_4)           // 18
@@ -801,10 +801,10 @@
 
                 // Right hand (Index 11 to 20)
                 &kp DOT                    // 11
-                &kp MINUS                  // 12
+                &kp COMMA                  // 12
                 &none                      // 13
                 &kp LS(COMMA)              // 14
-                &kp COMMA                  // 15
+                &kp MINUS                  // 15
                 &kp SEMI                   // 16
                 &kp LS(NUMBER_6)           // 17
                 &kp LS(NUMBER_1)           // 18
@@ -829,10 +829,10 @@
 
                 // Right hand (Index 11 to 20)
                 &kp LC(LS(T))              // 11
-                &trans                     // 12
+                &kp LC(LS(S))              // 12
                 &trans                     // 13
                 &trans                     // 14
-                &kp LC(LS(S))              // 15
+                &trans                     // 15
                 &trans                     // 16
                 &trans                     // 17
                 &trans                     // 18
