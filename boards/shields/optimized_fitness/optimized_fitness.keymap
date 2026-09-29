@@ -549,11 +549,11 @@
 
                 // Right hand (Index 11 to 20)
                 &kp SPC                    // 11
-                &ht FSLH E                 // 12
+                &ht_ugrave_kp 0 U          // 12
                 &none                      // 13
-                &kp S                      // 14
-                &ht_ugrave_kp 0 U          // 15
-                &ht_ccedilla_kp 0 C        // 16
+                &ht_ccedilla_kp 0 C        // 14
+                &ht FSLH E                 // 15
+                &kp S                      // 16
                 &ht_icirc_kp 0 I           // 17
                 &kp D                      // 18
                 &ht_ocirc_kp 0 O           // 19
@@ -579,9 +579,9 @@
                 &kp BSPC                   // 11
                 &kp DEL                    // 12
                 &none                      // 13
-                &kp H                      // 14
+                &kp P                      // 14
                 &kp F                      // 15
-                &kp P                      // 16
+                &kp H                      // 16
                 &kp Y                      // 17
                 &kp G                      // 18
                 &kp J                      // 19
@@ -607,12 +607,12 @@
                 &kp NUMBER_1               // 11
                 &kp NUMBER_2               // 12
                 &none                      // 13
-                &kp NUMBER_5               // 14
+                &kp NUMBER_3               // 14
                 &kp NUMBER_4               // 15
-                &kp NUMBER_3               // 16
-                &kp NUMBER_8               // 17
+                &kp NUMBER_5               // 16
+                &kp NUMBER_6               // 17
                 &kp NUMBER_7               // 18
-                &kp NUMBER_6               // 19
+                &kp NUMBER_8               // 19
                 &kp NUMBER_9               // 20
             >;
         };
@@ -635,12 +635,12 @@
                 &kp LS(A)                  // 11
                 &kp LS(B)                  // 12
                 &none                      // 13
-                &kp LS(E)                  // 14
+                &kp LS(C)                  // 14
                 &kp LS(D)                  // 15
-                &kp LS(C)                  // 16
-                &uc_deg                    // 17
+                &kp LS(E)                  // 16
+                &kp LS(F)                  // 17
                 &uc_delta                  // 18
-                &kp LS(F)                  // 19
+                &uc_deg                    // 19
                 &uc_ohm                    // 20
             >;
         };
@@ -663,12 +663,12 @@
                 &kp LS(NUMBER_9)           // 11
                 &kp LS(NUMBER_0)           // 12
                 &none                      // 13
-                &kp RA(LBKT)               // 14
+                &kp RA(SQT)                // 14
                 &kp RA(BSLH)               // 15
-                &kp RA(SQT)                // 16
-                &kp LS(BSLH)               // 17
+                &kp RA(LBKT)               // 16
+                &kp RA(RBKT)               // 17
                 &kp BSLH                   // 18
-                &kp RA(RBKT)               // 19
+                &kp LS(BSLH)               // 19
                 &kp LS(NUMBER_2)           // 20
             >;
         };
@@ -689,11 +689,11 @@
 
                 // Right hand (Index 11 to 20)
                 &mm_ecirc                  // 11
-                &ht_etrema_egrave 0 0      // 12
+                &mm_ucirc                  // 12
                 &none                      // 13
-                &kp RET                    // 14
-                &mm_ucirc                  // 15
-                &mm_ccedilla               // 16
+                &mm_ccedilla               // 14
+                &ht_etrema_egrave 0 0      // 15
+                &kp RET                    // 16
                 &mm_itrema                 // 17
                 &kp ESC                    // 18
                 &kp TAB                    // 19
@@ -719,12 +719,12 @@
                 &kp LEFT                   // 11
                 &kp HOME                   // 12
                 &none                      // 13
-                &kp PG_UP                  // 14
+                &kp UP                     // 14
                 &kp DOWN                   // 15
-                &kp UP                     // 16
-                &kp END                    // 17
+                &kp PG_UP                  // 16
+                &kp PG_DN                  // 17
                 &trans                     // 18
-                &kp PG_DN                  // 19
+                &kp END                    // 19
                 &kp RIGHT                  // 20
             >;
         };
@@ -747,12 +747,12 @@
                 &kp LC(Z)                  // 11
                 &kp LC(S)                  // 12
                 &none                      // 13
-                &kp LC(V)                  // 14
+                &kp LC(C)                  // 14
                 &kp LC(A)                  // 15
-                &kp LC(C)                  // 16
-                &kp LC(H)                  // 17
+                &kp LC(V)                  // 16
+                &kp LC(F)                  // 17
                 &kp LC(X)                  // 18
-                &kp LC(F)                  // 19
+                &kp LC(H)                  // 19
                 &kp LC(Y)                  // 20
             >;
         };
@@ -803,12 +803,12 @@
                 &kp DOT                    // 11
                 &kp COMMA                  // 12
                 &none                      // 13
-                &kp SEMI                   // 14
+                &kp LS(COMMA)              // 14
                 &kp MINUS                  // 15
-                &kp LS(COMMA)              // 16
-                &kp LS(NUMBER_6)           // 17
+                &kp SEMI                   // 16
+                &kp LS(SEMI)               // 17
                 &kp LS(NUMBER_1)           // 18
-                &kp LS(SEMI)               // 19
+                &kp LS(NUMBER_6)           // 19
                 &kp LS(MINUS)              // 20
             >;
         };
