@@ -723,7 +723,7 @@
                 &kp DOWN                   // 15
                 &kp PG_UP                  // 16
                 &kp PG_DN                  // 17
-                &trans                     // 18
+                &kp RET                    // 18
                 &kp END                    // 19
                 &kp RIGHT                  // 20
             >;
@@ -845,55 +845,55 @@
             bindings = <
                 // Left hand (Index 1 to 10)
                 &mo 13                     // 1
-                &kp LSHIFT                 // 2
+                &mo 12                     // 2
                 &trans                     // 3
                 &kp LALT                   // 4
                 &trans                     // 5
-                &kp LGUI                   // 6
+                &kp LSHIFT                 // 6
                 &trans                     // 7
                 &kp LCTRL                  // 8
-                &mo 12                     // 9
-                &trans                     // 10
+                &trans                     // 9
+                &mo 11                     // 10
 
                 // Right hand (Index 11 to 20)
-                &kp LEFT                   // 11
-                &kp K                      // 12
+                &kp LG(LEFT)               // 11
+                &kp LG(K)                  // 12
                 &trans                     // 13
-                &kp UP                     // 14
-                &kp DOWN                   // 15
-                &kp F                      // 16
-                &kp O                      // 17
-                &kp W                      // 18
-                &trans                     // 19
-                &kp RIGHT                  // 20
+                &kp LG(UP)                 // 14
+                &kp LG(DOWN)               // 15
+                &kp LG(F)                  // 16
+                &kp LG(O)                  // 17
+                &kp LG(W)                  // 18
+                &kp LG(J)                  // 19
+                &kp LG(RIGHT)              // 20
             >;
         };
 
         layer_13 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &trans                     // 1
-                &trans                     // 2
+                &mo 13                     // 1
+                &mo 12                     // 2
                 &trans                     // 3
-                &trans                     // 4
+                &kp LALT                   // 4
                 &trans                     // 5
-                &trans                     // 6
+                &kp LSHIFT                 // 6
                 &trans                     // 7
-                &trans                     // 8
+                &kp LCTRL                  // 8
                 &trans                     // 9
-                &trans                     // 10
+                &mo 11                     // 10
 
                 // Right hand (Index 11 to 20)
-                &kp NUMBER_1               // 11
-                &kp NUMBER_2               // 12
+                &kp LG(NUMBER_1)           // 11
+                &kp LG(NUMBER_2)           // 12
                 &trans                     // 13
-                &kp NUMBER_3               // 14
-                &kp NUMBER_4               // 15
-                &kp NUMBER_5               // 16
-                &kp NUMBER_6               // 17
-                &kp NUMBER_7               // 18
-                &kp NUMBER_8               // 19
-                &kp NUMBER_9               // 20
+                &kp LG(NUMBER_3)           // 14
+                &kp LG(NUMBER_4)           // 15
+                &kp LG(NUMBER_5)           // 16
+                &kp LG(NUMBER_6)           // 17
+                &kp LG(NUMBER_7)           // 18
+                &kp LG(NUMBER_8)           // 19
+                &kp LG(NUMBER_9)           // 20
             >;
         };
 
@@ -903,25 +903,25 @@
                 &trans                     // 1
                 &trans                     // 2
                 &none                      // 3
-                &trans                     // 4
+                &kp LALT                   // 4
                 &trans                     // 5
-                &trans                     // 6
+                &kp LSHIFT                 // 6
                 &trans                     // 7
-                &trans                     // 8
+                &kp LCTRL                  // 8
                 &trans                     // 9
                 &trans                     // 10
 
                 // Right hand (Index 11 to 20)
-                &kp SPC                    // 11
-                &kp Q                      // 12
+                &kp LG(SPC)                // 11
+                &kp LG(Q)                  // 12
                 &none                      // 13
-                &kp S                      // 14
+                &kp LG(S)                  // 14
                 &trans                     // 15
                 &trans                     // 16
                 &trans                     // 17
-                &kp ESC                    // 18
-                &kp TAB                    // 19
-                &kp RET                    // 20
+                &kp LG(ESC)                // 18
+                &kp LG(TAB)                // 19
+                &kp LG(RET)                // 20
             >;
         };
 
