@@ -537,7 +537,7 @@
             bindings = <
                 // Left hand (Index 1 to 10)
                 &sl 5                      // 1
-                &sl 9                      // 2
+                &sl 6                      // 2
                 &none                      // 3
                 &kp R                      // 4
                 &kp L                      // 5
@@ -573,7 +573,7 @@
                 &kp Z                      // 7
                 &kp W                      // 8
                 &kp V                      // 9
-                &mo 6                      // 10
+                &mo 7                      // 10
 
                 // Right hand (Index 11 to 20)
                 &kp BSPC                   // 11
@@ -691,7 +691,7 @@
                 &mm_ecirc                  // 11
                 &mm_ucirc                  // 12
                 &none                      // 13
-                &mm_ccedilla               // 14
+                &none                      // 14
                 &ht_etrema_egrave 0 0      // 15
                 &kp RET                    // 16
                 &mm_itrema                 // 17
@@ -704,6 +704,34 @@
         layer_7 {
             bindings = <
                 // Left hand (Index 1 to 10)
+                &trans                     // 1
+                &mo 6                      // 2
+                &none                      // 3
+                &trans                     // 4
+                &mo 9                      // 5
+                &trans                     // 6
+                &mo 10                     // 7
+                &trans                     // 8
+                &mo 8                      // 9
+                &mo 7                      // 10
+
+                // Right hand (Index 11 to 20)
+                &kp DOT                    // 11
+                &kp COMMA                  // 12
+                &none                      // 13
+                &kp LS(COMMA)              // 14
+                &kp MINUS                  // 15
+                &kp SEMI                   // 16
+                &kp LS(SEMI)               // 17
+                &kp LS(NUMBER_1)           // 18
+                &kp LS(NUMBER_6)           // 19
+                &kp LS(MINUS)              // 20
+            >;
+        };
+
+        layer_8 {
+            bindings = <
+                // Left hand (Index 1 to 10)
                 &kp RET                    // 1
                 &kp TAB                    // 2
                 &none                      // 3
@@ -713,7 +741,7 @@
                 &trans                     // 7
                 &kp LCTRL                  // 8
                 &trans                     // 9
-                &mo 6                      // 10
+                &mo 7                      // 10
 
                 // Right hand (Index 11 to 20)
                 &kp LEFT                   // 11
@@ -723,13 +751,13 @@
                 &kp DOWN                   // 15
                 &kp PG_UP                  // 16
                 &kp PG_DN                  // 17
-                &none                      // 18
+                &kp ESC                    // 18
                 &kp END                    // 19
                 &kp RIGHT                  // 20
             >;
         };
 
-        layer_8 {
+        layer_9 {
             bindings = <
                 // Left hand (Index 1 to 10)
                 &trans                     // 1
@@ -740,8 +768,8 @@
                 &trans                     // 6
                 &trans                     // 7
                 &trans                     // 8
-                &mo 7                      // 9
-                &mo 6                      // 10
+                &mo 8                      // 9
+                &mo 7                      // 10
 
                 // Right hand (Index 11 to 20)
                 &kp LC(Z)                  // 11
@@ -757,7 +785,7 @@
             >;
         };
 
-        layer_9 {
+        layer_10 {
             bindings = <
                 // Left hand (Index 1 to 10)
                 &ht_pi_ohm 0 0             // 1
@@ -769,7 +797,7 @@
                 &kp LS(NUMBER_7)           // 7
                 &trans                     // 8
                 &kp LS(NUMBER_2)           // 9
-                &mo 6                      // 10
+                &mo 7                      // 10
 
                 // Right hand (Index 11 to 20)
                 &ht SEMI LS(SEMI)          // 11
@@ -782,34 +810,6 @@
                 &kp LS(NUMBER_4)           // 18
                 &single_tilde              // 19
                 &ht LS(DOT) RA(NUMBER_3)   // 20
-            >;
-        };
-
-        layer_10 {
-            bindings = <
-                // Left hand (Index 1 to 10)
-                &trans                     // 1
-                &mo 9                      // 2
-                &none                      // 3
-                &trans                     // 4
-                &mo 8                      // 5
-                &trans                     // 6
-                &mo 10                     // 7
-                &trans                     // 8
-                &mo 7                      // 9
-                &mo 6                      // 10
-
-                // Right hand (Index 11 to 20)
-                &kp DOT                    // 11
-                &kp COMMA                  // 12
-                &none                      // 13
-                &kp LS(COMMA)              // 14
-                &kp MINUS                  // 15
-                &kp SEMI                   // 16
-                &kp LS(SEMI)               // 17
-                &kp LS(NUMBER_1)           // 18
-                &kp LS(NUMBER_6)           // 19
-                &kp LS(MINUS)              // 20
             >;
         };
 
