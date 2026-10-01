@@ -551,9 +551,9 @@
                 &kp SPC                    // 11
                 &ht_ugrave_kp 0 U          // 12
                 &none                      // 13
-                &kp S                      // 14
+                &ht_ccedilla_kp 0 C        // 14
                 &ht FSLH E                 // 15
-                &ht_ccedilla_kp 0 C        // 16
+                &kp S                      // 16
                 &ht_icirc_kp 0 I           // 17
                 &kp D                      // 18
                 &ht_ocirc_kp 0 O           // 19
@@ -704,8 +704,8 @@
         layer_7 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &mo 7                      // 1
-                &trans                     // 2
+                &kp RET                    // 1
+                &kp TAB                    // 2
                 &none                      // 3
                 &kp LALT                   // 4
                 &trans                     // 5
@@ -723,7 +723,7 @@
                 &kp DOWN                   // 15
                 &kp PG_UP                  // 16
                 &kp PG_DN                  // 17
-                &kp RET                    // 18
+                &none                      // 18
                 &kp END                    // 19
                 &kp RIGHT                  // 20
             >;
