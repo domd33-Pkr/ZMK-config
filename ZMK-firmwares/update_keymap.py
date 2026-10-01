@@ -38,7 +38,12 @@ def generate_keymap():
             "SPACE": "SPC",
             "ENTER": "RET",
             "BKS": "BSPC",
-            "EACUTE": "FSLH"
+            "EACUTE": "FSLH",
+            "CONTEXTMENU": "K_APP",
+            "CONTEXT_MENU": "K_APP",
+            "MENU": "K_APP",
+            "APPLICATION": "K_APP",
+            "APP": "K_APP"
         }
         
         # Check for nested modifier format, e.g., LS(key) or RSFT(key)
@@ -254,6 +259,7 @@ def generate_keymap():
 
 #define DEGREE RA(NUBS)
 #define EACUTE FSLH
+#define CONTEXTMENU K_APP
 
 / {{
     behaviors {{

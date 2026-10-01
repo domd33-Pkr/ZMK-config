@@ -6,6 +6,7 @@
 
 #define DEGREE RA(NUBS)
 #define EACUTE FSLH
+#define CONTEXTMENU K_APP
 
 / {
     behaviors {
@@ -736,7 +737,7 @@
                 &kp TAB                    // 2
                 &none                      // 3
                 &kp LALT                   // 4
-                &kp CONTEXTMENU            // 5
+                &kp K_APP                  // 5
                 &kp LSHIFT                 // 6
                 &trans                     // 7
                 &kp LCTRL                  // 8
