@@ -736,7 +736,7 @@
                 &kp TAB                    // 2
                 &none                      // 3
                 &kp LALT                   // 4
-                &trans                     // 5
+                &kp CONTEXTMENU            // 5
                 &kp LSHIFT                 // 6
                 &trans                     // 7
                 &kp LCTRL                  // 8
@@ -916,9 +916,9 @@
                 &kp LG(Q)                  // 12
                 &none                      // 13
                 &kp LG(S)                  // 14
-                &trans                     // 15
-                &trans                     // 16
-                &trans                     // 17
+                &kp LG(L)                  // 15
+                &kp LG(EQUAL)              // 16
+                &kp LG(MINUS)              // 17
                 &kp LG(ESC)                // 18
                 &kp LG(TAB)                // 19
                 &kp LG(RET)                // 20
