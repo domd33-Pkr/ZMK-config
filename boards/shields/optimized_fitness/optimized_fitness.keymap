@@ -537,8 +537,8 @@
         layer_1 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &sl 5                      // 1
-                &sl 6                      // 2
+                &mo 5                      // 1
+                &mo 6                      // 2
                 &none                      // 3
                 &kp R                      // 4
                 &kp L                      // 5
@@ -546,7 +546,7 @@
                 &kp B                      // 7
                 &kp M                      // 8
                 &kp N                      // 9
-                &sl 1                      // 10
+                &mo 1                      // 10
 
                 // Right hand (Index 11 to 20)
                 &kp SPC                    // 11
@@ -746,15 +746,15 @@
 
                 // Right hand (Index 11 to 20)
                 &kp LEFT                   // 11
-                &kp HOME                   // 12
+                &kp RIGHT                  // 12
                 &none                      // 13
                 &kp UP                     // 14
                 &kp DOWN                   // 15
                 &kp PG_UP                  // 16
                 &kp PG_DN                  // 17
                 &kp ESC                    // 18
-                &kp END                    // 19
-                &kp RIGHT                  // 20
+                &kp HOME                   // 19
+                &kp END                    // 20
             >;
         };
 
@@ -858,7 +858,7 @@
 
                 // Right hand (Index 11 to 20)
                 &kp LG(LEFT)               // 11
-                &kp LG(K)                  // 12
+                &kp LG(RIGHT)              // 12
                 &none                      // 13
                 &kp LG(UP)                 // 14
                 &kp LG(DOWN)               // 15
@@ -866,7 +866,7 @@
                 &kp LG(O)                  // 17
                 &kp LG(W)                  // 18
                 &kp LG(J)                  // 19
-                &kp LG(RIGHT)              // 20
+                &kp LG(K)                  // 20
             >;
         };
 
