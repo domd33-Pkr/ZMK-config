@@ -712,7 +712,7 @@
                 &mo 9                      // 5
                 &trans                     // 6
                 &mo 10                     // 7
-                &trans                     // 8
+                &mo 15                     // 8
                 &mo 8                      // 9
                 &mo 7                      // 10
 
@@ -958,22 +958,22 @@
             bindings = <
                 // Left hand (Index 1 to 10)
                 &trans                     // 1
-                &trans                     // 2
+                &mo 6                      // 2
                 &trans                     // 3
                 &trans                     // 4
-                &trans                     // 5
+                &mo 9                      // 5
                 &trans                     // 6
-                &trans                     // 7
-                &trans                     // 8
-                &trans                     // 9
-                &trans                     // 10
+                &mo 10                     // 7
+                &mo 15                     // 8
+                &mo 8                      // 9
+                &mo 7                      // 10
 
                 // Right hand (Index 11 to 20)
-                &trans                     // 11
-                &trans                     // 12
+                &bt BT_PRV                 // 11
+                &bt BT_NXT                 // 12
                 &trans                     // 13
-                &trans                     // 14
-                &trans                     // 15
+                &bt BT_CLR_ALL             // 14
+                &bt BT_CLR                 // 15
                 &trans                     // 16
                 &trans                     // 17
                 &trans                     // 18
