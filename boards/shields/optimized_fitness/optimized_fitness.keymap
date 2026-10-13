@@ -566,7 +566,7 @@
             bindings = <
                 // Left hand (Index 1 to 10)
                 &mo 2                      // 1
-                &mo 9                      // 2
+                &none                      // 2
                 &none                      // 3
                 &kp Q                      // 4
                 &kp K                      // 5
@@ -594,7 +594,7 @@
             bindings = <
                 // Left hand (Index 1 to 10)
                 &mo 2                      // 1
-                &mo 8                      // 2
+                &none                      // 2
                 &none                      // 3
                 &mo 15                     // 4
                 &mo 6                      // 5
@@ -734,15 +734,15 @@
             bindings = <
                 // Left hand (Index 1 to 10)
                 &mo 7                      // 1
-                &trans                     // 2
+                &none                      // 2
                 &none                      // 3
                 &sk LSHIFT                 // 4
-                &mo 10                     // 5
+                &mo 18                     // 5
                 &caps_word                 // 6
-                &mo 18                     // 7
+                &mo 17                     // 7
                 &mo 19                     // 8
-                &mo 17                     // 9
-                &mo 16                     // 10
+                &mo 16                     // 9
+                &mo 9                      // 10
 
                 // Right hand (Index 11 to 20)
                 &none                      // 11
@@ -761,7 +761,7 @@
         layer_9 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &mo 2                      // 1
+                &none                      // 1
                 &mo 8                      // 2
                 &none                      // 3
                 &mo 15                     // 4
@@ -789,16 +789,16 @@
         layer_10 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &none                      // 1
-                &mo 9                      // 2
+                &mo 7                      // 1
+                &mo 8                      // 2
                 &none                      // 3
                 &kp LALT                   // 4
                 &none                      // 5
                 &kp LSHIFT                 // 6
-                &trans                     // 7
+                &none                      // 7
                 &kp LCTRL                  // 8
-                &trans                     // 9
-                &mo 10                     // 10
+                &mo 10                     // 9
+                &mo 9                      // 10
 
                 // Right hand (Index 11 to 20)
                 &kp LEFT                   // 11
@@ -817,16 +817,16 @@
         layer_11 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &none                      // 1
-                &mo 9                      // 2
+                &kp LCTRL                  // 1
+                &none                      // 2
                 &none                      // 3
                 &kp LALT                   // 4
-                &trans                     // 5
+                &none                      // 5
                 &kp LSHIFT                 // 6
-                &trans                     // 7
+                &none                      // 7
                 &kp LCTRL                  // 8
-                &trans                     // 9
-                &mo 10                     // 10
+                &mo 10                     // 9
+                &mo 9                      // 10
 
                 // Right hand (Index 11 to 20)
                 &kp HOME                   // 11
@@ -835,7 +835,7 @@
                 &kp PG_UP                  // 14
                 &kp PG_DN                  // 15
                 &kp K_APP                  // 16
-                &trans                     // 17
+                &none                      // 17
                 &kp ESC                    // 18
                 &kp TAB                    // 19
                 &kp RET                    // 20
@@ -892,7 +892,7 @@
                 &trans                     // 15
                 &trans                     // 16
                 &trans                     // 17
-                &trans                     // 18
+                &kp LC(LA(DEL))            // 18
                 &trans                     // 19
                 &trans                     // 20
             >;
@@ -902,7 +902,7 @@
             bindings = <
                 // Left hand (Index 1 to 10)
                 &mo 2                      // 1
-                &none                      // 2
+                &mo 8                      // 2
                 &none                      // 3
                 &mo 15                     // 4
                 &mo 6                      // 5
@@ -930,7 +930,7 @@
             bindings = <
                 // Left hand (Index 1 to 10)
                 &mo 2                      // 1
-                &none                      // 2
+                &mo 8                      // 2
                 &trans                     // 3
                 &mo 15                     // 4
                 &mo 6                      // 5
@@ -957,16 +957,16 @@
         layer_16 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &trans                     // 1
-                &trans                     // 2
+                &mo 2                      // 1
+                &mo 8                      // 2
                 &trans                     // 3
-                &trans                     // 4
-                &trans                     // 5
-                &trans                     // 6
-                &trans                     // 7
-                &trans                     // 8
-                &trans                     // 9
-                &trans                     // 10
+                &mo 15                     // 4
+                &mo 6                      // 5
+                &mo 14                     // 6
+                &mo 5                      // 7
+                &mo 13                     // 8
+                &mo 4                      // 9
+                &mo 3                      // 10
 
                 // Right hand (Index 11 to 20)
                 &trans                     // 11
@@ -985,16 +985,16 @@
         layer_17 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &trans                     // 1
-                &none                      // 2
+                &mo 7                      // 1
+                &kp LCTRL                  // 2
                 &none                      // 3
                 &kp LALT                   // 4
-                &none                      // 5
+                &mo 18                     // 5
                 &kp LSHIFT                 // 6
-                &mo 18                     // 7
+                &mo 17                     // 7
                 &kp LCTRL                  // 8
-                &mo 17                     // 9
-                &mo 16                     // 10
+                &mo 16                     // 9
+                &mo 9                      // 10
 
                 // Right hand (Index 11 to 20)
                 &kp LG(NUMBER_1)           // 11
@@ -1013,16 +1013,16 @@
         layer_18 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &kp LCTRL                  // 1
-                &none                      // 2
+                &mo 7                      // 1
+                &kp LSHIFT                 // 2
                 &none                      // 3
                 &kp LALT                   // 4
-                &none                      // 5
+                &mo 18                     // 5
                 &kp LSHIFT                 // 6
-                &mo 18                     // 7
+                &mo 17                     // 7
                 &kp LCTRL                  // 8
-                &mo 17                     // 9
-                &mo 16                     // 10
+                &mo 16                     // 9
+                &mo 9                      // 10
 
                 // Right hand (Index 11 to 20)
                 &kp LG(LEFT)               // 11
@@ -1041,16 +1041,16 @@
         layer_19 {
             bindings = <
                 // Left hand (Index 1 to 10)
-                &kp LSHIFT                 // 1
-                &none                      // 2
+                &mo 7                      // 1
+                &kp LALT                   // 2
                 &none                      // 3
                 &kp LALT                   // 4
-                &none                      // 5
+                &mo 18                     // 5
                 &kp LSHIFT                 // 6
-                &mo 18                     // 7
+                &mo 17                     // 7
                 &kp LCTRL                  // 8
-                &mo 17                     // 9
-                &mo 16                     // 10
+                &mo 16                     // 9
+                &mo 9                      // 10
 
                 // Right hand (Index 11 to 20)
                 &kp LG(SPC)                // 11
